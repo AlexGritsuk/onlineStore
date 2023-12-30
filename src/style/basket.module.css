@@ -1,0 +1,14 @@
+.basket {
+  display: flex;
+  margin-top: 40px;  
+}
+
+.basket__info {   
+  width: 70%;
+  margin-right: 30px;
+}
+
+.basket__details {
+  width: 30%;
+}
+

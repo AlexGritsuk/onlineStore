@@ -1,0 +1,19 @@
+.countItem_absolute {
+  position: absolute;
+  top: -5px;
+  right: 18px;
+  text-align: center;
+  padding-top: 3px;
+  font-size: 13px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  background: var(--danger-color);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.countItem_absolute::before {
+  content: "";
+  display: inline-block;
+}

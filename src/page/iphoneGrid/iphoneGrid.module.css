@@ -1,0 +1,31 @@
+.iphoneGrid__item {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;    
+}
+
+
+.iphoneGrid__catalog {
+    display: flex;
+    justify-content: end;
+    margin-right: 15px;
+}
+
+.iphoneGrid__catalog > li {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
+
+.iphoneGrid__pagin {
+    display: flex;
+    justify-content: center;
+}
+
+.iphoneGrid__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 300px;
+}

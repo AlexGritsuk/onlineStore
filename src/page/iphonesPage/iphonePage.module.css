@@ -1,0 +1,14 @@
+.iphonePage {
+  display: flex;
+  margin-top: 40px;
+}
+
+.iphonePage__groupList {
+  float: left;
+  width: 40%;
+}
+
+.iphonePage__iphoneGrid {
+  float: right;
+  width: 60%;
+}

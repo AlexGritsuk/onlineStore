@@ -1,0 +1,29 @@
+.accordion__item {
+  margin-bottom: 10px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.accordion__header {
+  position: relative;
+  background-color: #fff;
+
+  display: flex;     
+
+}
+
+.accordion__collapse {
+  overflow: hidden;
+  margin-top: 15px;
+
+  transition: height 0.3s;
+}
+
+.accordion__collapse.open {
+  height: auto;
+}
+
+.accordion__body {
+  font-size: 14px;
+}

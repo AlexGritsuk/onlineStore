@@ -1,0 +1,43 @@
+.login {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    
+    
+}
+
+.login__inner {
+    width: 320px;
+    height: 440px;
+    border-radius: 20px;    
+    box-shadow: 0px 0px 17px 11px rgba(1, 8, 37, 0.164);
+
+    position: relative;
+}
+
+.login__inner > h3 {
+    text-align: center;
+}
+
+.login__logo {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login__item {
+    padding: 25px;
+}
+
+
+.login__link {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login__link > a {
+    cursor: pointer;
+}
+
+
+

@@ -1,0 +1,50 @@
+.iphoneCart__wrapper {
+  width: auto;
+  height: auto;
+
+  box-shadow: 0px 0px 14px 6px rgba(1, 8, 37, 0.164);
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.iphoneCart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.iphoneCart__item {
+  margin-top: 40px;
+}
+
+.iphoneCart__btns {
+  display: flex;
+  flex-direction: column;
+}
+
+.iphoneCart_delete,
+.iphoneCart_favorites {
+  background: none;
+  color: var(--gray--color);
+  padding: 5px;
+}
+
+.iphoneCart_delete:hover,
+.iphoneCart_favorites:hover {
+  color: var(--darkgray--color);
+}
+
+.iphoneCart_favorites_in {
+  color: var(--danger-color);
+}
+
+.iphoneCart_favorites_in:hover {
+  color: var(--danger-color);
+}
+
+.iphoneCart__img {
+  margin-top: 15px;
+  margin-bottom: 10px;
+
+  width: 100px;
+  height: 120px;
+}

@@ -1,0 +1,10 @@
+.btnCart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 115px;
+}
+
+.bntCart__in {
+    background-color: var(--danger-color);
+}
