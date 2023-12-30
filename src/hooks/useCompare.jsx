@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
-import {isHave} from "../utils/isHave"
+import {isHave} from "../utils/isHave";
 
 const CompareContext = React.createContext();
 
