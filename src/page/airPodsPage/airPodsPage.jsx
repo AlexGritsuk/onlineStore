@@ -3,6 +3,13 @@ import ProductsGrid from "../../components/common/productsGrid/productsGrid";
 import GroupList from "../../components/common/groupList/groupList";
 
 const AirPodsPage = () => {
+  const {
+    cartProducts,
+    countCart,
+    handleAddCartProducts,
+    handleDeleteCartProducts,
+    isHave,
+  } = useCart();
   return (
     <div className={root.container}>
       <div className={style.iphonePage}>
@@ -10,7 +17,12 @@ const AirPodsPage = () => {
           <GroupList />
         </div>
         <div className={style.iphonePage__iphoneGrid}>
-          <ProductsGrid />
+          <ProductsGrid
+            products={cartProducts}
+            onAddCart={handleAddCartProducts}
+            onDeleteCart={handleDeleteCartProducts}
+            isHave={isHave}
+          />
         </div>
       </div>
     </div>

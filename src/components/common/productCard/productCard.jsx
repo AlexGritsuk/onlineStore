@@ -53,7 +53,9 @@ const ProductCard = ({
   };
 
   return (
-    <div className={catalog ? style.productCard__grid : style.productCard__line}>
+    <div
+      className={catalog ? style.productCard__grid : style.productCard__line}
+    >
       <img
         className={root.img + " " + style.productCard__img}
         src={product.img}
@@ -67,7 +69,9 @@ const ProductCard = ({
 
       <div
         className={
-          catalog ? style.productCard__grid_price : style.productCard__line_price
+          catalog
+            ? style.productCard__grid_price
+            : style.productCard__line_price
         }
       >
         <div className={style.productCard__price}>{product.price} ₽</div>

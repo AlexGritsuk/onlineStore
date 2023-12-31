@@ -2,7 +2,7 @@ import React from "react";
 import ProductCard from "../productCard/productCard";
 import { useState } from "react";
 
-const ProductsGrid = ({products}) => {
+const ProductsGrid = ({ products, onAddCart, onDeleteCart, isHave }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [catalog, setCatalog] = useState(true);
 
@@ -57,7 +57,11 @@ const ProductsGrid = ({products}) => {
         </ul>
         <div className={catalog ? style.iphoneGrid__item : ""}>
           {userCrop.map((iphone) => (
-            <ProductCard catalog={catalog} />
+            <ProductCard
+              catalog={catalog}
+              onAddCart={onAddCart}
+              onDeleteCart={onDeleteCart}
+            />
           ))}
         </div>
         <div className={style.iphoneGrid__pagin}>
