@@ -9,38 +9,38 @@ export const useCompare = () => {
 };
 
 export const CompareProvider = ({ children }) => {
-  const [compareIphones, setCompareIphones] = useState([]);  
+  const [compareProducts, setCompareProducts] = useState([]);  
 
   useEffect(() => {
     const compareIphones = JSON.parse(localStorage.getItem("compareIphones"));
     if (compareIphones) {
-      setCompareIphones(compareIphones);
+      setCompareProducts(compareIphones);
     }
   }, []);
 
   useEffect(() => {
     setTimeout(() => {
-      localStorage.setItem("compareIphones", JSON.stringify(compareIphones));
+      localStorage.setItem("compareIphones", JSON.stringify(compareProducts));
     }, 0);
-  }, [compareIphones]);
+  }, [compareProducts]);
 
   const handleAddCompareIphone = (iphoneID) => {
-    setCompareIphones([...compareIphones, iphoneID]);
+    setCompareProducts([...compareProducts, iphoneID]);
   };
 
   const handleDeleteCompareIphone = (iphoneID) => {
-    const newcompareIphones = compareIphones.filter(
+    const newcompareIphones = compareProducts.filter(
       (compareIphone) => compareIphone._id !== iphoneID
     );
-    setCompareIphones(newcompareIphones);
+    setCompareProducts(newcompareIphones);
   };
 
-  let countItemCompare = compareIphones.length;
+  let countItemCompare = compareProducts.length;
 
   return (
     <CompareContext.Provider
       value={{
-        compareIphones,
+        compareIphones: compareProducts,
         countItemCompare,
         handleAddCompareIphone,
         handleDeleteCompareIphone,

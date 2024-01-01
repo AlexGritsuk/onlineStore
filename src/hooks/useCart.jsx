@@ -20,7 +20,7 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     setTimeout(() => {
       localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
-    }, 0);
+    }, 1);
   }, [cartProducts]);
 
   const handleAddCartProducts = (product) => {

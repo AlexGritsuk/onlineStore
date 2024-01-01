@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./productCard.module.css";
-import root from "../../style/root__style.module.css";
+import root from "../../../style/root__style.module.css";
 import { PiShoppingCartFill } from "react-icons/pi";
 import { PiShoppingCartBold } from "react-icons/pi";
 import { FaRegHeart } from "react-icons/fa";

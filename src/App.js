@@ -14,38 +14,41 @@ import Footer from "./page/footer/footer";
 import "./index.css";
 import { CartProvider } from "./hooks/useCart";
 import { HeartProvider } from "./hooks/useHeart";
+import { AirPodsProvider } from "./hooks/useAirPods";
 
 // import { pathRoutes } from './routes';
 
 function App() {
   return (
     <div className="wrapper">
-      <IphoneProvider>
-        <CompareProvider>
-          <CartProvider>
-            <HeartProvider>
-              <header className="header">
-                <NavBar />
-              </header>
-              <main className="main">
-                <Switch>
-                  <Route path="/Login/:type?" component={Login} />
-                  <Route path="/Airpods" component={Airpods} />
-                  <Route path="/Iphones:iphoneId?" component={Iphones} />
-                  <Route path="/Basket" component={Basket} />
-                  <Route path="/Comparison" component={Comparison} />
-                  <Route path="/Heart" component={Heart} />
-                  <Route path="/" exact component={Main} />
-                  <Redirect to="./Main" />
-                </Switch>
-              </main>
-              <footer className="footer">
-                <Footer />
-              </footer>
-            </HeartProvider>
-          </CartProvider>
-        </CompareProvider>
-      </IphoneProvider>
+      <AirPodsProvider>
+        <IphoneProvider>
+          <CompareProvider>
+            <CartProvider>
+              <HeartProvider>
+                <header className="header">
+                  <NavBar />
+                </header>
+                <main className="main">
+                  <Switch>
+                    <Route path="/Login/:type?" component={Login} />
+                    <Route path="/Airpods" component={Airpods} />
+                    <Route path="/Iphones:iphoneId?" component={Iphones} />
+                    <Route path="/Basket" component={Basket} />
+                    <Route path="/Comparison" component={Comparison} />
+                    <Route path="/Heart" component={Heart} />
+                    <Route path="/" exact component={Main} />
+                    <Redirect to="./Main" />
+                  </Switch>
+                </main>
+                <footer className="footer">
+                  <Footer />
+                </footer>
+              </HeartProvider>
+            </CartProvider>
+          </CompareProvider>
+        </IphoneProvider>
+      </AirPodsProvider>
     </div>
   );
 }

@@ -1,11 +1,31 @@
 import React from "react";
 import ProductCard from "../productCard/productCard";
 import { useState } from "react";
+import { paginate } from "../../../utils/paginate";
+import Pagination from "../pagination/pagination";
+import style from "./productGrid.module.css";
+import { IoGrid } from "react-icons/io5";
+import { IoGridOutline } from "react-icons/io5";
+import { PiListLight } from "react-icons/pi";
+import { PiListFill } from "react-icons/pi";
+import Loading from "../loading/loading";
+import { useAirPods } from "../../../hooks/useAirPods";
 
-const ProductsGrid = ({ products, onAddCart, onDeleteCart, isHave }) => {
+const ProductsGrid = ({
+  productsCart,
+  onAddCart,
+  onDeleteCart,
+  productsHeart,
+  onAddHeart,
+  onDeleteHeart,
+  productsCompare,
+  onAddCompare,
+  onDeleteCompare,
+  products,
+}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [catalog, setCatalog] = useState(true);
-
+const {airPods} = useAirPods()
   const pageSize = 6;
 
   const handlePageChange = (pageIndex) => {
@@ -36,14 +56,14 @@ const ProductsGrid = ({ products, onAddCart, onDeleteCart, isHave }) => {
   const handleCatalogLine = () => {
     setCatalog((catalog) => (catalog = false));
   };
-
-  if (products) {
-    const count = products.length;
-    const userCrop = paginate(products, currentPage, pageSize);
-
+  
+  if (airPods) {
+    const count = airPods.length;
+    const userCrop = paginate(airPods, currentPage, pageSize);
+    
     return (
       <div>
-        <ul className={style.iphoneGrid__catalog}>
+        <ul className={style.productsGrid__catalog}>
           <li>
             <a onClick={() => handleCatalogGrid()} role="button">
               {catalog ? <IoGrid /> : <IoGridOutline />}
@@ -55,16 +75,24 @@ const ProductsGrid = ({ products, onAddCart, onDeleteCart, isHave }) => {
             </a>
           </li>
         </ul>
-        <div className={catalog ? style.iphoneGrid__item : ""}>
-          {userCrop.map((iphone) => (
+        <div className={catalog ? style.productsGrid__item : ""}>
+          {userCrop.map((airPods) => (
             <ProductCard
               catalog={catalog}
+              cartProduct={productsCart}
               onAddCart={onAddCart}
               onDeleteCart={onDeleteCart}
+              heartProduct={productsHeart}
+              onAddHeart={onAddHeart}
+              onDeleteHeart={onDeleteHeart}
+              compareProduct={productsCompare}
+              onAddCompare={onAddCompare}
+              onDeleteCompare={onDeleteCompare}
+              {...airPods}
             />
           ))}
         </div>
-        <div className={style.iphoneGrid__pagin}>
+        <div className={style.productsGrid__pagin}>
           <Pagination
             itemsCount={count}
             pageSize={pageSize}
@@ -78,7 +106,7 @@ const ProductsGrid = ({ products, onAddCart, onDeleteCart, isHave }) => {
     );
   } else {
     return (
-      <div className={style.iphoneGrid__loading}>
+      <div className={style.productsGrid__loading}>
         <Loading />
       </div>
     );

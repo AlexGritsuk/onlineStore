@@ -15,7 +15,6 @@ const IphoneGrid = () => {
   const [catalog, setCatalog] = useState(true);
   const { iphones } = useIphone();
   const pageSize = 6;
-
   const handlePageChange = (pageIndex) => {
     setCurrentPage(pageIndex);
   };
@@ -47,6 +46,8 @@ const IphoneGrid = () => {
   };
 
   if (iphones) {
+  console.log(iphones);
+
     const count = iphones.length;
     const userCrop = paginate(iphones, currentPage, pageSize);
 

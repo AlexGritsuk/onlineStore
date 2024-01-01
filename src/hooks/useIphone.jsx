@@ -56,6 +56,8 @@ export const IphoneProvider = ({ children }) => {
     getIphones();
   }, []);
 
+  
+
   const handleAddIphoneCart = (iphoneID) => {
     setCartIphones([...cartIphones, iphoneID]);
   };
