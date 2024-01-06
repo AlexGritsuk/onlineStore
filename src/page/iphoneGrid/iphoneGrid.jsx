@@ -45,9 +45,7 @@ const IphoneGrid = () => {
     setCatalog((catalog) => (catalog = false));
   };
 
-  if (iphones) {
-  console.log(iphones);
-
+  if (iphones) { 
     const count = iphones.length;
     const userCrop = paginate(iphones, currentPage, pageSize);
 

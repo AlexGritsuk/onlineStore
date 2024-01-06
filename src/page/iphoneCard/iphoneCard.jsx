@@ -21,7 +21,7 @@ const IphoneCard = ({ catalog, ...iphone }) => {
     handleAddIphoneHeart,
     handleDeleteIphoneHeart,
     heartIphones,
-  } = useIphone();
+  } = useIphone();  
 
   const { compareIphones, handleAddCompareIphone, handleDeleteCompareIphone } =
     useCompare();

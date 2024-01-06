@@ -50,7 +50,7 @@ const ProductCard = ({
       beforeLogo: <IoGitCompare />,
       afterLogo: <IoIosGitCompare />,
     },
-  };
+  };  
 
   return (
     <div
@@ -58,7 +58,7 @@ const ProductCard = ({
     >
       <img
         className={root.img + " " + style.productCard__img}
-        src={product.img}
+        src={product.img[0]}
         alt="product"
       />
 

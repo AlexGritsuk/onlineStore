@@ -4,7 +4,7 @@ import AirPodsPage from "../page/airPodsPage/airPodsPage";
 const Airpods = () => {
   return (
     <div>
-      {/* <AirPodsPage /> */}
+      <AirPodsPage />
     </div>
   );
 };

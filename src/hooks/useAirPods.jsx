@@ -24,8 +24,10 @@ export const AirPodsProvider = ({ children }) => {
     getAirPods();
   }, []);
 
+  
+
   return (
-    <AirPodsContext.Provider value={airPods}>
+    <AirPodsContext.Provider value={{airPods}}>
       {children}
     </AirPodsContext.Provider>
   );

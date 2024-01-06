@@ -31,7 +31,7 @@ const AirPodsPage = () => {
     handleDeleteCompareIphone,
   } = useCompare();
 
-  // const { airPods } = useAirPods();
+  const { airPods } = useAirPods();
   
   return (
     <div className={root.container}>
@@ -53,7 +53,7 @@ const AirPodsPage = () => {
             countCart={countCart}
             countHeart={countHeart}
             countItemCompare={countItemCompare}
-            // products={airPods}
+            products={airPods}
           />
         </div>
       </div>

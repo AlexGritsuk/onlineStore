@@ -25,7 +25,7 @@ const ProductsGrid = ({
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [catalog, setCatalog] = useState(true);
-const {airPods} = useAirPods()
+// const {airPods} = useAirPods()
   const pageSize = 6;
 
   const handlePageChange = (pageIndex) => {
@@ -55,11 +55,11 @@ const {airPods} = useAirPods()
 
   const handleCatalogLine = () => {
     setCatalog((catalog) => (catalog = false));
-  };
+  };  
   
-  if (airPods) {
-    const count = airPods.length;
-    const userCrop = paginate(airPods, currentPage, pageSize);
+  if (products) {    
+    const count = products.length;
+    const userCrop = paginate(products, currentPage, pageSize);
     
     return (
       <div>
@@ -76,7 +76,7 @@ const {airPods} = useAirPods()
           </li>
         </ul>
         <div className={catalog ? style.productsGrid__item : ""}>
-          {userCrop.map((airPods) => (
+          {userCrop.map((products) => (
             <ProductCard
               catalog={catalog}
               cartProduct={productsCart}
@@ -88,7 +88,7 @@ const {airPods} = useAirPods()
               compareProduct={productsCompare}
               onAddCompare={onAddCompare}
               onDeleteCompare={onDeleteCompare}
-              {...airPods}
+              {...products}
             />
           ))}
         </div>
