@@ -1,40 +1,35 @@
 import React from "react";
-import { useIphone } from "../../hooks/useIphone";
 import HeartEmpty from "./heartEmpty";
-import IphoneHeart from "./iPhoneHeart";
+import ProductHeart from "./ProductHeart";
 import { useCompare } from "../../hooks/useCompare";
+import { useCart } from "../../hooks/useCart";
+import { useHeart } from "../../hooks/useHeart";
 
 const HeartList = () => {
-  const {
-    heartIphones,
-    cartIphones,
-    handleDeleteIphoneHeart,
-    handleDeleteIphoneCart, 
-    handleAddIphoneHeart,
-    handleAddIphoneCart,
-    isHave,
-  } = useIphone();
-
   const { compareIphones, handleAddCompareIphone, handleDeleteCompareIphone } =
     useCompare();
 
-  if (heartIphones.length > 0) {
+  const { cartProducts, handleAddCartProducts, handleDeleteCartProducts } =
+    useCart();
+
+  const { heartProducts, handleAddHeartProducts, handleDeleteHeartProducts } =
+    useHeart();
+
+  if (heartProducts.length > 0) {
     return (
       <div>
         <div>
-          {heartIphones.map((iphone) => {
+          {heartProducts.map((product) => {
             return (
-              <IphoneHeart
-                key={iphone._id}
-                {...iphone}
-                heartIphones={heartIphones}
-                cartIphones={cartIphones}
+              <ProductHeart
+                key={product._id}
+                {...product}
+                cartProducts={cartProducts}
                 compareIphones={compareIphones}
-                onAddCart={handleAddIphoneCart}
-                onDelete={handleDeleteIphoneCart}
-                onAddHeart={handleAddIphoneHeart}
-                onDeleteHeart={handleDeleteIphoneHeart}
-                isHave={isHave}
+                onAddCart={handleAddCartProducts}
+                onDeleteCart={handleDeleteCartProducts}
+                onAddHeart={handleAddHeartProducts}
+                onDeleteHeart={handleDeleteHeartProducts}
                 onAddCompare={handleAddCompareIphone}
                 onDeleteCompare={handleDeleteCompareIphone}
               />

@@ -10,10 +10,9 @@ const Pagination = ({
   onPageChange,
   onNext,
   onPrev,
+  pages
 }) => {
-  const pagesCount = Math.ceil(itemsCount / pageSize);
-  if (pagesCount === 1) return null;
-  let pages = pagesArray(pagesCount);
+  
 
   return (
     <nav>

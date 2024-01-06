@@ -6,13 +6,12 @@ import { LuMinusSquare } from "react-icons/lu";
 import BtnDelete from "../../components/common/btnDelete/btnDelete";
 import BtnHeart from "../../components/common/btnHeart/btnHeart";
 
-const IphoneCart = ({
+const ProductCart = ({
   onDelete,
   onAddHeart,
-  onDeleteHeart,
-  isHave,
-  heartIphones,
-  ...iphone
+  onDeleteHeart,  
+  heartProducts,
+  ...product
 }) => {
   return (
     <div className={style.iphoneCart__wrapper}>
@@ -20,12 +19,12 @@ const IphoneCart = ({
         <div style={{ margin: "20px" }}>
           <img
             className={root.img + " " + style.iphoneCart__img}
-            src={iphone.img}
+            src={product.img[0]}
             alt="Картинка"
           />
         </div>
 
-        <div className={style.iphoneCart__item}>{iphone.name.name}</div>
+        <div className={style.iphoneCart__item}>{product.name.name}</div>
 
         <div className={style.iphoneCart__item}>
           <div>
@@ -33,12 +32,12 @@ const IphoneCart = ({
           </div>
 
           <div style={{ ["marginTop"]: "30px" }}>
-            <BtnDelete id={iphone._id} onDel={onDelete} />
+            <BtnDelete id={product._id} onDel={onDelete} />
             <BtnHeart
-              products={heartIphones}
-              id={iphone._id}
+              products={heartProducts}
+              id={product._id}
               onAddHeart={onAddHeart}
-              currentProduct={iphone}
+              currentProduct={product}
               onDeleteHeart={onDeleteHeart}
             />
           </div>
@@ -48,11 +47,11 @@ const IphoneCart = ({
           style={{ ["marginRight"]: "20px" }}
           className={style.iphoneCart__item}
         >
-          {iphone.price} ₽
+          {product.price} ₽
         </div>
       </div>
     </div>
   );
 };
 
-export default IphoneCart;
+export default ProductCart;

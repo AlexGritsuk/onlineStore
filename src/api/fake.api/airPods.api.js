@@ -78,6 +78,11 @@ const visualAppearance = {
     name: "Красный глянец",
     color: "danger",
   },
+  perple : {
+    _id: "77rdca3eeb7f6fgeed4711012",
+    name: "Фиолетовый",
+    color: "perple",
+  }
 };
 
 export const seriesAirPods = {
@@ -179,7 +184,7 @@ const airPods = [
   {
     _id: "5006313112",
     name: seriesAirPods.airPodsMax,
-    img: imageAirPods.airPods2.green,
+    img: imageAirPods.airPodsMax.green,
     visualAppearance: visualAppearance.green,
     price: 44900,
     rating: 6.1,

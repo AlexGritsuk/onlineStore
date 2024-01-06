@@ -1,8 +1,8 @@
 import React from "react";
 import { useCompare } from "../../hooks/useCompare";
-import IphoneCompare from "./iphoneCompare";
 import CompareEmpty from "./compareEmpty";
 import style from "./comparisonList.module.css";
+import ProductCompare from "./productCompare";
 
 const ComparisonList = () => {
   const { compareIphones } = useCompare();
@@ -11,7 +11,7 @@ const ComparisonList = () => {
     return (
       <div className={style.comparisonList}>
         {compareIphones.map((compareIphone) => (
-          <IphoneCompare key={compareIphone._id} {...compareIphone} />
+          <ProductCompare key={compareIphone._id} {...compareIphone} />
         ))}
       </div>
     );

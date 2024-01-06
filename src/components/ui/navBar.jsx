@@ -9,10 +9,11 @@ import { SlEarphones } from "react-icons/sl";
 import { ImAppleinc } from "react-icons/im";
 import { FaRegHeart } from "react-icons/fa";
 import MenuLink from "./menuLink/MenuLink";
-import { useIphone } from "../../hooks/useIphone";
 import CountItem from "../common/countCart/countItem";
 import { IoIosGitCompare } from "react-icons/io";
 import { useCompare } from "../../hooks/useCompare";
+import { useCart } from "../../hooks/useCart";
+import { useHeart } from "../../hooks/useHeart";
 
 const NavBar = () => {
   const widthHeight = {
@@ -20,8 +21,9 @@ const NavBar = () => {
     height: "25px",
   };
 
-  const { countItemCart, countItemHeart } = useIphone();
   const { countItemCompare } = useCompare();
+  const { countCart } = useCart();
+  const { countHeart } = useHeart();
 
   const icons = {
     cart: {
@@ -96,7 +98,7 @@ const NavBar = () => {
               <li>
                 <Link to="/Basket">
                   <div className={style.navBar__cart_relative}>
-                    <CountItem count={countItemCart} />
+                    <CountItem count={countCart} />
                     <MenuLink items={icons.cart} />
                   </div>
                 </Link>
@@ -104,7 +106,7 @@ const NavBar = () => {
               <li>
                 <Link to="/Heart">
                   <div className={style.navBar__cart_relative}>
-                    <CountItem count={countItemHeart} />
+                    <CountItem count={countHeart} />
                     <MenuLink items={icons.heart} />
                   </div>
                 </Link>

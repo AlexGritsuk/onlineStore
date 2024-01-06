@@ -17,6 +17,8 @@ const AirPodsPage = () => {
     handleDeleteCartProducts,
   } = useCart();
 
+  console.log(cartProducts);
+
   const {
     heartProducts,
     countHeart,
