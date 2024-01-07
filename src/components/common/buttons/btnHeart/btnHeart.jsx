@@ -1,5 +1,5 @@
 import React from "react";
-import { isHave } from "../../../utils/isHave";
+import { isHave } from "../../../../utils/isHave";
 import PropTypes from "prop-types";
 import { FaRegHeart } from "react-icons/fa";
 import style from "./btnHeart.module.css";

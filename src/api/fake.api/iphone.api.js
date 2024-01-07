@@ -66,52 +66,52 @@ const memories = {
 // }
 const imageIphone = {
     iphone13Mini: {
-        black: iphone13Black,
-        white: iphone13White,
-        pink: iphone13Pink,
-        green: iphone13Green,
-        red: iphone13Red,
-        blue: iphone13Blue,
+        black: [iphone13Black],
+        white: [iphone13White],
+        pink: [iphone13Pink],
+        green: [iphone13Green],
+        red: [iphone13Red],
+        blue: [iphone13Blue],
     },
     iphone13: {
-        black: iphone13Black,
-        white: iphone13White,
-        pink: iphone13Pink,
-        green: iphone13Green,
-        red: iphone13Red,
-        blue: iphone13Blue,
+        black: [iphone13Black],
+        white: [iphone13White],
+        pink: [iphone13Pink],
+        green: [iphone13Green],
+        red: [iphone13Red],
+        blue: [iphone13Blue],
     },
     iphoneSE2020: {
-        black: iphoneSE2020Black,
-        white: iphoneSE2020White,
-        red: iphoneSE2020Red,
+        black: [iphoneSE2020Black],
+        white: [iphoneSE2020White],
+        red: [iphoneSE2020Red],
     },
     iphoneSE2022: {
-        black: iphoneSE2022Black,
-        white: iphoneSE2022White,
-        red: iphoneSE2022Red,
+        black: [iphoneSE2022Black],
+        white: [iphoneSE2022White],
+        red: [iphoneSE2022Red],
     },
 
     iphone12: {
-        white: iphone12White,
-        black: iphone12Black,
+        white: [iphone12White],
+        black: [iphone12Black],
     },
 
     iphone12Pro: {
-        white: iphone12ProWhite,
-        blue: iphone12ProBlue,
+        white: [iphone12ProWhite],
+        blue: [iphone12ProBlue],
     },
 
     iphone14: {
-        black: iphone14Black,
-        white: iphone14White,
-        pink: iphone14Pink,
+        black: [iphone14Black],
+        white: [iphone14White],
+        pink: [iphone14Pink],
     },
 
     iphone14Pro: {
-        black: iphone14ProBlack,
-        white: iphone14ProWhite,
-        gold: iphone14ProGold,
+        black: [iphone14ProBlack],
+        white: [iphone14ProWhite],
+        gold: [iphone14ProGold],
     },
 }
 

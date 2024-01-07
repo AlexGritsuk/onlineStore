@@ -4,7 +4,7 @@ import root from "../../style/root__style.module.css";
 import { FaRegSquarePlus } from "react-icons/fa6";
 import { LuMinusSquare } from "react-icons/lu";
 import BtnDelete from "../../components/common/btnDelete/btnDelete";
-import BtnHeart from "../../components/common/btnHeart/btnHeart";
+import BtnHeart from "../../components/common/buttons/btnHeart/btnHeart"
 
 const ProductCart = ({
   onDelete,

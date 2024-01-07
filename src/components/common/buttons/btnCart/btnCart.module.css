@@ -1,0 +1,22 @@
+.btnCart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 115px;
+}
+
+.bntCart__in {
+    background-color: var(--danger-color);
+}
+
+
+.btn {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+}

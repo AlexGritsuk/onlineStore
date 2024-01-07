@@ -16,7 +16,7 @@ import airPodsMaxBlack from "./images/airpods/AirPodsMax/AirPodsMaxBlack.png";
 import airPodsMaxPink from "./images/airpods/AirPodsMax/AirPodsMaxPink.png";
 import airPodsMaxGreen from "./images/airpods/AirPodsMax/AirPodsMaxGreen.png";
 
-const imageAirPods = {
+const imageAirPods = { 
   airPods2: {
     white: [airPods2White2, airPods2White, airPodsWhite3],
     black: [airPods2Black],

@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./productHeart.module.css";
 import root from "../../style/root__style.module.css";
-import BtnCart from "../../components/common/btnCart/btnCart";
+import BtnCart from "../../components/common/buttons/btnCart/btnCart";
 import BtnCompare from "../../components/common/btnCompare/btnCompare";
 import BtnDelete from "../../components/common/btnDelete/btnDelete";
 
