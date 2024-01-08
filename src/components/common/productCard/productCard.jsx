@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import style from "./productCard.module.css";
 import root from "../../../style/root__style.module.css";
 import { PiShoppingCartFill } from "react-icons/pi";
@@ -7,7 +8,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { IoIosGitCompare } from "react-icons/io";
 import { IoGitCompare } from "react-icons/io5";
-import BtnOnCard from "../btnOnCard/btnOnCard";
+import BtnOnCard from "../buttons/btnOnCard/btnOnCard";
 
 const ProductCard = ({
   catalog,
@@ -20,6 +21,7 @@ const ProductCard = ({
   onAddCompare,
   onDeleteCompare,
   compareProduct,
+  linkName,
   ...product
 }) => {
   const btnCard = {
@@ -50,37 +52,45 @@ const ProductCard = ({
       beforeLogo: <IoGitCompare />,
       afterLogo: <IoIosGitCompare />,
     },
-  };  
+  };
 
   return (
-    <div
-      className={catalog ? style.productCard__grid : style.productCard__line}
-    >
-      <img
-        className={root.img + " " + style.productCard__img}
-        src={product.img[0]}
-        alt="product"
-      />
-
-      <div className={style.productCard__name}>
-        <div>{product.name.name}</div>
-        <div>{product.visualAppearance.name}</div>
-      </div>
-
-      <div
-        className={
-          catalog
-            ? style.productCard__grid_price
-            : style.productCard__line_price
-        }
+    <div className={style.card}>
+      <Link
+        to={`/${linkName}/${product._id}`}
+        className={style.productCard__link}
       >
-        <div className={style.productCard__price}>{product.price} ₽</div>
+        <div
+          className={
+            catalog ? style.productCard__grid : style.productCard__line
+          }
+        >
+          <img
+            className={root.img + " " + style.productCard__img}
+            src={product.img[0]}
+            alt="product"
+          />
 
-        <div className={style.productCard__buttons}>
-          <BtnOnCard {...btnCard.cart} />
-          <BtnOnCard {...btnCard.heart} />
-          <BtnOnCard {...btnCard.compare} />
+          <div className={style.productCard__name}>
+            <div>{product.name.name}</div>
+            <div>{product.visualAppearance.name}</div>
+          </div>
+
+          <div
+            className={
+              catalog
+                ? style.productCard__grid_price
+                : style.productCard__line_price
+            }
+          >
+            <div className={style.productCard__price}>{product.price} ₽</div>
+          </div>
         </div>
+      </Link>
+      <div className={catalog ? style.productCard__buttons_grid : style.productCard__buttons_line}>
+        <BtnOnCard {...btnCard.cart} />
+        <BtnOnCard {...btnCard.heart} />
+        <BtnOnCard {...btnCard.compare} />
       </div>
     </div>
   );

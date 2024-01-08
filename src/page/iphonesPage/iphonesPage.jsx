@@ -9,14 +9,12 @@ import { useHeart } from "../../hooks/useHeart";
 import { useCompare } from "../../hooks/useCompare";
 
 const IphonesPage = () => {
-
   const {
     cartProducts,
     countCart,
     handleAddCartProducts,
     handleDeleteCartProducts,
   } = useCart();
-  
 
   const {
     heartProducts,
@@ -33,7 +31,7 @@ const IphonesPage = () => {
   } = useCompare();
 
   const { iphones } = useIphone();
-
+  const linkName = "Iphones";
 
   return (
     <div className={root.container}>
@@ -42,7 +40,7 @@ const IphonesPage = () => {
           <GroupList />
         </div>
         <div className={style.iphonePage__iphoneGrid}>
-        <ProductsGrid
+          <ProductsGrid
             productsCart={cartProducts}
             onAddCart={handleAddCartProducts}
             onDeleteCart={handleDeleteCartProducts}
@@ -56,6 +54,7 @@ const IphonesPage = () => {
             countHeart={countHeart}
             countItemCompare={countItemCompare}
             products={iphones}
+            linkName={linkName}
           />
         </div>
       </div>

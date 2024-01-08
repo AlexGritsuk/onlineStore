@@ -20,6 +20,7 @@ const ProductsGrid = ({
   productsCompare,
   onAddCompare,
   onDeleteCompare,
+  linkName,
   products,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -93,6 +94,7 @@ const ProductsGrid = ({
               compareProduct={productsCompare}
               onAddCompare={onAddCompare}
               onDeleteCompare={onDeleteCompare}
+              linkName={linkName}
               {...products}
             />
           ))}

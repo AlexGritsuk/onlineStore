@@ -17,8 +17,6 @@ const AirPodsPage = () => {
     handleDeleteCartProducts,
   } = useCart();
 
-  console.log(cartProducts);
-
   const {
     heartProducts,
     countHeart,
@@ -34,7 +32,8 @@ const AirPodsPage = () => {
   } = useCompare();
 
   const { airPods } = useAirPods();
-  
+  const linkName = "Airpods";
+
   return (
     <div className={root.container}>
       <div className={style.airPodsPage}>
@@ -56,6 +55,7 @@ const AirPodsPage = () => {
             countHeart={countHeart}
             countItemCompare={countItemCompare}
             products={airPods}
+            linkName={linkName}
           />
         </div>
       </div>

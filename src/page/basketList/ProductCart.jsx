@@ -3,13 +3,13 @@ import style from "./iphoneCart.module.css";
 import root from "../../style/root__style.module.css";
 import { FaRegSquarePlus } from "react-icons/fa6";
 import { LuMinusSquare } from "react-icons/lu";
-import BtnDelete from "../../components/common/btnDelete/btnDelete";
-import BtnHeart from "../../components/common/buttons/btnHeart/btnHeart"
+import BtnDelete from "../../components/common/buttons/btnDelete/btnDelete";
+import BtnHeart from "../../components/common/buttons/btnHeart/btnHeart";
 
 const ProductCart = ({
   onDelete,
   onAddHeart,
-  onDeleteHeart,  
+  onDeleteHeart,
   heartProducts,
   ...product
 }) => {

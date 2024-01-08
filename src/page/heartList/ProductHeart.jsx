@@ -2,8 +2,8 @@ import React from "react";
 import style from "./productHeart.module.css";
 import root from "../../style/root__style.module.css";
 import BtnCart from "../../components/common/buttons/btnCart/btnCart";
-import BtnCompare from "../../components/common/btnCompare/btnCompare";
-import BtnDelete from "../../components/common/btnDelete/btnDelete";
+import BtnCompare from "../../components/common/buttons/btnCompare/btnCompare";
+import BtnDelete from "../../components/common/buttons/btnDelete/btnDelete";
 
 const ProductHeart = ({
   cartProducts,
@@ -12,10 +12,9 @@ const ProductHeart = ({
   onAddCart,
   onDeleteHeart,
   onAddCompare,
-  onDeleteCompare,  
+  onDeleteCompare,
   ...product
 }) => {
-  
   return (
     <div className={style.productHeart__wrapper}>
       <div className={style.productHeart}>

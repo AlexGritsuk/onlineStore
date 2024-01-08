@@ -32,8 +32,8 @@ function App() {
                 <main className="main">
                   <Switch>
                     <Route path="/Login/:type?" component={Login} />
-                    <Route path="/Airpods" component={Airpods} />
-                    <Route path="/Iphones:iphoneId?" component={Iphones} />
+                    <Route path="/Airpods/:airPodsId?" component={Airpods} />
+                    <Route path="/Iphones/:iphoneId?" component={Iphones} />
                     <Route path="/Basket" component={Basket} />
                     <Route path="/Comparison" component={Comparison} />
                     <Route path="/Heart" component={Heart} />

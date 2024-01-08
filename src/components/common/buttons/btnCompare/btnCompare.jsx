@@ -1,5 +1,5 @@
 import React from "react";
-import { isHave } from "../../../utils/isHave";
+import { isHave } from "../../../../utils/isHave";
 import { IoIosGitCompare } from "react-icons/io";
 import style from "./btnCompare.module.css";
 import PropTypes from "prop-types";

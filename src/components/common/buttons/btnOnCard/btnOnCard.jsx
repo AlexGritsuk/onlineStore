@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { isHave } from "../../../utils/isHave";
+import { isHave } from "../../../../utils/isHave";
 import style from "./btnOnCard.module.css";
 
 const BtnOnCard = ({
@@ -13,7 +13,7 @@ const BtnOnCard = ({
   afterLogo,
 }) => {
   return (
-    <div>
+    <div className={style.btnOnCard__wrapper}>
       {!isHave(products, id) ? (
         <button
           onClick={() => {
