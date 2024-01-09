@@ -33,13 +33,15 @@ const ProductCart = ({
 
           <div style={{ ["marginTop"]: "30px" }}>
             <BtnDelete id={product._id} onDel={onDelete} />
-            <BtnHeart
-              products={heartProducts}
-              id={product._id}
-              onAddHeart={onAddHeart}
-              currentProduct={product}
-              onDeleteHeart={onDeleteHeart}
-            />
+            <div style={{marginTop: "20px"}}>
+              <BtnHeart
+                products={heartProducts}
+                id={product._id}
+                onAddHeart={onAddHeart}
+                currentProduct={product}
+                onDeleteHeart={onDeleteHeart}
+              />
+            </div>
           </div>
         </div>
 

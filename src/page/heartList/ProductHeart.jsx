@@ -29,7 +29,7 @@ const ProductHeart = ({
         <div style={{ width: "260px" }}>
           <div className={style.productHeart__name}>
             <div>{product.name.name}</div>
-            {/* <div>{product.memories.memory}</div> */}
+            <div>{product.memories?.memory}</div>
           </div>
           <div>{product.visualAppearance.name}</div>
           <div className={style.productHeart__btns}>

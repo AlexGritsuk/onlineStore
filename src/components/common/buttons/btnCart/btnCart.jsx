@@ -2,7 +2,7 @@ import React from "react";
 import { isHave } from "../../../../utils/isHave";
 import { PiShoppingCartBold } from "react-icons/pi";
 import style from "./btnCart.module.css";
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"; 
 
 const BtnCart = ({ products, id, currentProduct, onDelete, onAddCart }) => {
   return (
@@ -18,7 +18,7 @@ const BtnCart = ({ products, id, currentProduct, onDelete, onAddCart }) => {
       ) : (
         <button
           onClick={() => onDelete(id)}
-          className={style.btn + " " + style.btnCart + " " + style.bntCart__in}
+          className={style.btnCart + " " + style.btnCart__in}
         >
           <PiShoppingCartBold style={{ width: "20px", height: "20px" }} /> В
           корзине
