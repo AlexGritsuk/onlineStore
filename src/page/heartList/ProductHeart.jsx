@@ -33,7 +33,7 @@ const ProductHeart = ({
           </div>
           <div>{product.visualAppearance.name}</div>
           <div className={style.productHeart__btns}>
-            <BtnCompare
+            <BtnCompare 
               products={compareIphones}
               id={product._id}
               currentProduct={product}

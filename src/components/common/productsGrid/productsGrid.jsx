@@ -22,15 +22,13 @@ const ProductsGrid = ({
   onDeleteCompare,
   linkName,
   products,
-}) => {
-  const [currentPage, setCurrentPage] = useState(1);
+  handleNext,
+  handlePrev,
+  handlePageChange,
+  currentPage
+}) => { 
   const [catalog, setCatalog] = useState(true);
-
-  const pageSize = 6;
-
-  const handlePageChange = (pageIndex) => {
-    setCurrentPage(pageIndex);
-  };  
+  const pageSize = 6;  
 
   const handleCatalogGrid = () => {
     setCatalog((catalog) => (catalog = true));
@@ -45,26 +43,8 @@ const ProductsGrid = ({
     const userCrop = paginate(products, currentPage, pageSize);
 
     const pagesCount = Math.ceil(count / pageSize);
-    if (pagesCount === 1) return null;
+    // if (pagesCount === 1) return null;
     let pages = pagesArray(pagesCount);
-
-    const handleNext = () => {
-      setCurrentPage((prev) => {
-        if (prev >= pages.length) {
-          return (prev = 1);
-        }
-        return prev + 1;
-      });
-    };
-  
-    const handlePrev = () => {
-      setCurrentPage((prev) => {
-        if (prev < 2) {
-          return (prev = pages.length);
-        }
-        return prev - 1;
-      });
-    };
 
     return (
       <div>
@@ -100,12 +80,13 @@ const ProductsGrid = ({
           ))}
         </div>
         <div className={style.productsGrid__pagin}>
-          <Pagination            
+          <Pagination
             pages={pages}
             onPageChange={handlePageChange}
             currentPage={currentPage}
             onNext={handleNext}
             onPrev={handlePrev}
+            pagesCount={pagesCount}
           />
         </div>
       </div>

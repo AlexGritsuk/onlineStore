@@ -1,3 +1,5 @@
+import { seriesAirPods } from "./seriesAirPods.api";
+
 import airPods2White from "./images/airpods/airPods2/airPods2White3.png";
 import airPods2White2 from "./images/airpods/airPods2/airPods2White2.png";
 import airPodsWhite3 from "./images/airpods/airPods2/airPods2White3.png";
@@ -126,12 +128,7 @@ const visualAppearance = {
   }
 };
 
-export const seriesAirPods = {
-  airPods2: { _id: "77rdca3eeb7f6fgeed4718181", name: "AirPods 2" },
-  airPods3: { _id: "77rdca3eeb7f6fgeed4718182", name: "AirPods 3" },
-  airPods2Pro: { _id: "77rdca3eeb7f6fgeed4718183", name: "AirPods 2 Pro" },
-  airPodsMax: { _id: "77rdca3eeb7f6fgeed47181831", name: "AirPods Max" },
-};
+
 
 const airPods = [
   {

@@ -45,7 +45,10 @@ import iphoneSE2022Red2 from "./images/iphones/SE2022/SE2022Red2.png";
 
 
 import iphone12Black from "./images/iphones/12/12Black.png";
+import iphone12Black2 from "./images/iphones/12/12Black2.png";
+
 import iphone12White from "./images/iphones/12/12White.png";
+import iphone12White2 from "./images/iphones/12/12White2.png";
 
 import iphone12ProWhite from "./images/iphones/12Pro/12ProWhite.png";
 import iphone12ProWhite2 from "./images/iphones/12Pro/12ProWhite2.png";
@@ -128,8 +131,8 @@ const imageIphone = {
     },
 
     iphone12: {
-        white: [iphone12White],
-        black: [iphone12Black],
+        white: [iphone12White, iphone12White2],
+        black: [iphone12Black, iphone12Black2],
     },
 
     iphone12Pro: {

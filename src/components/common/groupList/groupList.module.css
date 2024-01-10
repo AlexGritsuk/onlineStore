@@ -1,0 +1,14 @@
+
+.groupList {
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+    margin-top: 15px;
+    padding: 25px;
+
+    width: 430px;
+}
+
+.groupList__item {
+    margin: 15px;
+    cursor: pointer;
+}

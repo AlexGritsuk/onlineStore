@@ -7,8 +7,26 @@ import ProductsGrid from "../../components/common/productsGrid/productsGrid";
 import { useCart } from "../../hooks/useCart";
 import { useHeart } from "../../hooks/useHeart";
 import { useCompare } from "../../hooks/useCompare";
+import API from "../../api";
 
 const IphonesPage = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [seriesIphone, setSeriesIphone] = useState();
+  const [currentItems, setCurrentItems] = useState();
+  const [product, setProduct] = useState()
+
+  useEffect(() => {
+    API.seriesIphone.fetchAll().then((data) => setSeriesIphone(data));
+  }, []);
+
+  useEffect(() => {
+    API.iphones.fetchAll().then((data) => setCurrentItems(data));
+  }, []);
+
+  useEffect(() => {
+    API.iphones.fetchAll().then((data) => setProduct(data));
+  }, []);
+
   const {
     cartProducts,
     countCart,
@@ -29,15 +47,46 @@ const IphonesPage = () => {
     handleAddCompareIphone,
     handleDeleteCompareIphone,
   } = useCompare();
-
-  const { iphones } = useIphone();
+ 
   const linkName = "Iphones";
+
+  const handleChooseCategory = (category) => {
+    setCurrentPage(1);
+    setCurrentItems(product.filter((el) => el.name.name === category));
+  };
+
+  const handlePageChange = (pageIndex) => {
+    setCurrentPage(pageIndex);
+  };
+
+  const handleNext = (pages) => {
+    setCurrentPage((prev) => {
+      if (prev >= pages.length) {
+        return (prev = 1);
+      }
+      return prev + 1;
+    });
+  };
+
+  const handlePrev = (pages) => {
+    setCurrentPage((prev) => {
+      if (prev < 2) {
+        return (prev = pages.length);
+      }
+      return prev - 1;
+    });
+  };
 
   return (
     <div className={root.container}>
       <div className={style.iphonePage}>
         <div className={style.iphonePage__groupList}>
-          <GroupList />
+          {seriesIphone && (
+            <GroupList
+              chooseCategory={handleChooseCategory}
+              items={seriesIphone}
+            />
+          )}
         </div>
         <div className={style.iphonePage__iphoneGrid}>
           <ProductsGrid
@@ -53,8 +102,12 @@ const IphonesPage = () => {
             countCart={countCart}
             countHeart={countHeart}
             countItemCompare={countItemCompare}
-            products={iphones}
+            products={currentItems}
             linkName={linkName}
+            handleNext={handleNext}
+            handlePrev={handlePrev}
+            handlePageChange={handlePageChange}
+            currentPage={currentPage}
           />
         </div>
       </div>

@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./pagination.module.css";
-import root from "../../../style/root__style.module.css";
 import { pagesArray } from "../../../utils/paginate";
 
 const Pagination = ({
@@ -10,14 +9,15 @@ const Pagination = ({
   onPageChange,
   onNext,
   onPrev,
-  pages
+  pagesCount  
 }) => {
   
+  let pages = pagesArray(pagesCount);
 
   return (
     <nav>
       <ul className={style.pagination__ul}>
-        <li className={style.pagination__prev} onClick={() => onPrev()}>
+        <li className={style.pagination__prev} onClick={() => onPrev(pages)}>
           <a>prev</a>
         </li>
 
@@ -31,7 +31,7 @@ const Pagination = ({
           </li>
         ))}
 
-        <li className={style.pagination__right} onClick={() => onNext()}>
+        <li className={style.pagination__right} onClick={() => onNext(pages)}>
           <a>next</a>
         </li>
       </ul>

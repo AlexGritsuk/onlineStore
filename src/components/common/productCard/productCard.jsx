@@ -72,7 +72,10 @@ const ProductCard = ({
           />
 
           <div className={style.productCard__name}>
-            <div>{product.name.name}</div>
+            <div style={{display: "flex", padding: "5px"}}>              
+              <div>{product.name.name}</div>
+              <div style={{marginLeft: "4px"}}>{product.memories?.memory}</div>
+            </div>
             <div>{product.visualAppearance.name}</div>
           </div>
 
@@ -87,7 +90,13 @@ const ProductCard = ({
           </div>
         </div>
       </Link>
-      <div className={catalog ? style.productCard__buttons_grid : style.productCard__buttons_line}>
+      <div
+        className={
+          catalog
+            ? style.productCard__buttons_grid
+            : style.productCard__buttons_line
+        }
+      >
         <BtnOnCard {...btnCard.cart} />
         <BtnOnCard {...btnCard.heart} />
         <BtnOnCard {...btnCard.compare} />
