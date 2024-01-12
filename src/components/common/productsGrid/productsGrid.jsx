@@ -9,6 +9,8 @@ import { IoGridOutline } from "react-icons/io5";
 import { PiListLight } from "react-icons/pi";
 import { PiListFill } from "react-icons/pi";
 import Loading from "../loading/loading";
+import SortMenu from "../../ui/sortMenu/sortMenu";
+import _ from "lodash";
 
 const ProductsGrid = ({
   productsCart,
@@ -25,10 +27,12 @@ const ProductsGrid = ({
   handleNext,
   handlePrev,
   handlePageChange,
-  currentPage
-}) => { 
+  currentPage,
+}) => {
+  const [sortBy, setSortBy] = useState({ iter: "price", order: "asc" });
+
   const [catalog, setCatalog] = useState(true);
-  const pageSize = 6;  
+  const pageSize = 6;
 
   const handleCatalogGrid = () => {
     setCatalog((catalog) => (catalog = true));
@@ -38,16 +42,44 @@ const ProductsGrid = ({
     setCatalog((catalog) => (catalog = false));
   };
 
+  const handleSort = (item) => {
+    if (sortBy.iter === item) {
+      setSortBy((prevState) => ({
+        ...prevState,
+        order: prevState.order === "asc" ? "desc" : "asc",
+      }));
+    } else {
+      setSortBy({ iter: item, order: "asc" });
+    }
+  };
+
   if (products) {
     const count = products.length;
-    const userCrop = paginate(products, currentPage, pageSize);
-
+    const sortedUsers = _.orderBy(products, [sortBy.iter], [sortBy.order]);
+    const userCrop = paginate(sortedUsers, currentPage, pageSize);
     const pagesCount = Math.ceil(count / pageSize);
     // if (pagesCount === 1) return null;
     let pages = pagesArray(pagesCount);
-
     return (
       <div>
+        <div className={style.productsGrid__sortMenu}>
+          <div>
+            <SortMenu
+              onSort={handleSort}
+              name={"По цене"}
+              sort={"price"}
+              arrow={sortBy.order}
+            />
+          </div>
+          <div style={{ marginLeft: "15px" }}>
+            <SortMenu
+              onSort={handleSort}
+              name={"По популярности"}
+              sort={"rating"}
+              arrow={sortBy.order}
+            />
+          </div>
+        </div>
         <ul className={style.productsGrid__catalog}>
           <li>
             <a onClick={() => handleCatalogGrid()} role="button">

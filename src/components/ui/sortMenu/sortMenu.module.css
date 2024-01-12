@@ -1,0 +1,12 @@
+.sortMenu__btn {
+  display: flex;
+  background: none;
+}
+
+.sortMenu__arrow, .rotate {
+  padding-left: 5px;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}

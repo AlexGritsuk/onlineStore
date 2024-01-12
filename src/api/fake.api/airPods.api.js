@@ -1,4 +1,5 @@
 import { seriesAirPods } from "./seriesAirPods.api";
+import { visualAppearance } from "./visualAppearanceAirPods.api";
 
 import airPods2White from "./images/airpods/airPods2/airPods2White3.png";
 import airPods2White2 from "./images/airpods/airPods2/airPods2White2.png";
@@ -13,6 +14,18 @@ import airPods2Black4 from "./images/airpods/airPods2/airPods2Black4.png";
 import airPods2Green from "./images/airpods/airPods2/airPods2Green.png";
 import airPods2Green2 from "./images/airpods/airPods2/airPods2Green2.png";
 import airPods2Green3 from "./images/airpods/airPods2/airPods2Green3.png";
+
+import airPods2blue from "./images/airpods/airPods2/airPods2Blue.png";
+import airPods2blue2 from "./images/airpods/airPods2/airPods2Blue2.png";
+import airPods2blue3 from "./images/airpods/airPods2/airPods2Blue3.png";
+
+
+import airPods2Gold from "./images/airpods/airPods2/airPods2Gold.png";
+import airPods2Gold2 from "./images/airpods/airPods2/airPods2Gold2.png";
+import airPods2Gold3 from "./images/airpods/airPods2/airPods2Gold3.png";
+import airPods2Gold4 from "./images/airpods/airPods2/airPods2Gold4.png";
+
+
 
 import airPods3White from "./images/airpods/airPods3/AirPods3White.png";
 import airPods3White2 from "./images/airpods/airPods3/AirPods3White2.png";
@@ -38,9 +51,9 @@ import airPods2Perple3 from "./images/airpods/airPods3/AirPods3Perple3.png";
 import airPods2Perple4 from "./images/airpods/airPods3/AirPods3Perple4.png";
 
 import airPods2ProWhite from "./images/airpods/airPods2Pro/airPods2Pro.png";
-import  airPods2ProWhite2 from "./images/airpods/airPods2Pro/airPods2Pro2.png";
-import  airPods2ProWhite3 from "./images/airpods/airPods2Pro/airPods2Pro3.png";
-import  airPods2ProWhite4 from "./images/airpods/airPods2Pro/airPods2Pro3.png";
+import airPods2ProWhite2 from "./images/airpods/airPods2Pro/airPods2Pro2.png";
+import airPods2ProWhite3 from "./images/airpods/airPods2Pro/airPods2Pro3.png";
+import airPods2ProWhite4 from "./images/airpods/airPods2Pro/airPods2Pro3.png";
 
 import airPods2ProBlack from "./images/airpods/airPods2Pro/airPods2ProBlack.png";
 import airPods2ProBlack2 from "./images/airpods/airPods2Pro/airPods2ProBlack2.png";
@@ -63,6 +76,8 @@ const imageAirPods = {
     white: [airPods2White, airPods2White2, airPodsWhite3, airPodsWhite4],
     black: [airPods2Black, airPods2Black2, airPods2Black3, airPods2Black4],
     green: [airPods2Green, airPods2Green2, airPods2Green3],
+    blue: [airPods2blue, airPods2blue2, airPods2blue3],
+    gold: [airPods2Gold, airPods2Gold2, airPods2Gold3, airPods2Gold4]
   },
 
   airPods3: {
@@ -74,8 +89,8 @@ const imageAirPods = {
   },
 
   airPods2Pro: {
-    white: [ airPods2ProWhite, airPods2ProWhite2,  airPods2ProWhite3,  airPods2ProWhite4],
-    black: [ airPods2ProBlack, airPods2ProBlack2, airPods2ProBlack3],
+    white: [airPods2ProWhite, airPods2ProWhite2, airPods2ProWhite3, airPods2ProWhite4],
+    black: [airPods2ProBlack, airPods2ProBlack2, airPods2ProBlack3],
   },
 
   airPodsMax: {
@@ -85,59 +100,30 @@ const imageAirPods = {
   },
 };
 
-const visualAppearance = {
-  blue: {
-    _id: "77rdca3eeb7f6fgeed471198",
-    name: "Голубой",
-    color: "primary",
-  },
-  green: {
-    _id: "77rdca3eeb7f6fgeed471100",
-    name: "Зеленый",
-    color: "success",
-  },
-  pink: {
-    _id: "77rdca3eeb7f6fgeed471108",
-    name: "Розовый",
-    color: "#F400F4",
-  },
-  white: {
-    _id: "77rdca3eeb7f6fgeed471105",
-    name: "Белый",
-    color: "white",
-  },
-  black: {
-    _id: "77rdca3eeb7f6fgeed471102",
-    name: "Черный",
-    color: "black",
-  },
-  gold: {
-    _id: "77rdca3eeb7f6fgeed471101",
-    name: "Золотистый",
-    color: "warning",
-  },
-  red: {
-    _id: "77rdca3eeb7f6fgeed471103",
-    name: "Красный глянец",
-    color: "danger",
-  },
-  perple: {
-    _id: "77rdca3eeb7f6fgeed4711012",
-    name: "Фиолетовый",
-    color: "perple",
-  }
-};
-
-
-
 const airPods = [
   {
     _id: "500631311",
     name: seriesAirPods.airPods2,
     img: imageAirPods.airPods2.white,
-    visualAppearance: visualAppearance.black,
+    visualAppearance: visualAppearance.white,
     price: 11900,
     rating: 10,
+  },
+  {
+    _id: "50063131133",
+    name: seriesAirPods.airPods2,
+    img: imageAirPods.airPods2.blue,
+    visualAppearance: visualAppearance.blue,
+    price: 13900,
+    rating: 10,
+  },
+  {
+    _id: "511631311",
+    name: seriesAirPods.airPods2,
+    img: imageAirPods.airPods2.gold,
+    visualAppearance: visualAppearance.gold,
+    price: 18900,
+    rating: 7,
   },
   {
     _id: "500631312",

@@ -4,10 +4,8 @@ import GroupList from "../../components/common/groupList/groupList";
 import { useHeart } from "../../hooks/useHeart";
 import { useCompare } from "../../hooks/useCompare";
 import { useCart } from "../../hooks/useCart";
-
 import root from "../../style/root__style.module.css";
 import style from "./airPodsPage.module.css";
-import { useAirPods } from "../../hooks/useAirPods";
 import { useEffect } from "react";
 import { useState } from "react";
 import API from "../../api";
@@ -16,7 +14,9 @@ const AirPodsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [seriesAirPods, setSeriesAirPods] = useState();
   const [currentItems, setCurrentItems] = useState();
-  const [product, setProduct] = useState()
+  const [product, setProduct] = useState();
+  const [colorAirPods, setColorAirPods] = useState();
+  const [selectedItem, setSelectedItem] = useState();
 
   useEffect(() => {
     API.seriesAirPods.fetchAll().then((data) => setSeriesAirPods(data));
@@ -30,9 +30,24 @@ const AirPodsPage = () => {
     API.airPods.fetchAll().then((data) => setProduct(data));
   }, []);
 
+  useEffect(() => {
+    API.visualAppearanceAirPods
+      .fetchAll()
+      .then((data) => setColorAirPods(data));
+  }, []);
+
   const handleChooseCategory = (category) => {
     setCurrentPage(1);
-    setCurrentItems(product.filter((el) => el.name.name === category));
+    let productFilter = product.filter((el) => el.name.name === category);
+    setCurrentItems(productFilter);
+    setSelectedItem(productFilter.map((el) => el.name.name)[0]);
+  };
+
+  const handleChooseCategoryColor = (category) => {
+    setCurrentPage(1);
+    let productFilter = product.filter((el) => el.visualAppearance.name === category)
+    setCurrentItems(productFilter);
+    setSelectedItem((productFilter.map(el=>el.visualAppearance.name))[0])
   };
 
   const handlePageChange = (pageIndex) => {
@@ -57,7 +72,6 @@ const AirPodsPage = () => {
     });
   };
 
-
   const {
     cartProducts,
     countCart,
@@ -79,17 +93,26 @@ const AirPodsPage = () => {
     handleDeleteCompareIphone,
   } = useCompare();
 
-  const { airPods } = useAirPods();
   const linkName = "Airpods";
+
+
+  const handleClearFilter = () => {
+    setCurrentItems(product)
+  }
 
   return (
     <div className={root.container}>
       <div className={style.airPodsPage}>
         <div className={style.airPodsPage__groupList}>
-        {seriesAirPods && (
+          {seriesAirPods && (
             <GroupList
               chooseCategory={handleChooseCategory}
+              chooseCategoryColor={handleChooseCategoryColor}
               items={seriesAirPods}
+              itemsColor={colorAirPods}
+              groupName={linkName}
+              selectedItem={selectedItem}
+              clearFilter = {handleClearFilter}
             />
           )}
         </div>

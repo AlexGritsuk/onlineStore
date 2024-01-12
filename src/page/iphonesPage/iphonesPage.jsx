@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import style from "./iphonePage.module.css";
 import root from "../../style/root__style.module.css";
 import GroupList from "../../components/common/groupList/groupList";
-import { useIphone } from "../../hooks/useIphone";
 import ProductsGrid from "../../components/common/productsGrid/productsGrid";
 import { useCart } from "../../hooks/useCart";
 import { useHeart } from "../../hooks/useHeart";
@@ -13,7 +12,9 @@ const IphonesPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [seriesIphone, setSeriesIphone] = useState();
   const [currentItems, setCurrentItems] = useState();
-  const [product, setProduct] = useState()
+  const [product, setProduct] = useState();
+  const [colorIphone, setColorIphone] = useState();
+  const [selectedItem, setSelectedItem] = useState();
 
   useEffect(() => {
     API.seriesIphone.fetchAll().then((data) => setSeriesIphone(data));
@@ -25,6 +26,10 @@ const IphonesPage = () => {
 
   useEffect(() => {
     API.iphones.fetchAll().then((data) => setProduct(data));
+  }, []);
+
+  useEffect(() => {
+    API.visualAppearance.fetchAll().then((data) => setColorIphone(data));
   }, []);
 
   const {
@@ -47,12 +52,23 @@ const IphonesPage = () => {
     handleAddCompareIphone,
     handleDeleteCompareIphone,
   } = useCompare();
- 
+
   const linkName = "Iphones";
 
   const handleChooseCategory = (category) => {
     setCurrentPage(1);
-    setCurrentItems(product.filter((el) => el.name.name === category));
+    let productFilter = product.filter((el) => el.name.name === category);
+    setCurrentItems(productFilter);
+    setSelectedItem(productFilter.map((el) => el.name.name)[0]);
+  };
+
+  const handleChooseCategoryColor = (category) => {
+    setCurrentPage(1);
+    let productFilter = product.filter(
+      (el) => el.visualAppearance.name === category
+    );
+    setCurrentItems(productFilter);
+    setSelectedItem(productFilter.map((el) => el.visualAppearance.name)[0]);
   };
 
   const handlePageChange = (pageIndex) => {
@@ -77,6 +93,12 @@ const IphonesPage = () => {
     });
   };
 
+  const handleClearFilter = () => {
+    setCurrentItems(product);
+  };
+
+  let groupName = "iPhone";
+
   return (
     <div className={root.container}>
       <div className={style.iphonePage}>
@@ -84,7 +106,12 @@ const IphonesPage = () => {
           {seriesIphone && (
             <GroupList
               chooseCategory={handleChooseCategory}
+              chooseCategoryColor={handleChooseCategoryColor}
               items={seriesIphone}
+              itemsColor={colorIphone}
+              groupName={groupName}
+              selectedItem={selectedItem}
+              clearFilter={handleClearFilter}
             />
           )}
         </div>
