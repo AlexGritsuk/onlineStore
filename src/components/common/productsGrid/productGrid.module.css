@@ -1,37 +1,33 @@
 .productsGrid__item {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;    
+  display: flex;
+  flex-wrap: wrap;
 }
 
-
 .productsGrid__catalog {
-    display: flex;
-    justify-content: end;
-    margin-right: 15px;
+  display: flex;
+  justify-content: end;
+  margin-right: 15px;
 }
 
 .productsGrid__catalog > li {
-    margin-left: 10px;
-    cursor: pointer;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
-
-
 .productsGrid__pagin {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .productsGrid__loading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 300px;
 }
 
 .productsGrid__sortMenu {
-    display: flex;    
-    margin-left: 15px;
-    margin-bottom: -18px;
+  display: flex;
+  margin-left: 15px;
+  margin-bottom: -18px;
 }

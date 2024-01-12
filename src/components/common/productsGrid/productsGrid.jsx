@@ -43,14 +43,7 @@ const ProductsGrid = ({
   };
 
   const handleSort = (item) => {
-    if (sortBy.iter === item) {
-      setSortBy((prevState) => ({
-        ...prevState,
-        order: prevState.order === "asc" ? "desc" : "asc",
-      }));
-    } else {
-      setSortBy({ iter: item, order: "asc" });
-    }
+    setSortBy(item);
   };
 
   if (products) {
@@ -66,17 +59,17 @@ const ProductsGrid = ({
           <div>
             <SortMenu
               onSort={handleSort}
+              currentSort={sortBy}
               name={"По цене"}
-              sort={"price"}
-              arrow={sortBy.order}
+              sort={"price"}              
             />
           </div>
           <div style={{ marginLeft: "15px" }}>
             <SortMenu
               onSort={handleSort}
+              currentSort={sortBy}
               name={"По популярности"}
-              sort={"rating"}
-              arrow={sortBy.order}
+              sort={"rating"}              
             />
           </div>
         </div>

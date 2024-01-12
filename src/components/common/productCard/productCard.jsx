@@ -57,7 +57,7 @@ const ProductCard = ({
   return (
     <div className={style.card}>
       <Link
-        to={`/${linkName}/${product._id}`}
+        to={`/${linkName}/${product._id}`} 
         className={style.productCard__link}
       >
         <div
