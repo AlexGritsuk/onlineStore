@@ -1,3 +1,6 @@
+.navBar {
+  position: relative;
+}
 .navBar__inner {
   display: flex;
   justify-content: space-between;
@@ -21,7 +24,6 @@
   padding-left: 0;
 }
 
-
 .navBar__cart_relative {
   position: relative;
 }
@@ -31,13 +33,13 @@
   top: -5px;
   right: 10px;
 
-  text-align: center;  
+  text-align: center;
   padding-top: 3px;
-  
+
   font-size: 13px;
   color: #fff;
-  font-family: 'Roboto', sans-serif;
-  
+  font-family: "Roboto", sans-serif;
+
   background: var(--danger-color);
   width: 20px;
   height: 20px;
@@ -45,7 +47,110 @@
 }
 
 .navBar__cart_absolute::before {
-  content: "";  
+  content: "";
   display: inline-block;
+}
+
+.menu__button{
+  width: 130px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px;
+
+  background-color: var(--danger-color);
+  color: var(--white-color);
+}
+
+.menu__button > span {
+  padding-left: 5px;
+  padding-top: 4px;
+}
+
+.menu__list {
+  display: block;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% - 5px);
+  left: -7px;
+
+  margin: 0;
+
+  width: 250px;
+  /* padding: 25px; */
+  background-color: #f5f5f6;
+  border: 1px solid var(--darkgray--color);
+
+  z-index: 100;
+
+
+
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(5px);
 
 }
+
+/* .menu::before,
+.menu::after {
+  display: block;
+  content: "";
+  position: absolute; 
+  left: 15px;
+  border: 14px solid transparent;
+}
+
+.menu::before {
+  top: -25px;
+  border-bottom: 10px solid var(--darkgray--color);
+}
+
+.menu::after {
+  top: -23px;
+  border-bottom: 10px solid var(--white-color);
+}  */
+
+.menu__list {
+  margin: 0;
+  width: 100%;
+  padding: 0;  
+  color: var(--black-color);
+}
+
+.menu__item {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;  
+  width: 100%;
+  padding: 20px;
+
+  color: var(--black-color);
+  
+}
+
+.menu__item:nth-child(n+2) {
+  
+}
+
+
+.menu__item:hover {
+  
+  background-color: #fff;
+  padding: -25px;
+  cursor: pointer;
+  color: var(--danger-color);
+}
+
