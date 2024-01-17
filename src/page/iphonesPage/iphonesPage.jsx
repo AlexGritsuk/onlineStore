@@ -95,15 +95,16 @@ const IphonesPage = () => {
 
   const handleClearFilter = () => {
     setCurrentItems(product);
+    setSelectedItem(undefined)    
   };
 
   let groupName = "iPhone";
-
+  console.log(selectedItem);
   return (
     <div className={root.container}>
       <div className={style.iphonePage}>
         <div className={style.iphonePage__groupList}>
-          {seriesIphone && (
+          {seriesIphone && colorIphone && (
             <GroupList
               chooseCategory={handleChooseCategory}
               chooseCategoryColor={handleChooseCategoryColor}

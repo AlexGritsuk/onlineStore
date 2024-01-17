@@ -1,17 +1,15 @@
 import React from "react";
 import style from "./pagination.module.css";
 import { pagesArray } from "../../../utils/paginate";
+import PropTypes from "prop-types";
 
 const Pagination = ({
-  itemsCount,
-  pageSize,
   currentPage,
   onPageChange,
   onNext,
   onPrev,
-  pagesCount  
+  pagesCount,
 }) => {
-  
   let pages = pagesArray(pagesCount);
 
   return (
@@ -37,6 +35,13 @@ const Pagination = ({
       </ul>
     </nav>
   );
+};
+
+Pagination.propTypes = {
+  currentPage: PropTypes.object.isRequired,
+  onPageChange: PropTypes.func.isRequired,
+  onNext: PropTypes.func.isRequired,
+  onPrev: PropTypes.func.isRequired,
 };
 
 export default Pagination;

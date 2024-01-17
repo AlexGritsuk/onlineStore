@@ -45,9 +45,11 @@ const AirPodsPage = () => {
 
   const handleChooseCategoryColor = (category) => {
     setCurrentPage(1);
-    let productFilter = product.filter((el) => el.visualAppearance.name === category)
+    let productFilter = product.filter(
+      (el) => el.visualAppearance.name === category
+    );
     setCurrentItems(productFilter);
-    setSelectedItem((productFilter.map(el=>el.visualAppearance.name))[0])
+    setSelectedItem(productFilter.map((el) => el.visualAppearance.name)[0]);
   };
 
   const handlePageChange = (pageIndex) => {
@@ -95,16 +97,16 @@ const AirPodsPage = () => {
 
   const linkName = "Airpods";
 
-
   const handleClearFilter = () => {
-    setCurrentItems(product)
-  }
+    setCurrentItems(product);
+    setSelectedItem(undefined);
+  };
 
   return (
     <div className={root.container}>
       <div className={style.airPodsPage}>
         <div className={style.airPodsPage__groupList}>
-          {seriesAirPods && (
+          {seriesAirPods && colorAirPods && (
             <GroupList
               chooseCategory={handleChooseCategory}
               chooseCategoryColor={handleChooseCategoryColor}
@@ -112,7 +114,7 @@ const AirPodsPage = () => {
               itemsColor={colorAirPods}
               groupName={linkName}
               selectedItem={selectedItem}
-              clearFilter = {handleClearFilter}
+              clearFilter={handleClearFilter}
             />
           )}
         </div>

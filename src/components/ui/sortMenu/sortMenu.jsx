@@ -4,7 +4,7 @@ import { TiArrowSortedDown } from "react-icons/ti";
 import PropTypes from "prop-types";
 import style from "./sortMenu.module.css";
 
-const SortMenu = ({ onSort, name, sort, arrow, currentSort }) => {
+const SortMenu = ({ onSort, name, sort, currentSort }) => {
   const handleSort = (item) => {
     if (currentSort.iter === item) {
       onSort({
