@@ -98,8 +98,7 @@ const IphonesPage = () => {
     setSelectedItem(undefined)    
   };
 
-  let groupName = "iPhone";
-  console.log(selectedItem);
+  let groupName = "iPhone";  
   return (
     <div className={root.container}>
       <div className={style.iphonePage}>
