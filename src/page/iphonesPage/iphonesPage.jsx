@@ -57,18 +57,18 @@ const IphonesPage = () => {
 
   const handleChooseCategory = (category) => {
     setCurrentPage(1);
-    let productFilter = product.filter((el) => el.name.name === category);
+    let productFilter = product.filter((el) => el.name === category);
     setCurrentItems(productFilter);
-    setSelectedItem(productFilter.map((el) => el.name.name)[0]);
+    setSelectedItem(category);
   };
 
   const handleChooseCategoryColor = (category) => {
     setCurrentPage(1);
     let productFilter = product.filter(
-      (el) => el.visualAppearance.name === category
+      (el) => el.visualAppearance === category
     );
     setCurrentItems(productFilter);
-    setSelectedItem(productFilter.map((el) => el.visualAppearance.name)[0]);
+    setSelectedItem(category);
   };
 
   const handlePageChange = (pageIndex) => {

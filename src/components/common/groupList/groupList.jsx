@@ -21,11 +21,11 @@ const GroupList = ({
           <div
             key={items[item][valueProperty]}
             className={
-              selectedItem === items[item][contentPtoperty]
+              items[item] === selectedItem 
                 ? style.groupList__item__active
                 : style.groupList__item
             }
-            onClick={() => chooseCategory(items[item][contentPtoperty])}
+            onClick={() => chooseCategory(items[item])}
           >
             {items[item][contentPtoperty]}
           </div>
@@ -37,12 +37,12 @@ const GroupList = ({
           <div
             key={itemsColor[item][valueProperty]}
             className={
-              selectedItem === itemsColor[item][contentPtoperty]
+              itemsColor[item] === selectedItem 
                 ? style.groupList__item__active
                 : style.groupList__item
             }
             onClick={() =>
-              chooseCategoryColor(itemsColor[item][contentPtoperty])
+              chooseCategoryColor(itemsColor[item])
             }
           >
             {itemsColor[item][contentPtoperty]}
@@ -67,7 +67,7 @@ GroupList.propTypes = {
   valueProperty: PropTypes.string.isRequired,
   contentPtoperty: PropTypes.string.isRequired,
   groupName: PropTypes.string.isRequired,
-  selectedItem: PropTypes.string.isRequired,
+  selectedItem: PropTypes.object.isRequired,
   clearFilter: PropTypes.func.isRequired,
 };
 
