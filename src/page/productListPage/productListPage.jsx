@@ -8,7 +8,6 @@ import ProductPage from "./productPage";
 const ProductListPage = ({ productId }) => {
   const [productIphones, setProduct] = useState();
   const [productAirPods, setProduct2] = useState();
-
   useEffect(() => {
     API.iphones.getById(productId).then((data) => setProduct(data));
   }, []);

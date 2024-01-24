@@ -57,7 +57,7 @@ const ProductCard = ({
   return (
     <div className={style.card}>
       <Link
-        to={`/${linkName}/${product._id}`} 
+        to={`/${linkName}/${product._id}`}
         className={style.productCard__link}
       >
         <div
@@ -72,9 +72,11 @@ const ProductCard = ({
           />
 
           <div className={style.productCard__name}>
-            <div style={{display: "flex", padding: "5px"}}>              
+            <div style={{ display: "flex", padding: "5px" }}>
               <div>{product.name.name}</div>
-              <div style={{marginLeft: "4px"}}>{product.memories?.memory}</div>
+              <div style={{ marginLeft: "4px" }}>
+                {product.memories?.memory}
+              </div>
             </div>
             <div>{product.visualAppearance.name}</div>
           </div>

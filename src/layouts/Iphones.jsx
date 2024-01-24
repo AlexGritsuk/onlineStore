@@ -6,7 +6,7 @@ import ProductListPage from "../page/productListPage/productListPage";
 const Iphones = () => {
   const params = useParams();
   const { iphoneId } = params;  
-  return (
+  return ( 
     <div>
       {iphoneId ? <ProductListPage productId={iphoneId} /> : <IphonesPage />}
     </div>

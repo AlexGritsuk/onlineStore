@@ -9,10 +9,11 @@ import style from "./airPodsPage.module.css";
 import { useEffect } from "react";
 import { useState } from "react";
 import API from "../../api";
+import Loading from "../../components/common/loading/loading";
 
 const AirPodsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [seriesAirPods, setSeriesAirPods] = useState();
+  const [seriesAirPods, setSeriesAirPods] = useState(); 
   const [currentItems, setCurrentItems] = useState();
   const [product, setProduct] = useState();
   const [colorAirPods, setColorAirPods] = useState();
@@ -119,26 +120,30 @@ const AirPodsPage = () => {
           )}
         </div>
         <div className={style.airPodsPage__airPodsGrid}>
-          <ProductsGrid
-            productsCart={cartProducts}
-            onAddCart={handleAddCartProducts}
-            onDeleteCart={handleDeleteCartProducts}
-            productsHeart={heartProducts}
-            onAddHeart={handleAddHeartProducts}
-            onDeleteHeart={handleDeleteHeartProducts}
-            productsCompare={compareIphones}
-            onAddCompare={handleAddCompareIphone}
-            onDeleteCompare={handleDeleteCompareIphone}
-            countCart={countCart}
-            countHeart={countHeart}
-            countItemCompare={countItemCompare}
-            products={currentItems}
-            linkName={linkName}
-            handleNext={handleNext}
-            handlePrev={handlePrev}
-            handlePageChange={handlePageChange}
-            currentPage={currentPage}
-          />
+          {currentItems ? (
+            <ProductsGrid
+              productsCart={cartProducts}
+              onAddCart={handleAddCartProducts}
+              onDeleteCart={handleDeleteCartProducts}
+              productsHeart={heartProducts}
+              onAddHeart={handleAddHeartProducts}
+              onDeleteHeart={handleDeleteHeartProducts}
+              productsCompare={compareIphones}
+              onAddCompare={handleAddCompareIphone}
+              onDeleteCompare={handleDeleteCompareIphone}
+              countCart={countCart}
+              countHeart={countHeart}
+              countItemCompare={countItemCompare}
+              products={currentItems}
+              linkName={linkName}
+              handleNext={handleNext}
+              handlePrev={handlePrev}
+              handlePageChange={handlePageChange}
+              currentPage={currentPage}
+            />
+          ) : (
+            <Loading />
+          )}
         </div>
       </div>
     </div>

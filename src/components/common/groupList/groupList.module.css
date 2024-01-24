@@ -1,9 +1,6 @@
-.groupList {
-  border-bottom: 1px solid gray;
-
+.groupList {  
   margin-top: 15px;
-  padding: 25px;
-
+    padding: 25px;
   width: 400px;
 }
 

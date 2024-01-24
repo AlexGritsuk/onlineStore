@@ -7,6 +7,7 @@ import { useCart } from "../../hooks/useCart";
 import { useHeart } from "../../hooks/useHeart";
 import { useCompare } from "../../hooks/useCompare";
 import API from "../../api";
+import Loading from "../../components/common/loading/loading";
 
 const IphonesPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -95,10 +96,10 @@ const IphonesPage = () => {
 
   const handleClearFilter = () => {
     setCurrentItems(product);
-    setSelectedItem(undefined)    
+    setSelectedItem(undefined);
   };
 
-  let groupName = "iPhone";  
+  let groupName = "iPhone";
   return (
     <div className={root.container}>
       <div className={style.iphonePage}>
@@ -116,26 +117,30 @@ const IphonesPage = () => {
           )}
         </div>
         <div className={style.iphonePage__iphoneGrid}>
-          <ProductsGrid
-            productsCart={cartProducts}
-            onAddCart={handleAddCartProducts}
-            onDeleteCart={handleDeleteCartProducts}
-            productsHeart={heartProducts}
-            onAddHeart={handleAddHeartProducts}
-            onDeleteHeart={handleDeleteHeartProducts}
-            productsCompare={compareIphones}
-            onAddCompare={handleAddCompareIphone}
-            onDeleteCompare={handleDeleteCompareIphone}
-            countCart={countCart}
-            countHeart={countHeart}
-            countItemCompare={countItemCompare}
-            products={currentItems}
-            linkName={linkName}
-            handleNext={handleNext}
-            handlePrev={handlePrev}
-            handlePageChange={handlePageChange}
-            currentPage={currentPage}
-          />
+          {currentItems ? (
+            <ProductsGrid
+              productsCart={cartProducts}
+              onAddCart={handleAddCartProducts}
+              onDeleteCart={handleDeleteCartProducts}
+              productsHeart={heartProducts}
+              onAddHeart={handleAddHeartProducts}
+              onDeleteHeart={handleDeleteHeartProducts}
+              productsCompare={compareIphones}
+              onAddCompare={handleAddCompareIphone}
+              onDeleteCompare={handleDeleteCompareIphone}
+              countCart={countCart}
+              countHeart={countHeart}
+              countItemCompare={countItemCompare}
+              products={currentItems}
+              linkName={linkName}
+              handleNext={handleNext}
+              handlePrev={handlePrev}
+              handlePageChange={handlePageChange}
+              currentPage={currentPage}
+            />
+          ) : (
+            <Loading />
+          )}
         </div>
       </div>
     </div>

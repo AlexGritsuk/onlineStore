@@ -8,7 +8,6 @@ import { IoGrid } from "react-icons/io5";
 import { IoGridOutline } from "react-icons/io5";
 import { PiListLight } from "react-icons/pi";
 import { PiListFill } from "react-icons/pi";
-import Loading from "../loading/loading";
 import SortMenu from "../../ui/sortMenu/sortMenu";
 import _ from "lodash";
 
@@ -30,7 +29,6 @@ const ProductsGrid = ({
   currentPage,
 }) => {
   const [sortBy, setSortBy] = useState({ iter: "price", order: "asc" });
-
   const [catalog, setCatalog] = useState(true);
   const pageSize = 6;
 
@@ -45,8 +43,7 @@ const ProductsGrid = ({
   const handleSort = (item) => {
     setSortBy(item);
   };
-
-  if (products) {
+  
     const count = products.length;
     const sortedUsers = _.orderBy(products, [sortBy.iter], [sortBy.order]);
     const userCrop = paginate(sortedUsers, currentPage, pageSize);
@@ -115,14 +112,7 @@ const ProductsGrid = ({
           />
         </div>
       </div>
-    );
-  } else {
-    return (
-      <div className={style.productsGrid__loading}>
-        <Loading />
-      </div>
-    );
-  }
+    );  
 };
 
 export default ProductsGrid;

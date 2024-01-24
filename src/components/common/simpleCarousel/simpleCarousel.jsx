@@ -56,9 +56,9 @@ const SimpleCarousel = ({ images }) => {
 
   return (
     <Slider {...settings}>
-      {images.map((img) => {
+      {images.map((img) => {        
         return (
-          <div>
+          <div key={img}>
             <img src={img} style={{margin: "0 auto"}}/>
           </div>
         );
