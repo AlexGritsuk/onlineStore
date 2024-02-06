@@ -2,16 +2,20 @@ import React from "react";
 import style from "./pagination.module.css";
 import { pagesArray } from "../../../utils/paginate";
 import PropTypes from "prop-types";
+import _ from "lodash";
 
-const Pagination = ({
-  currentPage,
-  onPageChange,
-  onNext,
-  onPrev,
-  pagesCount,
-}) => {
-  let pages = pagesArray(pagesCount);
-
+const Pagination = ({ currentPage, onPageChange, onNext, onPrev, pages }) => {
+  console.log(pages);
+  if (pages.length === 1) {
+    return null;
+  }
+  if (pages.length === 0) {
+    return (
+      <h1 style={{ marginTop: "25px" }}>
+        Поробуйте другой запрос, данного товара нет в каталоге
+      </h1>
+    );
+  }
   return (
     <nav>
       <ul className={style.pagination__ul}>

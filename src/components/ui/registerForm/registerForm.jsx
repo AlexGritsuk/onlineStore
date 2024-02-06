@@ -10,7 +10,7 @@ const RegisterForm = () => {
     handleBlur,
     handleSubmit,
     emailError,
-    passwordError,
+    passwordError, 
     formValid,
     email,
     password,
@@ -21,8 +21,7 @@ const RegisterForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div className={style.loginForm__item}>
-        <TextField
-          type={"email"}
+        <TextField          
           placeholder={"e-mail"}
           name="email"
           value={email}

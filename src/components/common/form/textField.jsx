@@ -12,11 +12,15 @@ const TextField = ({ name, type, placeholder, value, onChange, onBlur }) => {
         name={name}
         value={value}
         onChange={onChange}
-        onBlur={onBlur}
+        onBlur={onBlur} 
       />
     </>
   );
 };
+
+TextField.defaultProps = {
+  type: "email"
+}
 
 TextField.propTypes = {
   name: PropTypes.string,

@@ -30,6 +30,7 @@ const ProductsGrid = ({
 }) => {
   const [sortBy, setSortBy] = useState({ iter: "price", order: "asc" });
   const [catalog, setCatalog] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
   const pageSize = 6;
 
   const handleCatalogGrid = () => {
@@ -43,76 +44,97 @@ const ProductsGrid = ({
   const handleSort = (item) => {
     setSortBy(item);
   };
+
+  const handleSearchQuery = ({ target }) => {
+    setSearchQuery(target.value);
+  }; 
+
+  let prod = searchQuery
+    ? products.filter(
+        (prod) =>
+          prod.name.name.toLowerCase().indexOf(searchQuery.toLowerCase()) !== -1
+      )
+    : products;
+
+  const count = prod.length;
+  const sortedUsers = _.orderBy(prod, [sortBy.iter], [sortBy.order]);
+  const userCrop = paginate(sortedUsers, currentPage, pageSize);
+  const pagesCount = Math.ceil(count / pageSize);
   
-    const count = products.length;
-    const sortedUsers = _.orderBy(products, [sortBy.iter], [sortBy.order]);
-    const userCrop = paginate(sortedUsers, currentPage, pageSize);
-    const pagesCount = Math.ceil(count / pageSize);
-    // if (pagesCount === 1) return null;
-    let pages = pagesArray(pagesCount);
-    return (
-      <div>
-        <div className={style.productsGrid__sortMenu}>
-          <div>
-            <SortMenu
-              onSort={handleSort}
-              currentSort={sortBy}
-              name={"По цене"}
-              sort={"price"}              
-            />
-          </div>
-          <div style={{ marginLeft: "15px" }}>
-            <SortMenu
-              onSort={handleSort}
-              currentSort={sortBy}
-              name={"По популярности"}
-              sort={"rating"}              
-            />
-          </div>
-        </div>
-        <ul className={style.productsGrid__catalog}>
-          <li>
-            <a onClick={() => handleCatalogGrid()} role="button">
-              {catalog ? <IoGrid /> : <IoGridOutline />}
-            </a>
-          </li>
-          <li>
-            <a onClick={() => handleCatalogLine()} role="button">
-              {catalog ? <PiListLight /> : <PiListFill />}
-            </a>
-          </li>
-        </ul>
-        <div className={catalog ? style.productsGrid__item : ""}>
-          {userCrop.map((products) => (
-            <ProductCard
-              key={products._id}
-              catalog={catalog}
-              cartProduct={productsCart}
-              onAddCart={onAddCart}
-              onDeleteCart={onDeleteCart}
-              heartProduct={productsHeart}
-              onAddHeart={onAddHeart}
-              onDeleteHeart={onDeleteHeart}
-              compareProduct={productsCompare}
-              onAddCompare={onAddCompare}
-              onDeleteCompare={onDeleteCompare}
-              linkName={linkName}
-              {...products}
-            />
-          ))}
-        </div>
-        <div className={style.productsGrid__pagin}>
-          <Pagination
-            pages={pages}
-            onPageChange={handlePageChange}
-            currentPage={currentPage}
-            onNext={handleNext}
-            onPrev={handlePrev}
-            pagesCount={pagesCount}
+  let pages = pagesArray(pagesCount);
+  return (
+    <div>
+      <div className={style.productsGrid__sortMenu}>
+        <div>
+          <SortMenu
+            onSort={handleSort}
+            currentSort={sortBy}
+            name={"По цене"}
+            sort={"price"}
           />
         </div>
+        <div style={{ marginLeft: "15px" }}>
+          <SortMenu
+            onSort={handleSort}
+            currentSort={sortBy}
+            name={"По популярности"}
+            sort={"rating"}
+          />
+        </div>
+        <div>
+          <input
+            style={{ marginLeft: "45px", borderBottom: "1px solid black" }}
+            type="text"
+            name="searchQuery"
+            placeholder="Поиск..."
+            onChange={handleSearchQuery}
+            value={searchQuery}
+          />
+        </div>        
       </div>
-    );  
+      <ul className={style.productsGrid__catalog}>
+        <li>
+          <a onClick={() => handleCatalogGrid()} role="button">
+            {catalog ? <IoGrid /> : <IoGridOutline />}
+          </a>
+        </li>
+        <li>
+          <a onClick={() => handleCatalogLine()} role="button">
+            {catalog ? <PiListLight /> : <PiListFill />}
+          </a>
+        </li>
+      </ul>
+      <div className={catalog ? style.productsGrid__item : ""}>
+        {userCrop.map((products) => (
+          <ProductCard
+            key={products._id}
+            catalog={catalog}
+            cartProduct={productsCart}
+            onAddCart={onAddCart}
+            onDeleteCart={onDeleteCart}
+            heartProduct={productsHeart}
+            onAddHeart={onAddHeart}
+            onDeleteHeart={onDeleteHeart}
+            compareProduct={productsCompare}
+            onAddCompare={onAddCompare}
+            onDeleteCompare={onDeleteCompare}
+            linkName={linkName}
+            {...products}
+          />
+        ))}
+      </div>
+      <div className={style.productsGrid__pagin}>
+        <Pagination
+          pages={pages}
+          onPageChange={handlePageChange}
+          currentPage={currentPage}
+          onNext={handleNext}
+          onPrev={handlePrev}
+          
+        />
+      </div>
+    </div>
+  );
 };
 
 export default ProductsGrid;
