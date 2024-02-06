@@ -2,28 +2,66 @@ import { seriesIphone } from "./seriesIphone.api";
 import { visualAppearance } from "./visualAppearance.api";
 
 import iphone13Black from "./images/iphones/13/iphone13miniBlack.png";
+import iphone13Black2 from "./images/iphones/13/iphone13miniBlack2.png";
+
 import iphone13White from "./images/iphones/13/iphone13miniWhite.png";
+import iphone13White2 from "./images/iphones/13/iphone13miniWhite2.png";
+
 import iphone13Blue from "./images/iphones/13/iphone13miniBlue.png";
+import iphone13Blue2 from "./images/iphones/13/iphone13miniBlue2.png";
+import iphone13Blue3 from "./images/iphones/13/iphone13miniBlue3.png";
+
 import iphone13Green from "./images/iphones/13/iphone13miniGreen.png";
+import iphone13Green2 from "./images/iphones/13/iphone13miniGreen2.png";
+
+
 import iphone13Pink from "./images/iphones/13/iphone13miniPink.png";
+import iphone13Pink2 from "./images/iphones/13/iphone13miniPink2.png";
+
 import iphone13Red from "./images/iphones/13/iphone13miniRed.png";
+import iphone13Red2 from "./images/iphones/13/iphone13miniRed2.png";
+import iphone13Red3 from "./images/iphones/13/iphone13miniRed3.png";
 
 import iphoneSE2020Black from "./images/iphones/SE2020/SE2020Black.png";
+import iphoneSE2020Black2 from "./images/iphones/SE2020/SE2020Black2.png";
+import iphoneSE2020Black3 from "./images/iphones/SE2020/SE2020Black3.png";
+
 import iphoneSE2020White from "./images/iphones/SE2020/SE2020White.png";
+import iphoneSE2020White2 from "./images/iphones/SE2020/SE2020White2.png";
+
 import iphoneSE2020Red from "./images/iphones/SE2020/SE2020Red.png";
+import iphoneSE2020Red2 from "./images/iphones/SE2020/SE2020Red2.png";
 
 import iphoneSE2022Black from "./images/iphones/SE2022/SE2022Black.png";
+import iphoneSE2022Black2 from "./images/iphones/SE2022/SE2022Black2.png";
+import iphoneSE2022Black3 from "./images/iphones/SE2022/SE2022Black3.png";
+
 import iphoneSE2022White from "./images/iphones/SE2022/SE2022White.png";
+import iphoneSE2022White2 from "./images/iphones/SE2022/SE2022White2.png";
+import iphoneSE2022White3 from "./images/iphones/SE2022/SE2022White3.png";
+
 import iphoneSE2022Red from "./images/iphones/SE2022/SE2022Red.png";
+import iphoneSE2022Red2 from "./images/iphones/SE2022/SE2022Red2.png";
+
 
 import iphone12Black from "./images/iphones/12/12Black.png";
+import iphone12Black2 from "./images/iphones/12/12Black2.png";
+
 import iphone12White from "./images/iphones/12/12White.png";
+import iphone12White2 from "./images/iphones/12/12White2.png";
 
 import iphone12ProWhite from "./images/iphones/12Pro/12ProWhite.png";
+import iphone12ProWhite2 from "./images/iphones/12Pro/12ProWhite2.png";
+
 import iphone12ProBlue from "./images/iphones/12Pro/12ProBlue.png";
+import iphone12ProBlue2 from "./images/iphones/12Pro/12ProBlue2.png";
 
 import iphone14Black from "./images/iphones/14/iphone14Black.png";
+
 import iphone14White from "./images/iphones/14/iphone14White.png";
+import iphone14White2 from "./images/iphones/14/iphone14White2.png";
+import iphone14White3 from "./images/iphones/14/iphone14White3.png";
+
 import iphone14Pink from "./images/iphones/14/iphone14Pink.png";
 
 import iphone14ProBlack from "./images/iphones/14Pro/14ProBlack.png";
@@ -66,52 +104,52 @@ const memories = {
 // }
 const imageIphone = {
     iphone13Mini: {
-        black: iphone13Black,
-        white: iphone13White,
-        pink: iphone13Pink,
-        green: iphone13Green,
-        red: iphone13Red,
-        blue: iphone13Blue,
+        black: [iphone13Black, iphone13Black2],
+        white: [iphone13White, iphone13White2],
+        pink: [iphone13Pink, iphone13Pink2],
+        green: [iphone13Green, iphone13Green2],
+        red: [iphone13Red, iphone13Red2, iphone13Red3],
+        blue: [iphone13Blue, iphone13Blue2, iphone13Blue3],
     },
     iphone13: {
-        black: iphone13Black,
-        white: iphone13White,
-        pink: iphone13Pink,
-        green: iphone13Green,
-        red: iphone13Red,
-        blue: iphone13Blue,
+        black: [iphone13Black, iphone13Black2],
+        white: [iphone13White, iphone13White2],
+        pink: [iphone13Pink, iphone13Pink2],
+        green: [iphone13Green, iphone13Green2],
+        red: [iphone13Red, iphone13Red2, iphone13Red3],
+        blue: [iphone13Blue, iphone13Blue2, iphone13Blue3],
     },
     iphoneSE2020: {
-        black: iphoneSE2020Black,
-        white: iphoneSE2020White,
-        red: iphoneSE2020Red,
+        black: [iphoneSE2020Black, iphoneSE2020Black2, iphoneSE2020Black3],
+        white: [iphoneSE2020White, iphoneSE2020White2],
+        red: [iphoneSE2020Red, iphoneSE2020Red2],
     },
     iphoneSE2022: {
-        black: iphoneSE2022Black,
-        white: iphoneSE2022White,
-        red: iphoneSE2022Red,
+        black: [iphoneSE2022Black, iphoneSE2022Black2, iphoneSE2022Black3],
+        white: [iphoneSE2022White, iphoneSE2022White2, iphoneSE2022White3],
+        red: [iphoneSE2022Red, iphoneSE2022Red2],
     },
 
     iphone12: {
-        white: iphone12White,
-        black: iphone12Black,
+        white: [iphone12White, iphone12White2],
+        black: [iphone12Black, iphone12Black2],
     },
 
     iphone12Pro: {
-        white: iphone12ProWhite,
-        blue: iphone12ProBlue,
+        white: [iphone12ProWhite, iphone12ProWhite2],
+        blue: [iphone12ProBlue, iphone12ProBlue2],
     },
 
     iphone14: {
-        black: iphone14Black,
-        white: iphone14White,
-        pink: iphone14Pink,
+        black: [iphone14Black, iphone13Black2],
+        white: [iphone14White, iphone14White2, iphone14White3],
+        pink: [iphone14Pink, iphone13Pink2],
     },
 
     iphone14Pro: {
-        black: iphone14ProBlack,
-        white: iphone14ProWhite,
-        gold: iphone14ProGold,
+        black: [iphone14ProBlack],
+        white: [iphone14ProWhite],
+        gold: [iphone14ProGold],
     },
 }
 
@@ -180,6 +218,17 @@ const iphones = [
         visualAppearance: visualAppearance.white,
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 75999,
+        bookmark: false,
+        rating: 8.5
+    },
+    {
+        _id: "3006313368",
+        name: seriesIphone.iphone13,
+        img: imageIphone.iphone13.red,
+        memories: memories.twoFiveSix,
+        visualAppearance: visualAppearance.red,
+        simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
+        price: 78999,
         bookmark: false,
         rating: 8.5
     },
@@ -272,6 +321,17 @@ const iphones = [
         rating: 6.8
     },
     {
+        _id: "30063137145",
+        name: seriesIphone.iphone13mini,
+        img: imageIphone.iphone13Mini.red,
+        memories: memories.twoFiveSix,
+        visualAppearance: visualAppearance.red,
+        simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
+        price: 74900,
+        bookmark: false,
+        rating: 6.8
+    },
+    {
         _id: "300621",
         name: seriesIphone.iphoneSE2020,
         img: imageIphone.iphoneSE2020.red,
@@ -342,7 +402,7 @@ const iphones = [
         name: seriesIphone.iphoneSE2022,
         img: imageIphone.iphoneSE2022.black,
         memories: memories.sixfour,
-        visualAppearance: visualAppearance.red,
+        visualAppearance: visualAppearance.black,
         simCard: [simCard.oneNanoSim],
         price: 38900,
         bookmark: false,

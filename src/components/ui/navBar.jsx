@@ -1,27 +1,40 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import style from "../../style/navBar.module.css";
 import root from "../../style/root__style.module.css";
 import { SlBasket } from "react-icons/sl";
 import { CiLogin } from "react-icons/ci";
 import { MdOutlinePhoneIphone } from "react-icons/md";
+import { RiMacbookLine } from "react-icons/ri";
+import { IoWatchOutline } from "react-icons/io5";
 import { SlEarphones } from "react-icons/sl";
 import { ImAppleinc } from "react-icons/im";
 import { FaRegHeart } from "react-icons/fa";
 import MenuLink from "./menuLink/MenuLink";
-import { useIphone } from "../../hooks/useIphone";
 import CountItem from "../common/countCart/countItem";
 import { IoIosGitCompare } from "react-icons/io";
 import { useCompare } from "../../hooks/useCompare";
+import { useCart } from "../../hooks/useCart";
+import { useHeart } from "../../hooks/useHeart";
+import { MdManageSearch } from "react-icons/md";
+import { RxCross2 } from "react-icons/rx";
+import { useClickOutSide } from "../../hooks/useClickOutSide";
 
 const NavBar = () => {
+  const [isOpen, setOpen] = useState(false);
+  const menuRef = useRef(null);
+  useClickOutSide(menuRef, () => {
+    if (isOpen) setTimeout(() => setOpen(false), 150);
+  });
+
   const widthHeight = {
     width: "25px",
     height: "25px",
   };
 
-  const { countItemCart, countItemHeart } = useIphone();
   const { countItemCompare } = useCompare();
+  const { countCart } = useCart();
+  const { countHeart } = useHeart();
 
   const icons = {
     cart: {
@@ -40,6 +53,10 @@ const NavBar = () => {
       icon: <SlEarphones style={widthHeight} />,
       name: "AirPods",
     },
+    macBook: {
+      icon: <RiMacbookLine />,
+      name: "MacBooks",
+    },
     main: {
       icon: <ImAppleinc style={widthHeight} />,
       name: "AppleStore",
@@ -56,31 +73,64 @@ const NavBar = () => {
 
   return (
     <div className={root.container}>
-      <nav>
+      <nav className={style.navBar}>
         <div className={style.navBar__inner}>
-          <div>
-            <ul>
-              <li>
-                <Link to="/">
-                  <MenuLink items={icons.main} />
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <div>
+              <ul>
+                <li>
+                  <Link to="/">
+                    <MenuLink items={icons.main} />
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-          <div>
-            <ul className={style.navBar__ul}>
-              <li>
-                <Link to="/Iphones">
-                  <MenuLink items={icons.iPhones} />
-                </Link>
-              </li>
-              <li>
-                <Link to="/Airpods">
-                  <MenuLink items={icons.airPods} />
-                </Link>
-              </li>
-            </ul>
+            <div style={{ marginLeft: "20px" }}>
+              <button
+                className={style.menu__button}
+                onClick={() => setOpen(!isOpen)}
+              >
+                {!isOpen ? (
+                  <MdManageSearch style={{ height: "25px", width: "25px" }} />
+                ) : (
+                  <RxCross2 style={{ height: "25px", width: "25px" }} />
+                )}
+                <span>Каталог</span>
+              </button>
+
+              <nav
+                className={style.menu + " " + (isOpen ? style.active : "")}
+                ref={menuRef}
+              >
+                <ul className={style.menu__list}>
+                  <Link to="/Iphones">
+                    <li className={style.menu__item}>
+                      <MdOutlinePhoneIphone style={{ marginRight: "10px" }} />
+                      <span>iPhones</span>
+                    </li>
+                  </Link>
+                  <Link to="/Airpods">
+                    <li className={style.menu__item}>
+                      <SlEarphones style={{ marginRight: "10px" }} />
+                      <span>AirPods</span>
+                    </li>
+                  </Link>
+                  <Link to="/Airpods">
+                    <li className={style.menu__item}>
+                      <RiMacbookLine style={{ marginRight: "10px" }} />
+                      <span>MacBooks</span>
+                    </li>
+                  </Link>
+                  <Link to="/Airpods">
+                    <li className={style.menu__item}>
+                      <IoWatchOutline style={{ marginRight: "10px" }} />
+                      <span>Apple Watch</span>
+                    </li>
+                  </Link>
+                </ul>
+              </nav>
+            </div>
           </div>
 
           <div>
@@ -96,7 +146,7 @@ const NavBar = () => {
               <li>
                 <Link to="/Basket">
                   <div className={style.navBar__cart_relative}>
-                    <CountItem count={countItemCart} />
+                    <CountItem count={countCart} />
                     <MenuLink items={icons.cart} />
                   </div>
                 </Link>
@@ -104,7 +154,7 @@ const NavBar = () => {
               <li>
                 <Link to="/Heart">
                   <div className={style.navBar__cart_relative}>
-                    <CountItem count={countItemHeart} />
+                    <CountItem count={countHeart} />
                     <MenuLink items={icons.heart} />
                   </div>
                 </Link>

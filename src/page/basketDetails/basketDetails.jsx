@@ -1,11 +1,12 @@
 import React from "react";
 import style from "./basketDetails.module.css";
 import BasketProductCounter from "./BasketproductСounter";
-import { useIphone } from "../../hooks/useIphone";
 import Accordion from "../../components/common/accordion/accordion";
+import { useCart } from "../../hooks/useCart";
 
-const BasketDetails = () => {
-  const { cartIphones } = useIphone();
+const BasketDetails = () => {  
+
+  const { cartProducts} = useCart();
 
   const countPrice = (carts) => {
     let result = [];
@@ -15,7 +16,7 @@ const BasketDetails = () => {
     return result.reduce((a, b) => a + b, 0);
   };
 
-  let count = countPrice(cartIphones);
+  let count = countPrice(cartProducts);
 
   const accordionDiscount = [
     { title: "Скидка", text: "Авторизуйтесь для приминения Вашей скидки" },

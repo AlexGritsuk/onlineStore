@@ -1,0 +1,22 @@
+.sortMenu {
+    min-width: 100px;
+}
+
+.sortMenu__btn {
+  display: flex;
+  background: none;
+
+  transition: color 0.2s linear;
+}
+
+.sortMenu__btn:hover {
+    color: rgb(175, 170, 170);
+}
+
+.sortMenu__arrow, .rotate {
+  padding-left: 5px;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}

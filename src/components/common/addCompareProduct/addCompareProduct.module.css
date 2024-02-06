@@ -1,0 +1,26 @@
+.addCompareProduct {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 250px;
+    height: 400px;
+
+    padding: 35px;
+
+    border: 1px solid var(--gray--color);
+    border-radius: 20px;
+
+}
+
+.addCompareProduct_btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: none;
+}
+
+.addCompareProduct_btn:hover {
+    color: var(--blue-color);
+}

@@ -1,24 +1,21 @@
 import React from "react";
 import style from "./pagination.module.css";
-import root from "../../../style/root__style.module.css";
 import { pagesArray } from "../../../utils/paginate";
+import PropTypes from "prop-types";
 
 const Pagination = ({
-  itemsCount,
-  pageSize,
   currentPage,
   onPageChange,
   onNext,
   onPrev,
+  pagesCount,
 }) => {
-  const pagesCount = Math.ceil(itemsCount / pageSize);
-  if (pagesCount === 1) return null;
   let pages = pagesArray(pagesCount);
 
   return (
     <nav>
       <ul className={style.pagination__ul}>
-        <li className={style.pagination__prev} onClick={() => onPrev()}>
+        <li className={style.pagination__prev} onClick={() => onPrev(pages)}>
           <a>prev</a>
         </li>
 
@@ -32,12 +29,19 @@ const Pagination = ({
           </li>
         ))}
 
-        <li className={style.pagination__right} onClick={() => onNext()}>
+        <li className={style.pagination__right} onClick={() => onNext(pages)}>
           <a>next</a>
         </li>
       </ul>
     </nav>
   );
+};
+
+Pagination.propTypes = {
+  currentPage: PropTypes.object.isRequired,
+  onPageChange: PropTypes.func.isRequired,
+  onNext: PropTypes.func.isRequired,
+  onPrev: PropTypes.func.isRequired,
 };
 
 export default Pagination;
