@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import root from "../../style/root__style.module.css";
 import style from "./productListPage.module.css";
 import BtnCart from "../../components/common/buttons/btnCart/btnCart";
@@ -10,7 +11,8 @@ import { useCompare } from "../../hooks/useCompare";
 import { useHeart } from "../../hooks/useHeart";
 import SimpleCarousel from "../../components/common/simpleCarousel/simpleCarousel";
 
-const ProductPage = ({ product }) => {
+const ProductPage = ({ product, push }) => {
+  const history = useHistory()
   const { cartProducts, handleAddCartProducts, handleDeleteCartProducts } =
     useCart();
 
@@ -19,6 +21,10 @@ const ProductPage = ({ product }) => {
 
   const { heartProducts, handleAddHeartProducts, handleDeleteHeartProducts } =
     useHeart();
+
+  const handleBack = () => {
+    history.push(`/${push}`);
+  };
 
   return (
     <div className={root.container}>
@@ -72,6 +78,7 @@ const ProductPage = ({ product }) => {
           </div>
         </div>
       </div>
+      <button onClick={() => handleBack()}>Вернуться назад</button>
     </div>
   );
 };

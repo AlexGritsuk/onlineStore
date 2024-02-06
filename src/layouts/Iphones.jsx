@@ -5,10 +5,14 @@ import ProductListPage from "../page/productListPage/productListPage";
 
 const Iphones = () => {
   const params = useParams();
-  const { iphoneId } = params;  
-  return ( 
+  const { iphoneId } = params;
+  return (
     <div>
-      {iphoneId ? <ProductListPage productId={iphoneId} /> : <IphonesPage />}
+      {iphoneId ? (
+        <ProductListPage productId={iphoneId} />
+      ) : (
+        <IphonesPage />
+      )}
     </div>
   );
 };

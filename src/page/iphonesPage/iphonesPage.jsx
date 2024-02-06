@@ -11,7 +11,7 @@ import Loading from "../../components/common/loading/loading";
 
 const IphonesPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [seriesIphone, setSeriesIphone] = useState();
+  const [seriesIphone, setSeriesIphone] = useState();  
   const [currentItems, setCurrentItems] = useState();
   const [product, setProduct] = useState();
   const [colorIphone, setColorIphone] = useState();
@@ -55,6 +55,8 @@ const IphonesPage = () => {
   } = useCompare();
 
   const linkName = "Iphones";
+
+  
 
   const handleChooseCategory = (category) => {
     setCurrentPage(1);
@@ -116,7 +118,7 @@ const IphonesPage = () => {
             />
           )}
         </div>
-        <div className={style.iphonePage__iphoneGrid}>
+        <div className={style.iphonePage__iphoneGrid}>          
           {currentItems ? (
             <ProductsGrid
               productsCart={cartProducts}

@@ -26,11 +26,11 @@ const Login = () => {
   return (
     <div className={style.login}>
       <div className={style.login__inner}>
-        <div className={style.login__logo}>
-          <h3>Welcome</h3>
-          <DiApple style={{height: "2em", width: "2em"}}/>
+        <div className={style.login__logo} style={{ marginTop: "15px" }}>
+          <h4>Welcome to AppleStore</h4>
+          <DiApple style={{ height: "2em", width: "2em", marginTop: "15px" }} />
         </div>
-        <div className={style.login__item}>
+        <div className={style.login__item} style={{ marginTop: "15px" }}>
           <div className={style.login__link}>
             <a role="button" onClick={FormTypeLogin}>
               Вход

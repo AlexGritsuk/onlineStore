@@ -22,7 +22,6 @@ const LoginForm = () => {
     <form onSubmit={handleSubmit}>
       <div className={style.loginForm__item}>
         <TextField
-          type={"email"}
           placeholder={"e-mail"}
           name="email"
           value={email}

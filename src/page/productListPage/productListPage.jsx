@@ -17,9 +17,9 @@ const ProductListPage = ({ productId }) => {
   }, []);
 
   if (productIphones) {
-    return <ProductPage product={productIphones} />;
+    return <ProductPage product={productIphones} push={"Iphones"}/>;
   } else if (productAirPods) {
-    return <ProductPage product={productAirPods} />;
+    return <ProductPage product={productAirPods} push={"Airpods"}/>;
   }
   return <Loading />;
 };
