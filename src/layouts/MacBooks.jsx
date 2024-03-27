@@ -1,16 +1,16 @@
 import React from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-import AirPodsPage from "../page/airPodsPage/airPodsPage";
 import ProductListPage from "../page/productListPage/productListPage";
+import MacBooksPage from "../page/macBookPage/macBookPage";
 
-const Airpods = ({ history }) => { 
+const MacBooks = ({ history }) => {
   const params = useParams();
-  const { airPodsId } = params;
+  const { macBookId } = params;
   return (
     <div>
-      {airPodsId ? <ProductListPage productId={airPodsId}/> : <AirPodsPage />}
+      {macBookId ? <ProductListPage productId={macBookId} /> : <MacBooksPage />}
     </div>
   );
 };
 
-export default Airpods;
+export default MacBooks;

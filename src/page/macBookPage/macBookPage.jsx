@@ -1,62 +1,39 @@
 import React, { useEffect, useState } from "react";
-import style from "./iphonePage.module.css";
-import root from "../../style/root__style.module.css";
-import GroupList from "../../components/common/groupList/groupList";
-import ProductsGrid from "../../components/common/productsGrid/productsGrid";
+import API from "../../api";
 import { useCart } from "../../hooks/useCart";
 import { useHeart } from "../../hooks/useHeart";
 import { useCompare } from "../../hooks/useCompare";
-import API from "../../api";
+import root from "../../style/root__style.module.css";
+import style from "./macBookPage.module.css";
+import GroupList from "../../components/common/groupList/groupList";
+import ProductsGrid from "../../components/common/productsGrid/productsGrid";
 import Loading from "../../components/common/loading/loading";
 
-const IphonesPage = () => {
+const MacBooksPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [seriesIphone, setSeriesIphone] = useState();  
+  const [seriesMacBooks, setSeriesMacBooks] = useState();
   const [currentItems, setCurrentItems] = useState();
   const [product, setProduct] = useState();
-  const [colorIphone, setColorIphone] = useState();
+  const [colorMacBooks, setColorMacBooks] = useState();
   const [selectedItem, setSelectedItem] = useState();
 
   useEffect(() => {
-    API.seriesIphone.fetchAll().then((data) => setSeriesIphone(data));
+    API.seriesMacBooks.fetchAll().then((data) => setSeriesMacBooks(data));
   }, []);
 
   useEffect(() => {
-    API.iphones.fetchAll().then((data) => setCurrentItems(data));
+    API.macBooks.fetchAll().then((data) => setCurrentItems(data));
   }, []);
 
   useEffect(() => {
-    API.iphones.fetchAll().then((data) => setProduct(data));
+    API.macBooks.fetchAll().then((data) => setProduct(data));
   }, []);
 
   useEffect(() => {
-    API.visualAppearance.fetchAll().then((data) => setColorIphone(data));
+    API.visualAppearanceMacBook
+      .fetchAll()
+      .then((data) => setColorMacBooks(data));
   }, []);
-
-  const {
-    cartProducts,
-    countCart,
-    handleAddCartProducts,
-    handleDeleteCartProducts,
-  } = useCart();
-
-  const {
-    heartProducts,
-    countHeart,
-    handleAddHeartProducts,
-    handleDeleteHeartProducts,
-  } = useHeart();
-
-  const {
-    compareIphones,
-    countItemCompare,
-    handleAddCompareIphone,
-    handleDeleteCompareIphone,
-  } = useCompare();
-
-  const linkName = "Iphones";
-
-  
 
   const handleChooseCategory = (category) => {
     setCurrentPage(1);
@@ -69,7 +46,7 @@ const IphonesPage = () => {
     setCurrentPage(1);
     let productFilter = product.filter(
       (el) => el.visualAppearance === category
-    );
+    );    
     setCurrentItems(productFilter);
     setSelectedItem(category);
   };
@@ -96,29 +73,51 @@ const IphonesPage = () => {
     });
   };
 
+  const {
+    cartProducts,
+    countCart,
+    handleAddCartProducts,
+    handleDeleteCartProducts,
+  } = useCart();
+
+  const {
+    heartProducts,
+    countHeart,
+    handleAddHeartProducts,
+    handleDeleteHeartProducts,
+  } = useHeart();
+
+  const {
+    compareIphones,
+    countItemCompare,
+    handleAddCompareIphone,
+    handleDeleteCompareIphone,
+  } = useCompare();
+
+  const linkName = "macBooks";
+
   const handleClearFilter = () => {
     setCurrentItems(product);
     setSelectedItem(undefined);
   };
 
-  let groupName = "iPhone";
-  return ( 
+  return (
     <div className={root.container}>
-      <div className={style.iphonePage}>
-        <div className={style.iphonePage__groupList}>
-          {seriesIphone && colorIphone && (
+      <div className={style.macBookPage}>
+        <div className={style.macBookPage__groupList}>
+          {seriesMacBooks && colorMacBooks && (
             <GroupList
               chooseCategory={handleChooseCategory}
               chooseCategoryColor={handleChooseCategoryColor}
-              items={seriesIphone}
-              itemsColor={colorIphone}
-              groupName={groupName}
+              items={seriesMacBooks}
+              itemsColor={colorMacBooks}
+              groupName={linkName}
               selectedItem={selectedItem}
               clearFilter={handleClearFilter}
             />
           )}
         </div>
-        <div className={style.iphonePage__iphoneGrid}>          
+        <div className={style.macBookPage__macBookGrid}>
           {currentItems ? (
             <ProductsGrid
               productsCart={cartProducts}
@@ -138,7 +137,7 @@ const IphonesPage = () => {
               handleNext={handleNext}
               handlePrev={handlePrev}
               handlePageChange={handlePageChange}
-              currentPage={currentPage}              
+              currentPage={currentPage}
             />
           ) : (
             <Loading />
@@ -149,4 +148,4 @@ const IphonesPage = () => {
   );
 };
 
-export default IphonesPage;
+export default MacBooksPage;

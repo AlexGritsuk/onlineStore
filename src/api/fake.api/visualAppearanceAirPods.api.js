@@ -1,5 +1,3 @@
-
-
 export const visualAppearance = {
     blue: {
         _id: "77rdca3eeb7f6fgeed471198",
@@ -8,7 +6,7 @@ export const visualAppearance = {
     },
     green: {
         _id: "77rdca3eeb7f6fgeed471100",
-        name: "Зеленый",
+        name: "Зеленый", 
         color: "success",
     },
     pink: {

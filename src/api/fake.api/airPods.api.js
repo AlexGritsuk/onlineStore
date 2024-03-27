@@ -96,7 +96,7 @@ const imageAirPods = {
   airPodsMax: {
     pink: [airPodsMaxPink, airPodsMaxPink2],
     black: [airPodsMaxBlack, airPodsMaxBlack2],
-    green: [airPodsMaxGreen, airPodsMaxGreen2],
+    green: [airPodsMaxGreen, airPodsMaxGreen2], 
   },
 };
 

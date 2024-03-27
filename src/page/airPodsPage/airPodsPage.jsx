@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ProductsGrid from "../../components/common/productsGrid/productsGrid";
 import GroupList from "../../components/common/groupList/groupList";
 import { useHeart } from "../../hooks/useHeart";
@@ -6,14 +6,13 @@ import { useCompare } from "../../hooks/useCompare";
 import { useCart } from "../../hooks/useCart";
 import root from "../../style/root__style.module.css";
 import style from "./airPodsPage.module.css";
-import { useEffect } from "react";
-import { useState } from "react";
+
 import API from "../../api";
 import Loading from "../../components/common/loading/loading";
 
 const AirPodsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [seriesAirPods, setSeriesAirPods] = useState(); 
+  const [seriesAirPods, setSeriesAirPods] = useState();
   const [currentItems, setCurrentItems] = useState();
   const [product, setProduct] = useState();
   const [colorAirPods, setColorAirPods] = useState();
@@ -48,7 +47,8 @@ const AirPodsPage = () => {
     setCurrentPage(1);
     let productFilter = product.filter(
       (el) => el.visualAppearance === category
-    );
+    );  
+
     setCurrentItems(productFilter);
     setSelectedItem(category);
   };

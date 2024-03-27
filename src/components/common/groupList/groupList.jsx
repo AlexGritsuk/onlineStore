@@ -12,7 +12,7 @@ const GroupList = ({
   groupName,
   selectedItem,
   clearFilter,
-}) => {
+}) => { 
   return (
     <div>
       <div className={style.groupList}>

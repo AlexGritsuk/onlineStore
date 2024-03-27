@@ -11,7 +11,7 @@ import { useCompare } from "../../hooks/useCompare";
 import { useHeart } from "../../hooks/useHeart";
 import SimpleCarousel from "../../components/common/simpleCarousel/simpleCarousel";
 
-const ProductPage = ({ product, push }) => {
+const ProductPage = ({ product, push }) => { 
   const history = useHistory()
   const { cartProducts, handleAddCartProducts, handleDeleteCartProducts } =
     useCart();

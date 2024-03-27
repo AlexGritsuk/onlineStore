@@ -116,7 +116,7 @@ const NavBar = () => {
                       <span>AirPods</span>
                     </li>
                   </Link>
-                  <Link to="/Airpods">
+                  <Link to="/MacBooks">
                     <li className={style.menu__item}>
                       <RiMacbookLine style={{ marginRight: "10px" }} />
                       <span>MacBooks</span>

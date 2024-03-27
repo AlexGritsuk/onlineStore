@@ -26,7 +26,7 @@ const ProductsGrid = ({
   handleNext,
   handlePrev,
   handlePageChange,
-  currentPage,
+  currentPage,  
 }) => {
   const [sortBy, setSortBy] = useState({ iter: "price", order: "asc" });
   const [catalog, setCatalog] = useState(true);
