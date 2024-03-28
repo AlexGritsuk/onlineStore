@@ -2,7 +2,7 @@ import React from "react";
 import { useIphone } from "../../hooks/useIphone";
 
 const BasketProductCounter = () => {
-  const { countItemCart } = useIphone();
+  const { countItemCart } = useIphone(); 
 
   const renderPhrase = (number, one, two, five) => {
     let n = Math.abs(number);

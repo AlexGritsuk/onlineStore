@@ -15,7 +15,7 @@ export const HeartProvider = ({ children }) => {
       setHeartProducts(heartProducts);
     }
   }, []);
-
+ 
   useEffect(() => {
     setTimeout(() => {
       localStorage.setItem("heartProducts", JSON.stringify(heartProducts));

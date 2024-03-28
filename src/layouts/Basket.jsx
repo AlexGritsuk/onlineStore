@@ -6,7 +6,7 @@ import style from "../style/basket.module.css";
 import { useCart } from "../hooks/useCart";
 
 const Basket = () => {
-  const { countCart } = useCart();
+  const { countCart } = useCart(); 
 
   return (
     <div className={root.container}>

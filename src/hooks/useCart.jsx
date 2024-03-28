@@ -4,7 +4,7 @@ import {isHave} from "../utils/isHave";
 const CartContext = React.createContext();
 
 export const useCart = () => {
-  return useContext(CartContext);
+  return useContext(CartContext); 
 };
 
 export const CartProvider = ({ children }) => {

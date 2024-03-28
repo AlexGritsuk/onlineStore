@@ -9,12 +9,17 @@ import style from "./airPodsPage.module.css";
 
 import API from "../../api";
 import Loading from "../../components/common/loading/loading";
+import { useSelector } from "react-redux";
+import { getAirPods, getAirPodsLoadingStatus } from "../../store/airPods";
 
 const AirPodsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [seriesAirPods, setSeriesAirPods] = useState();
   const [currentItems, setCurrentItems] = useState();
-  const [product, setProduct] = useState();
+
+  const product = useSelector(getAirPods());
+  const isLoading = useSelector(getAirPodsLoadingStatus());
+
   const [colorAirPods, setColorAirPods] = useState();
   const [selectedItem, setSelectedItem] = useState();
 
@@ -24,11 +29,7 @@ const AirPodsPage = () => {
 
   useEffect(() => {
     API.airPods.fetchAll().then((data) => setCurrentItems(data));
-  }, []);
-
-  useEffect(() => {
-    API.airPods.fetchAll().then((data) => setProduct(data));
-  }, []);
+  }, []); 
 
   useEffect(() => {
     API.visualAppearanceAirPods
@@ -47,7 +48,7 @@ const AirPodsPage = () => {
     setCurrentPage(1);
     let productFilter = product.filter(
       (el) => el.visualAppearance === category
-    );  
+    );
 
     setCurrentItems(productFilter);
     setSelectedItem(category);
@@ -107,7 +108,7 @@ const AirPodsPage = () => {
     <div className={root.container}>
       <div className={style.airPodsPage}>
         <div className={style.airPodsPage__groupList}>
-          {seriesAirPods && colorAirPods && (
+          {!isLoading && seriesAirPods && colorAirPods && (
             <GroupList
               chooseCategory={handleChooseCategory}
               chooseCategoryColor={handleChooseCategoryColor}
