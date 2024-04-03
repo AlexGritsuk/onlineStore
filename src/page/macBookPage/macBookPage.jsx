@@ -8,14 +8,19 @@ import style from "./macBookPage.module.css";
 import GroupList from "../../components/common/groupList/groupList";
 import ProductsGrid from "../../components/common/productsGrid/productsGrid";
 import Loading from "../../components/common/loading/loading";
+import { useSelector } from "react-redux";
+import { getMacBooks, getMacBooksLoadingStatus } from "../../store/macBooks";
 
 const MacBooksPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [seriesMacBooks, setSeriesMacBooks] = useState();
   const [currentItems, setCurrentItems] = useState();
-  const [product, setProduct] = useState();
+
   const [colorMacBooks, setColorMacBooks] = useState();
   const [selectedItem, setSelectedItem] = useState();
+
+  const product = useSelector(getMacBooks());
+  const isLoading = useSelector(getMacBooksLoadingStatus());
 
   useEffect(() => {
     API.seriesMacBooks.fetchAll().then((data) => setSeriesMacBooks(data));
@@ -23,10 +28,6 @@ const MacBooksPage = () => {
 
   useEffect(() => {
     API.macBooks.fetchAll().then((data) => setCurrentItems(data));
-  }, []);
-
-  useEffect(() => {
-    API.macBooks.fetchAll().then((data) => setProduct(data));
   }, []);
 
   useEffect(() => {
@@ -46,7 +47,7 @@ const MacBooksPage = () => {
     setCurrentPage(1);
     let productFilter = product.filter(
       (el) => el.visualAppearance === category
-    );    
+    );
     setCurrentItems(productFilter);
     setSelectedItem(category);
   };
@@ -105,7 +106,7 @@ const MacBooksPage = () => {
     <div className={root.container}>
       <div className={style.macBookPage}>
         <div className={style.macBookPage__groupList}>
-          {seriesMacBooks && colorMacBooks && (
+          {!isLoading && seriesMacBooks && colorMacBooks && (
             <GroupList
               chooseCategory={handleChooseCategory}
               chooseCategoryColor={handleChooseCategoryColor}

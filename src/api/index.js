@@ -21,5 +21,5 @@ const API = {
     visualAppearanceMacBook,
     mainImg,
 }
-
+ 
 export default API;

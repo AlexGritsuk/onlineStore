@@ -1,32 +1,24 @@
 import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
-import API from "../../api";
 import Loading from "../../components/common/loading/loading";
 import ProductPage from "./productPage";
+import { getIphoneById } from "../../store/iphones";
+import { useSelector } from "react-redux";
+import { getAirPodsById } from "../../store/airPods";
+import { getMacBooksById } from "../../store/macBooks";
 
-const ProductListPage = ({ productId }) => {
-  const [productIphones, setProduct] = useState();
-  const [productAirPods, setProduct2] = useState();
-  const [productMacBooks, setProduct3] = useState();
-  useEffect(() => {
-    API.iphones.getById(productId).then((data) => setProduct(data));
-  }, []);
+const ProductListPage = ({ productId }) => {  
+   
+ 
+  const iphones = useSelector(getIphoneById(productId));
+  const airPods = useSelector(getAirPodsById(productId));
+  const macBooks = useSelector(getMacBooksById(productId)); 
 
-  useEffect(() => {
-    API.airPods.getById(productId).then((data) => setProduct2(data));
-  }, []);
-
-  useEffect(() => {
-    API.macBooks.getById(productId).then((data) => setProduct3(data));
-  }, []);
-
-  if (productIphones) {
-    return <ProductPage product={productIphones} push={"Iphones"} />;
-  } else if (productAirPods) {
-    return <ProductPage product={productAirPods} push={"Airpods"} />;
-  } else if (productMacBooks) {
-    return <ProductPage product={productMacBooks} push={"MacBooks"} />;
+  if (iphones) {
+    return <ProductPage product={iphones} push={"Iphones"} />;
+  } else if (airPods) {
+    return <ProductPage product={airPods} push={"Airpods"} />;
+  } else if (macBooks) {
+    return <ProductPage product={macBooks} push={"MacBooks"} />;
   }
   return <Loading />;
 };

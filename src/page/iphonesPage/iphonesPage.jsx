@@ -9,11 +9,11 @@ import { useCompare } from "../../hooks/useCompare";
 import API from "../../api";
 import Loading from "../../components/common/loading/loading";
 import { useSelector } from "react-redux";
-import { getIphones, getIphonesLoadingStatus } from "../../store/iphones";
+import { getIphones, getIphonesLoadingStatus, getSeriesIphones, getSeriesIphonesLoadingStatus } from "../../store/iphones";
 
 const IphonesPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [seriesIphone, setSeriesIphone] = useState();  
+
   const [currentItems, setCurrentItems] = useState();
 
   
@@ -21,12 +21,12 @@ const IphonesPage = () => {
   const isLoading = useSelector(getIphonesLoadingStatus())
 
 
+  const seriesIphone = useSelector(getSeriesIphones());
+  const isLoadingSeriesIphone = useSelector(getSeriesIphonesLoadingStatus());
+
+
   const [colorIphone, setColorIphone] = useState();
   const [selectedItem, setSelectedItem] = useState();
-
-  useEffect(() => {
-    API.seriesIphone.fetchAll().then((data) => setSeriesIphone(data));
-  }, []);
 
   useEffect(() => {
     API.iphones.fetchAll().then((data) => setCurrentItems(data));
@@ -109,7 +109,7 @@ const IphonesPage = () => {
     <div className={root.container}>
       <div className={style.iphonePage}>
         <div className={style.iphonePage__groupList}>
-          {!isLoading && seriesIphone && colorIphone && (
+          {!isLoading && !isLoadingSeriesIphone && colorIphone && (
             <GroupList
               chooseCategory={handleChooseCategory}
               chooseCategoryColor={handleChooseCategoryColor}

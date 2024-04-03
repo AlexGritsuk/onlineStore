@@ -1,8 +1,8 @@
 import React from "react";
-import { useIphone } from "../../hooks/useIphone";
+import { useCart } from "../../hooks/useCart";
 
 const BasketProductCounter = () => {
-  const { countItemCart } = useIphone(); 
+  const { countCart } = useCart();
 
   const renderPhrase = (number, one, two, five) => {
     let n = Math.abs(number);
@@ -22,8 +22,12 @@ const BasketProductCounter = () => {
 
   return (
     <div>
-      {countItemCart > 0
-        ? `${countItemCart + " " + renderPhrase(countItemCart, "товар", "товара", "товаров")}`
+      {countCart > 0
+        ? `${
+            countCart +
+            " " +
+            renderPhrase(countCart, "товар", "товара", "товаров")
+          }`
         : "Товаров в корзине нет"}
     </div>
   );

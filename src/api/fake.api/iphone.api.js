@@ -629,7 +629,7 @@ const fetchAll = () =>
 
 
 const getById = (id) => new Promise((resolve) => {
-    window.setTimeout(function () {
+    window.setTimeout(function () { 
         resolve(iphones.find((iphone) => iphone._id === id))
     }, 2000)
 })

@@ -6,35 +6,37 @@ import { useCompare } from "../../hooks/useCompare";
 import { useCart } from "../../hooks/useCart";
 import root from "../../style/root__style.module.css";
 import style from "./airPodsPage.module.css";
-
 import API from "../../api";
 import Loading from "../../components/common/loading/loading";
 import { useSelector } from "react-redux";
-import { getAirPods, getAirPodsLoadingStatus } from "../../store/airPods";
+import {
+  getAirPods,
+  getAirPodsLoadingStatus,
+  getColorAirPods,
+  getColorAirPodsLoadingStatus,
+  getSeriesAirPods,
+  getSeriesAirPodsLoadingStatus,
+} from "../../store/airPods";
 
 const AirPodsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [seriesAirPods, setSeriesAirPods] = useState();
   const [currentItems, setCurrentItems] = useState();
 
   const product = useSelector(getAirPods());
   const isLoading = useSelector(getAirPodsLoadingStatus());
 
-  const [colorAirPods, setColorAirPods] = useState();
+  const seriesAirPods = useSelector(getSeriesAirPods());
+  const isLoadingSeriesAirPods = useSelector(getSeriesAirPodsLoadingStatus());
+
+  const colorAirPods = useSelector(getColorAirPods());
+  const isLoadingColor = useSelector(getColorAirPodsLoadingStatus());
+
+
   const [selectedItem, setSelectedItem] = useState();
 
-  useEffect(() => {
-    API.seriesAirPods.fetchAll().then((data) => setSeriesAirPods(data));
-  }, []);
-
+  
   useEffect(() => {
     API.airPods.fetchAll().then((data) => setCurrentItems(data));
-  }, []); 
-
-  useEffect(() => {
-    API.visualAppearanceAirPods
-      .fetchAll()
-      .then((data) => setColorAirPods(data));
   }, []);
 
   const handleChooseCategory = (category) => {
@@ -108,7 +110,7 @@ const AirPodsPage = () => {
     <div className={root.container}>
       <div className={style.airPodsPage}>
         <div className={style.airPodsPage__groupList}>
-          {!isLoading && seriesAirPods && colorAirPods && (
+          {!isLoading && !isLoadingColor && !isLoadingSeriesAirPods && (
             <GroupList
               chooseCategory={handleChooseCategory}
               chooseCategoryColor={handleChooseCategoryColor}

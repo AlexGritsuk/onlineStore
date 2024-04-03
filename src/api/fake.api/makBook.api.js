@@ -3,7 +3,7 @@ import { seriesMacBooks } from "./seriesMacBook.api";
 
 import makBookAir from "./images/macbooks/macBook 13.png";
 
-
+ 
 const imageMacBook = {
     macBookAir13: {
         black: [makBookAir], 
