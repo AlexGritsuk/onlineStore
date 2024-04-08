@@ -17,14 +17,13 @@ const IphonesPage = () => {
 
   
   const product = useSelector(getIphones());
-  const isLoading = useSelector(getIphonesLoadingStatus())
-
+  const isLoading = useSelector(getIphonesLoadingStatus());
 
   const seriesIphone = useSelector(getSeriesIphones());
   const isLoadingSeriesIphone = useSelector(getSeriesIphonesLoadingStatus());
 
-  const colorIphone = useSelector(getColorIphones())
-  const isLoadingColorIphone = useSelector(getColorIphonesLoadingStatus())
+  const colorIphone = useSelector(getColorIphones());
+  const isLoadingColorIphone = useSelector(getColorIphonesLoadingStatus());
 
   
   const [selectedItem, setSelectedItem] = useState();
