@@ -9,31 +9,33 @@ import GroupList from "../../components/common/groupList/groupList";
 import ProductsGrid from "../../components/common/productsGrid/productsGrid";
 import Loading from "../../components/common/loading/loading";
 import { useSelector } from "react-redux";
-import { getMacBooks, getMacBooksLoadingStatus } from "../../store/macBooks";
+import {
+  getColorMacBooks,
+  getColorMacBooksLoadingStatus,
+  getMacBooks,
+  getMacBooksLoadingStatus,
+  getSeriesMacBooks,
+  getSeriesMacBooksLoadingStatus,
+} from "../../store/macBooks";
 
 const MacBooksPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [seriesMacBooks, setSeriesMacBooks] = useState();
+
   const [currentItems, setCurrentItems] = useState();
 
-  const [colorMacBooks, setColorMacBooks] = useState();
   const [selectedItem, setSelectedItem] = useState();
 
   const product = useSelector(getMacBooks());
   const isLoading = useSelector(getMacBooksLoadingStatus());
 
-  useEffect(() => {
-    API.seriesMacBooks.fetchAll().then((data) => setSeriesMacBooks(data));
-  }, []);
+  const seriesMacBooks = useSelector(getSeriesMacBooks());
+  const isLoadingSeriesMacBooks = useSelector(getSeriesMacBooksLoadingStatus());
+
+  const colorMacBooks = useSelector(getColorMacBooks());
+  const isLoadingColorMacBooks = useSelector(getColorMacBooksLoadingStatus());
 
   useEffect(() => {
     API.macBooks.fetchAll().then((data) => setCurrentItems(data));
-  }, []);
-
-  useEffect(() => {
-    API.visualAppearanceMacBook
-      .fetchAll()
-      .then((data) => setColorMacBooks(data));
   }, []);
 
   const handleChooseCategory = (category) => {
@@ -106,17 +108,19 @@ const MacBooksPage = () => {
     <div className={root.container}>
       <div className={style.macBookPage}>
         <div className={style.macBookPage__groupList}>
-          {!isLoading && seriesMacBooks && colorMacBooks && (
-            <GroupList
-              chooseCategory={handleChooseCategory}
-              chooseCategoryColor={handleChooseCategoryColor}
-              items={seriesMacBooks}
-              itemsColor={colorMacBooks}
-              groupName={linkName}
-              selectedItem={selectedItem}
-              clearFilter={handleClearFilter}
-            />
-          )}
+          {!isLoading &&
+            !isLoadingSeriesMacBooks &&
+            !isLoadingColorMacBooks && (
+              <GroupList
+                chooseCategory={handleChooseCategory}
+                chooseCategoryColor={handleChooseCategoryColor}
+                items={seriesMacBooks}
+                itemsColor={colorMacBooks}
+                groupName={linkName}
+                selectedItem={selectedItem}
+                clearFilter={handleClearFilter}
+              />
+            )}
         </div>
         <div className={style.macBookPage__macBookGrid}>
           {currentItems ? (

@@ -9,11 +9,10 @@ import { useCompare } from "../../hooks/useCompare";
 import API from "../../api";
 import Loading from "../../components/common/loading/loading";
 import { useSelector } from "react-redux";
-import { getIphones, getIphonesLoadingStatus, getSeriesIphones, getSeriesIphonesLoadingStatus } from "../../store/iphones";
+import { getColorIphones, getColorIphonesLoadingStatus, getIphones, getIphonesLoadingStatus, getSeriesIphones, getSeriesIphonesLoadingStatus } from "../../store/iphones";
 
 const IphonesPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-
   const [currentItems, setCurrentItems] = useState();
 
   
@@ -24,17 +23,17 @@ const IphonesPage = () => {
   const seriesIphone = useSelector(getSeriesIphones());
   const isLoadingSeriesIphone = useSelector(getSeriesIphonesLoadingStatus());
 
+  const colorIphone = useSelector(getColorIphones())
+  const isLoadingColorIphone = useSelector(getColorIphonesLoadingStatus())
 
-  const [colorIphone, setColorIphone] = useState();
+  
   const [selectedItem, setSelectedItem] = useState();
 
   useEffect(() => {
     API.iphones.fetchAll().then((data) => setCurrentItems(data));
   }, []);
 
-  useEffect(() => {
-    API.visualAppearance.fetchAll().then((data) => setColorIphone(data));
-  }, []);
+  
 
   const {
     cartProducts,
@@ -109,7 +108,7 @@ const IphonesPage = () => {
     <div className={root.container}>
       <div className={style.iphonePage}>
         <div className={style.iphonePage__groupList}>
-          {!isLoading && !isLoadingSeriesIphone && colorIphone && (
+          {!isLoading && !isLoadingSeriesIphone && !isLoadingColorIphone && (
             <GroupList
               chooseCategory={handleChooseCategory}
               chooseCategoryColor={handleChooseCategoryColor}

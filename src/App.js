@@ -19,7 +19,7 @@ import { MacBooksProvider } from "./hooks/useMacBook";
 import { useDispatch } from "react-redux";
 import { loadColorIphones, loadIphonesList, loadSeriesIphones } from "./store/iphones";
 import { loadAirPodsList, loadColorAirPods, loadSeriesAirPods } from "./store/airPods";
-import { loadMacBooksList } from "./store/macBooks";
+import { loadColorMacBooks, loadMacBooksList, loadSeriesMacBooks } from "./store/macBooks";
 
 // import { pathRoutes } from './routes';
 
@@ -35,6 +35,8 @@ function App() {
 
 
   const dispatchMacBooks = useDispatch()
+  const dispatchSeriesMacBooks = useDispatch()
+  const dispatchColorMacBooks = useDispatch()
 
   useEffect(() => {
     dispatchIphones(loadIphonesList())
@@ -63,6 +65,14 @@ function App() {
   useEffect(() => {
     dispatchMacBooks(loadMacBooksList())
   }, []);
+
+  useEffect(() => {
+    dispatchSeriesMacBooks(loadSeriesMacBooks())
+  }, []);
+
+  useEffect(() => {
+    dispatchColorMacBooks(loadColorMacBooks())
+  }, [])
 
 
 
