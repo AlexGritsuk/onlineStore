@@ -11,7 +11,7 @@ const ProductListPage = ({ productId }) => {
  
   const iphones = useSelector(getIphoneById(productId));
   const airPods = useSelector(getAirPodsById(productId));
-  const macBooks = useSelector(getMacBooksById(productId)); 
+  const macBooks = useSelector(getMacBooksById(productId));  
 
   if (iphones) {
     return <ProductPage product={iphones} push={"Iphones"} />;

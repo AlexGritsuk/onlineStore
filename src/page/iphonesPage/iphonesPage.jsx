@@ -9,13 +9,20 @@ import { useCompare } from "../../hooks/useCompare";
 import API from "../../api";
 import Loading from "../../components/common/loading/loading";
 import { useSelector } from "react-redux";
-import { getColorIphones, getColorIphonesLoadingStatus, getIphones, getIphonesLoadingStatus, getSeriesIphones, getSeriesIphonesLoadingStatus } from "../../store/iphones";
+import {
+  getColorIphones,
+  getColorIphonesLoadingStatus,
+  getIphones,
+  getIphonesLoadingStatus,  
+  getSeriesIphones,
+  getSeriesIphonesLoadingStatus,
+} from "../../store/iphones";
 
 const IphonesPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [currentItems, setCurrentItems] = useState();
+  const [currentItems, setCurrentItems] = useState(); 
+  const [selectedItem, setSelectedItem] = useState();
 
-  
   const product = useSelector(getIphones());
   const isLoading = useSelector(getIphonesLoadingStatus());
 
@@ -25,14 +32,9 @@ const IphonesPage = () => {
   const colorIphone = useSelector(getColorIphones());
   const isLoadingColorIphone = useSelector(getColorIphonesLoadingStatus());
 
-  
-  const [selectedItem, setSelectedItem] = useState();
-
   useEffect(() => {
     API.iphones.fetchAll().then((data) => setCurrentItems(data));
   }, []);
-
-  
 
   const {
     cartProducts,
@@ -57,7 +59,6 @@ const IphonesPage = () => {
 
   const linkName = "Iphones";
 
-  
 
   const handleChooseCategory = (category) => {
     setCurrentPage(1);
@@ -103,7 +104,7 @@ const IphonesPage = () => {
   };
 
   let groupName = "iPhone";
-  return ( 
+  return (
     <div className={root.container}>
       <div className={style.iphonePage}>
         <div className={style.iphonePage__groupList}>
@@ -119,7 +120,7 @@ const IphonesPage = () => {
             />
           )}
         </div>
-        <div className={style.iphonePage__iphoneGrid}>          
+        <div className={style.iphonePage__iphoneGrid}>
           {currentItems ? (
             <ProductsGrid
               productsCart={cartProducts}
@@ -139,7 +140,7 @@ const IphonesPage = () => {
               handleNext={handleNext}
               handlePrev={handlePrev}
               handlePageChange={handlePageChange}
-              currentPage={currentPage}              
+              currentPage={currentPage}
             />
           ) : (
             <Loading />

@@ -52,25 +52,11 @@ const iphonesSlice = createSlice({
         colorIphonesField: (state, action) => {
             state.error = action.payload
             state.isLoadingColor = false
-        },
-        currentIphonesRequested: (state) => {
-            state.isLoadingCurrent = true
-        },
-        currentIphonesReceved: (state, action) => {
-            state.currentItems = action.payload
-            state.isLoadingCurrent = false
-        },
-        currentIphonesField: (state, action) => {
-            state.error = action.payload
-            state.isLoadingCurrent = false
-        },
-
-        selectedItemIphoneReceved: (state, action) => {
-            state.selectedItem = action.payload
-        }
-
+        },    
+       
     }
 });
+
 
 const { reducer: iphonesReducer, actions } = iphonesSlice;
 const {
@@ -82,23 +68,9 @@ const {
     seriesIphonesField,
     colorIphonesRequested,
     colorIphonesReceved,
-    colorIphonesField,
+    colorIphonesField       
+} = actions;
 
-    currentIphonesRequested,
-    currentIphonesReceved,
-    currentIphonesField,
-} = actions
-
-
-export const loadCurrentIphones = () => async (dispatch) => {
-    dispatch(currentIphonesRequested());
-    try {
-        const data = await API.iphones.fetchAll()
-        dispatch(currentIphonesReceved(data))
-    } catch (error) {
-        dispatch(currentIphonesField(error.message))
-    }
-};
 
 
 export const loadSeriesIphones = () => async (dispatch) => {
@@ -133,56 +105,6 @@ export const loadIphonesList = () => async (dispatch) => {
     }
 };
 
-
-export const getHandleChooseCategory = (category) => (state) => {
-    if (state.iphones.currentItems) {
-        state.iphones.currentPage = 1;
-        let productFilter = state.iphones.entities.filter((el) => el.name === category);
-        state.iphones.currentItems = productFilter;
-        state.iphones.selectedItem = category;
-    };
-};
-
-export const getHandleChooseCategoryColor = (category) => (state) => {
-    if (state.iphones.currentItems) {
-        state.iphones.currentPage = 1;
-        let productFilter = state.iphones.entities.filter(
-            (el) => el.visualAppearance === category
-        );
-        state.iphones.currentItems = productFilter;
-        state.iphones.selectedItem = category;
-    };
-};
-
-export const getHandleClearFilter = () => (state) => {
-    state.iphones.currentItems = state.iphones.entities;
-    state.iphones.selectedItem = null
-};
-
-
-export const getHandlePageChange = (pageIndex) => (state) => {
-    state.iphones.currentPage = pageIndex;
-};
-
-export const getHandleNext = (pages) => (state) => {
-    state.iphones.currentPage = function () {
-        if (state.iphones.currentPage >= pages.length) {
-            return state.iphones.currentPage = 1
-        }
-        return state.iphones.currentPage - 1
-    }
-};
-
-export const getHandlePrev = (pages) => (state) => {
-    state.iphones.currentPage = function () {
-        if (state.iphones.currentPage < 2) {
-            return state.iphones.currentPage = pages.length;
-        }
-        return state.iphones.currentPage - 1
-    };
-};
-
-
 export const getIphones = () => (state) => state.iphones.entities;
 export const getIphonesLoadingStatus = () => (state) => state.iphones.isLoading;
 
@@ -197,5 +119,10 @@ export const getSeriesIphonesLoadingStatus = () => (state) => state.iphones.isLo
 
 export const getColorIphones = () => (state) => state.iphones.color;
 export const getColorIphonesLoadingStatus = () => (state) => state.iphones.isLoadingColor;
+
+
+
+
+
 
 export default iphonesReducer;

@@ -20,9 +20,7 @@ import {
 
 const MacBooksPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-
   const [currentItems, setCurrentItems] = useState();
-
   const [selectedItem, setSelectedItem] = useState();
 
   const product = useSelector(getMacBooks());

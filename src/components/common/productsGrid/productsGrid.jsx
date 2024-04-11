@@ -32,6 +32,7 @@ const ProductsGrid = ({
   const [catalog, setCatalog] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const pageSize = 6;
+  
 
   const handleCatalogGrid = () => {
     setCatalog((catalog) => (catalog = true));

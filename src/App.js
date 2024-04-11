@@ -15,7 +15,6 @@ import Footer from "./page/footer/footer";
 import "./index.css";
 import { CartProvider } from "./hooks/useCart";
 import { HeartProvider } from "./hooks/useHeart";
-import { MacBooksProvider } from "./hooks/useMacBook";
 import { useDispatch } from "react-redux";
 import { loadColorIphones, loadIphonesList, loadSeriesIphones } from "./store/iphones";
 import { loadAirPodsList, loadColorAirPods, loadSeriesAirPods } from "./store/airPods";
@@ -24,19 +23,15 @@ import { loadColorMacBooks, loadMacBooksList, loadSeriesMacBooks } from "./store
 // import { pathRoutes } from './routes';
 
 function App() {
-  const dispatchIphones = useDispatch()
-  const dispatchSeriesIphones = useDispatch()
-  const dispatchColorIphones = useDispatch()
-
-
-  const dispatchAirpods = useDispatch()
-  const dispatchSeriesAirpods = useDispatch()
-  const dispatchColorAirpods = useDispatch()
-
-
-  const dispatchMacBooks = useDispatch()
-  const dispatchSeriesMacBooks = useDispatch()
-  const dispatchColorMacBooks = useDispatch()
+  const dispatchIphones = useDispatch();
+  const dispatchSeriesIphones = useDispatch();
+  const dispatchColorIphones = useDispatch();
+  const dispatchAirpods = useDispatch();
+  const dispatchSeriesAirpods = useDispatch();
+  const dispatchColorAirpods = useDispatch();
+  const dispatchMacBooks = useDispatch();
+  const dispatchSeriesMacBooks = useDispatch();
+  const dispatchColorMacBooks = useDispatch();
 
   useEffect(() => {
     dispatchIphones(loadIphonesList())
@@ -73,9 +68,7 @@ function App() {
   useEffect(() => {
     dispatchColorMacBooks(loadColorMacBooks())
   }, [])
-
-
-
+  
 
 
   return (
