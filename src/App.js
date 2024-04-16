@@ -19,6 +19,8 @@ import { useDispatch } from "react-redux";
 import { loadColorIphones, loadIphonesList, loadSeriesIphones } from "./store/iphones";
 import { loadAirPodsList, loadColorAirPods, loadSeriesAirPods } from "./store/airPods";
 import { loadColorMacBooks, loadMacBooksList, loadSeriesMacBooks } from "./store/macBooks";
+import { getCart } from "./store/cart";
+
 
 // import { pathRoutes } from './routes';
 
@@ -32,6 +34,10 @@ function App() {
   const dispatchMacBooks = useDispatch();
   const dispatchSeriesMacBooks = useDispatch();
   const dispatchColorMacBooks = useDispatch();
+
+  const dispatchCart = useDispatch()
+
+
 
   useEffect(() => {
     dispatchIphones(loadIphonesList())

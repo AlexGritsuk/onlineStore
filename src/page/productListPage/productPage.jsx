@@ -3,18 +3,24 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import root from "../../style/root__style.module.css";
 import style from "./productListPage.module.css";
 import BtnCart from "../../components/common/buttons/btnCart/btnCart";
-import { useCart } from "../../hooks/useCart";
 import PropTypes from "prop-types";
 import BtnCompare from "../../components/common/buttons/btnCompare/btnCompare";
 import BtnHeart from "../../components/common/buttons/btnHeart/btnHeart";
 import { useCompare } from "../../hooks/useCompare";
 import { useHeart } from "../../hooks/useHeart";
 import SimpleCarousel from "../../components/common/simpleCarousel/simpleCarousel";
+import { useSelector } from "react-redux";
+import { getCart, gethandleAddCartProducts, gethandleDeleteCartProducts } from "../../store/cart";
 
 const ProductPage = ({ product, push }) => { 
   const history = useHistory()
-  const { cartProducts, handleAddCartProducts, handleDeleteCartProducts } =
-    useCart();
+  
+
+    const cartProducts = useSelector(getCart());
+    const handleAddCartProducts = useSelector(gethandleAddCartProducts);
+    const handleDeleteCartProducts = useSelector(gethandleDeleteCartProducts);
+
+
 
   const { compareIphones, handleAddCompareIphone, handleDeleteCompareIphone } =
     useCompare();

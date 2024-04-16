@@ -3,7 +3,7 @@ import style from "./iphonePage.module.css";
 import root from "../../style/root__style.module.css";
 import GroupList from "../../components/common/groupList/groupList";
 import ProductsGrid from "../../components/common/productsGrid/productsGrid";
-import { useCart } from "../../hooks/useCart";
+
 import { useHeart } from "../../hooks/useHeart";
 import { useCompare } from "../../hooks/useCompare";
 import API from "../../api";
@@ -13,14 +13,15 @@ import {
   getColorIphones,
   getColorIphonesLoadingStatus,
   getIphones,
-  getIphonesLoadingStatus,  
+  getIphonesLoadingStatus,
   getSeriesIphones,
   getSeriesIphonesLoadingStatus,
 } from "../../store/iphones";
+import { getCart, getCountCart, gethandleAddCartProducts, gethandleDeleteCartProducts } from "../../store/cart";
 
 const IphonesPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [currentItems, setCurrentItems] = useState(); 
+  const [currentItems, setCurrentItems] = useState();
   const [selectedItem, setSelectedItem] = useState();
 
   const product = useSelector(getIphones());
@@ -36,12 +37,14 @@ const IphonesPage = () => {
     API.iphones.fetchAll().then((data) => setCurrentItems(data));
   }, []);
 
-  const {
-    cartProducts,
-    countCart,
-    handleAddCartProducts,
-    handleDeleteCartProducts,
-  } = useCart();
+ 
+
+  const cartProducts = useSelector(getCart());
+  const countCart = useSelector(getCountCart());
+  const handleAddCartProducts = useSelector(gethandleAddCartProducts);
+  const handleDeleteCartProducts = useSelector(gethandleDeleteCartProducts);
+
+  
 
   const {
     heartProducts,
@@ -58,7 +61,6 @@ const IphonesPage = () => {
   } = useCompare();
 
   const linkName = "Iphones";
-
 
   const handleChooseCategory = (category) => {
     setCurrentPage(1);
@@ -123,8 +125,7 @@ const IphonesPage = () => {
         <div className={style.iphonePage__iphoneGrid}>
           {currentItems ? (
             <ProductsGrid
-              productsCart={cartProducts}
-              onAddCart={handleAddCartProducts}
+              productsCart={cartProducts}              
               onDeleteCart={handleDeleteCartProducts}
               productsHeart={heartProducts}
               onAddHeart={handleAddHeartProducts}

@@ -12,7 +12,6 @@ import BtnOnCard from "../buttons/btnOnCard/btnOnCard";
 
 const ProductCard = ({
   catalog,
-  onAddCart,
   onDeleteCart,
   cartProduct,
   onAddHeart,
@@ -21,15 +20,14 @@ const ProductCard = ({
   onAddCompare,
   onDeleteCompare,
   compareProduct,
-  linkName,
+  linkName, 
   ...product
 }) => {
   const btnCard = {
     cart: {
       products: cartProduct,
       id: product._id,
-      currentProduct: product,
-      onAdd: onAddCart,
+      currentProduct: product,      
       onDelete: onDeleteCart,
       beforeLogo: <PiShoppingCartFill />,
       afterLogo: <PiShoppingCartBold />,

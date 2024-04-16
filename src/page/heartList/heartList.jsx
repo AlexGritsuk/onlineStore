@@ -2,18 +2,20 @@ import React from "react";
 import HeartEmpty from "./heartEmpty";
 import ProductHeart from "./ProductHeart";
 import { useCompare } from "../../hooks/useCompare";
-import { useCart } from "../../hooks/useCart";
 import { useHeart } from "../../hooks/useHeart";
+import { useSelector } from "react-redux";
+import { getCart, gethandleAddCartProducts, gethandleDeleteCartProducts } from "../../store/cart";
 
 const HeartList = () => {
   const { compareIphones, handleAddCompareIphone, handleDeleteCompareIphone } =
-    useCompare();
+    useCompare();  
 
-  const { cartProducts, handleAddCartProducts, handleDeleteCartProducts } =
-    useCart();
+    const cartProducts = useSelector(getCart());
+    const handleAddCartProducts = useSelector(gethandleAddCartProducts);
+    const handleDeleteCartProducts = useSelector(gethandleDeleteCartProducts)
 
   const { heartProducts, handleAddHeartProducts, handleDeleteHeartProducts } =
-    useHeart();
+    useHeart();   
 
   if (heartProducts.length > 0) {
     return (

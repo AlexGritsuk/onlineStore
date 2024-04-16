@@ -2,14 +2,16 @@ import React from "react";
 import { isHave } from "../../../../utils/isHave";
 import { PiShoppingCartBold } from "react-icons/pi";
 import style from "./btnCart.module.css";
-import PropTypes from "prop-types"; 
+import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
 
 const BtnCart = ({ products, id, currentProduct, onDelete, onAddCart }) => {
+  const dispatch = useDispatch();
   return (
     <div>
       {!isHave(products, id) ? (
         <button
-          onClick={() => onAddCart(currentProduct)}
+          onClick={() => dispatch(onAddCart(currentProduct))}
           className={style.btn + " " + style.btnCart}
         >
           <PiShoppingCartBold style={{ width: "20px", height: "20px" }} /> В

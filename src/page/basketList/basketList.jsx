@@ -1,11 +1,15 @@
 import React from "react";
 import IphoneCart from "./ProductCart";
 import BasketEmpty from "./basketEmpty";
-import { useCart } from "../../hooks/useCart";
+
 import { useHeart } from "../../hooks/useHeart";
+import { useSelector } from "react-redux";
+import { getCart, gethandleDeleteCartProducts } from "../../store/cart";
 
 const BasketList = () => {
-  const { cartProducts, handleDeleteCartProducts } = useCart();
+ 
+  const cartProducts = useSelector(getCart());
+  const handleDeleteCartProducts = useSelector(gethandleDeleteCartProducts)
   const { heartProducts, handleAddHeartProducts, handleDeleteHeartProducts } =
     useHeart();
 

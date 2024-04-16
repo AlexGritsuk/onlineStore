@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 const HeartContext = React.createContext();
 
 export const useHeart = () => {
-  return useContext(HeartContext);
+  return useContext(HeartContext); 
 };
 
 export const HeartProvider = ({ children }) => {

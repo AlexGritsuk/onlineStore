@@ -4,19 +4,23 @@ import { createAction, createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
     name: "cart",
     initialState: {
-        entities: null,
+        entities: [],
+        count: 0,
     },
     reducers: {
         basket: (state, action) => {
             state.entities = action.payload
         },
         basketAdd: (state, action) => {
-            state.entities = [action.payload]
+            state.entities.push(action.payload)
         },
         basketRemove: (state, action) => {
             state.entities = state.entities.filter(
                 (c) => c._id !== action.payload
             )
+        },
+        countProduct: (state, actions) => {
+            state.count = state.entities.length
         }
     }
 });
@@ -43,17 +47,27 @@ const removeProductCart = createAction("cart/removeProductCart");
 // }
 
 
-export const handleAddCartProducts = (product) => (dispatch) => {
-    dispatch(addProductCart(product));
-    const cart = [...product];
-    dispatch(basketAdd(cart))
+export const gethandleAddCartProducts = (product) => (dispatch, getState) => {
+    dispatch(basketAdd(product))
 }
 
 
-export const handleDeleteCartProducts = (id) => (dispatch) => {
-    dispatch(removeProductCart())
+
+export const gethandleDeleteCartProducts = (id) => (dispatch) => {
+    // dispatch(removeProductCart())
     dispatch(basketRemove(id))
 }
+
+export const getCart = () => (state) => state.cart.entities;
+
+export const getCountCart = () => (state) => {
+    if (state.cart.entities) {
+        return state.cart.entities.length
+    }
+    return 0;
+}
+
+
 
 
 

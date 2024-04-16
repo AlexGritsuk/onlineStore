@@ -19,6 +19,8 @@ import { useHeart } from "../../hooks/useHeart";
 import { MdManageSearch } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { useClickOutSide } from "../../hooks/useClickOutSide";
+import { useSelector } from "react-redux";
+import { getCountCart } from "../../store/cart";
 
 const NavBar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -33,8 +35,9 @@ const NavBar = () => {
   };
 
   const { countItemCompare } = useCompare();
-  const { countCart } = useCart();
+  
   const { countHeart } = useHeart();
+  const countCart = useSelector(getCountCart())
 
   const icons = {
     cart: {
