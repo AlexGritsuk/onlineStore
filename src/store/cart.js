@@ -1,5 +1,4 @@
-import { createAction, createSlice } from "@reduxjs/toolkit";
-
+import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
     name: "cart",
@@ -7,10 +6,7 @@ const cartSlice = createSlice({
         entities: [],
         count: 0,
     },
-    reducers: {
-        basket: (state, action) => {
-            state.entities = action.payload
-        },
+    reducers: {               
         basketAdd: (state, action) => {
             state.entities.push(action.payload)
         },
@@ -19,56 +15,30 @@ const cartSlice = createSlice({
                 (c) => c._id !== action.payload
             )
         },
-        countProduct: (state, actions) => {
+        countProduct: (state) => {
             state.count = state.entities.length
         }
     }
 });
 
 const { reducer: cartReducer, actions } = cartSlice;
-
-const { basket, basketAdd, basketRemove } = actions;
-
-const addProductCart = createAction("cart/addProductCart");
-const removeProductCart = createAction("cart/removeProductCart");
-
-
-// export const getLoadCart = () => (dispatch) => {
-//     const cartProducts = JSON.parse(localStorage.getItem("cartProducts"));
-//     if (cartProducts) {
-//         dispatch(basket(cartProducts))
-//     }
-// }
-
-// export const setLoadCart = () => (state) => {
-//     setTimeout(() => {
-//         localStorage.setItem("cartProducts", JSON.stringify(basket(state.cart.entities)));
-//     }, 1)
-// }
-
-
-export const gethandleAddCartProducts = (product) => (dispatch, getState) => {
-    dispatch(basketAdd(product))
-}
-
-
-
-export const gethandleDeleteCartProducts = (id) => (dispatch) => {
-    // dispatch(removeProductCart())
-    dispatch(basketRemove(id))
-}
+const { basketAdd, basketRemove } = actions;
 
 export const getCart = () => (state) => state.cart.entities;
 
+export const gethandleAddCartProducts = (product) => (dispatch) => {
+    dispatch(basketAdd(product));
+};
+
+export const gethandleDeleteCartProducts = (id) => (dispatch) => {    
+    dispatch(basketRemove(id));
+};
+
 export const getCountCart = () => (state) => {
     if (state.cart.entities) {
-        return state.cart.entities.length
-    }
+        return state.cart.entities.length;
+    };
     return 0;
-}
-
-
-
-
+};
 
 export default cartReducer;

@@ -6,6 +6,8 @@ import macBooksReducer from "./macBooks";
 import cartReducer from "./cart";
 import { logger } from "./middleware/logger";
 import { thunk } from "./middleware/thunk";
+import heartReducer from "./heart";
+import compareReducer from "./compare";
 
 
 
@@ -14,6 +16,8 @@ const rootReducer = combineReducers({
     airPods: airPodsReducer,
     macBooks: macBooksReducer,
     cart: cartReducer,
+    heart: heartReducer,
+    compare: compareReducer,
 });
 
 

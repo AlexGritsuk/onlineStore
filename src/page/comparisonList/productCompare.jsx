@@ -1,15 +1,12 @@
 import React from "react";
 import style from "./productCompare.module.css";
 import BtnCart from "../../components/common/buttons/btnCart/btnCart";
-import BtnDelete from "../../components/common/buttons/btnDelete/btnDelete";
-import { useCart } from "../../hooks/useCart";
-import { useCompare } from "../../hooks/useCompare";
+import { useSelector } from "react-redux";
+import { getCart } from "../../store/cart";
+import BtnDeleteCompare from "../../components/common/buttons/btnCompare/btnDeleteCompare";
 
-const ProductCompare = ({ ...compareIphone }) => {
-  const { cartProducts, handleAddCartProducts, handleDeleteCartProducts } =
-    useCart();
-
-  const { handleDeleteCompareIphone } = useCompare();
+const ProductCompare = ({ ...compareIphone }) => {  
+    const cartProducts = useSelector(getCart());
 
   return (
     <div className={style.productCompare__wrapper}>
@@ -37,15 +34,12 @@ const ProductCompare = ({ ...compareIphone }) => {
             <BtnCart
               products={cartProducts}
               id={compareIphone._id}
-              currentProduct={compareIphone}
-              onDelete={handleDeleteCartProducts}
-              onAddCart={handleAddCartProducts}
+              currentProduct={compareIphone}              
             />
           </div>
           <div style={{ marginTop: "15px" }}>
-            <BtnDelete
-              id={compareIphone._id}
-              onDel={handleDeleteCompareIphone}
+            <BtnDeleteCompare
+              id={compareIphone._id}              
             />
           </div>
         </div>

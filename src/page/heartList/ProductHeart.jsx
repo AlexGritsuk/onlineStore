@@ -3,18 +3,17 @@ import style from "./productHeart.module.css";
 import root from "../../style/root__style.module.css";
 import BtnCart from "../../components/common/buttons/btnCart/btnCart";
 import BtnCompare from "../../components/common/buttons/btnCompare/btnCompare";
-import BtnDelete from "../../components/common/buttons/btnDelete/btnDelete";
+import BtnDeleteHeart from "../../components/common/buttons/btnHeart/btnDeleteHeart";
+import { useSelector } from "react-redux";
+import { getCart } from "../../store/cart";
+import { getCompare } from "../../store/compare";
 
-const ProductHeart = ({
-  cartProducts,
-  compareIphones,
-  onDeleteCart,
-  onAddCart,
-  onDeleteHeart,
-  onAddCompare,
-  onDeleteCompare,
+
+const ProductHeart = ({    
   ...product
 }) => {
+  const cartProducts = useSelector(getCart());
+  const compareProducts = useSelector(getCompare());  
   return (
     <div className={style.productHeart__wrapper}>
       <div className={style.productHeart}>
@@ -34,13 +33,11 @@ const ProductHeart = ({
           <div>{product.visualAppearance.name}</div>
           <div className={style.productHeart__btns}>
             <BtnCompare 
-              products={compareIphones}
+              products={compareProducts}
               id={product._id}
-              currentProduct={product}
-              onAddCompare={onAddCompare}
-              onDeleteCompare={onDeleteCompare}
+              currentProduct={product}              
             />
-            <BtnDelete id={product._id} onDel={onDeleteHeart} />
+            <BtnDeleteHeart id={product._id} />
           </div>
         </div>
 
@@ -49,9 +46,7 @@ const ProductHeart = ({
           <BtnCart
             products={cartProducts}
             id={product._id}
-            currentProduct={product}
-            onDelete={onDeleteCart}
-            onAddCart={onAddCart}
+            currentProduct={product}            
           />
         </div>
       </div>

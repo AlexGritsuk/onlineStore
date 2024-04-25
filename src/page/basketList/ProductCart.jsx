@@ -6,11 +6,8 @@ import { LuMinusSquare } from "react-icons/lu";
 import BtnDelete from "../../components/common/buttons/btnDelete/btnDelete";
 import BtnHeart from "../../components/common/buttons/btnHeart/btnHeart";
 
-const ProductCart = ({
-  onDelete,
-  onAddHeart,
-  onDeleteHeart,
-  heartProducts,
+const ProductCart = ({    
+  heartProducts, 
   ...product
 }) => {
   return (
@@ -32,14 +29,12 @@ const ProductCart = ({
           </div>
 
           <div style={{ ["marginTop"]: "30px" }}>
-            <BtnDelete id={product._id} onDel={onDelete} />
+            <BtnDelete id={product._id} />
             <div style={{marginTop: "20px"}}>
               <BtnHeart
                 products={heartProducts}
-                id={product._id}
-                onAddHeart={onAddHeart}
-                currentProduct={product}
-                onDeleteHeart={onDeleteHeart}
+                id={product._id}                
+                currentProduct={product}                
               />
             </div>
           </div>

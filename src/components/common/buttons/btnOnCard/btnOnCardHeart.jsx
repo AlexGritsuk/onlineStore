@@ -3,23 +3,22 @@ import PropTypes from "prop-types";
 import { isHave } from "../../../../utils/isHave";
 import style from "./btnOnCard.module.css";
 import { useDispatch } from "react-redux";
-import { gethandleAddCartProducts } from "../../../../store/cart";
+import { handleAddHeart, handleDeleteHeart } from "../../../../store/heart";
 
-const BtnOnCard = ({
+const BtnOnCardHeart = ({
   products,
-  id,
-  currentProduct,  
-  onDelete,
+  id,  
+  currentProduct,    
   beforeLogo,
   afterLogo,
 }) => {
-  const dispatch = useDispatch();
+const dispatch = useDispatch()
   return (
     <div className={style.btnOnCard__wrapper}>
       {!isHave(products, id) ? (
         <button
           onClick={() => {
-            dispatch(gethandleAddCartProducts(currentProduct))
+           dispatch(handleAddHeart(currentProduct))
           }}
           className={style.btnOnCard}
         >
@@ -28,7 +27,7 @@ const BtnOnCard = ({
       ) : (
         <button
           onClick={() => {
-            onDelete(id);
+            dispatch(handleDeleteHeart(id))
           }}
           className={style.btnOnCard_in}
         >
@@ -39,12 +38,10 @@ const BtnOnCard = ({
   );
 };
 
-BtnOnCard.propTypes = {
+BtnOnCardHeart.propTypes = {
   products: PropTypes.array.isRequired,
   id: PropTypes.string.isRequired,
-  currentProduct: PropTypes.object.isRequired,
-  onAdd: PropTypes.func.isRequired,
-  onDelete: PropTypes.func.isRequired,
+  currentProduct: PropTypes.object.isRequired,  
 };
 
-export default BtnOnCard;
+export default BtnOnCardHeart;

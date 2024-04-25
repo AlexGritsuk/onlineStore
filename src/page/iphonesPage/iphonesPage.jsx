@@ -3,9 +3,6 @@ import style from "./iphonePage.module.css";
 import root from "../../style/root__style.module.css";
 import GroupList from "../../components/common/groupList/groupList";
 import ProductsGrid from "../../components/common/productsGrid/productsGrid";
-
-import { useHeart } from "../../hooks/useHeart";
-import { useCompare } from "../../hooks/useCompare";
 import API from "../../api";
 import Loading from "../../components/common/loading/loading";
 import { useSelector } from "react-redux";
@@ -17,7 +14,9 @@ import {
   getSeriesIphones,
   getSeriesIphonesLoadingStatus,
 } from "../../store/iphones";
-import { getCart, getCountCart, gethandleAddCartProducts, gethandleDeleteCartProducts } from "../../store/cart";
+import { getCart, getCountCart } from "../../store/cart";
+import { getHeart, getCountHeart } from "../../store/heart";
+import { getCompare, getCountCompare } from "../../store/compare";
 
 const IphonesPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -40,25 +39,14 @@ const IphonesPage = () => {
  
 
   const cartProducts = useSelector(getCart());
-  const countCart = useSelector(getCountCart());
-  const handleAddCartProducts = useSelector(gethandleAddCartProducts);
-  const handleDeleteCartProducts = useSelector(gethandleDeleteCartProducts);
-
+  const countCart = useSelector(getCountCart()); 
   
-
-  const {
-    heartProducts,
-    countHeart,
-    handleAddHeartProducts,
-    handleDeleteHeartProducts,
-  } = useHeart();
-
-  const {
-    compareIphones,
-    countItemCompare,
-    handleAddCompareIphone,
-    handleDeleteCompareIphone,
-  } = useCompare();
+  const heartProducts = useSelector(getHeart())
+  const countHeart = useSelector(getCountHeart());
+  
+  const compareProducts = useSelector(getCompare());
+  const countCompare = useSelector(getCountCompare())
+ 
 
   const linkName = "Iphones";
 
@@ -125,17 +113,12 @@ const IphonesPage = () => {
         <div className={style.iphonePage__iphoneGrid}>
           {currentItems ? (
             <ProductsGrid
-              productsCart={cartProducts}              
-              onDeleteCart={handleDeleteCartProducts}
-              productsHeart={heartProducts}
-              onAddHeart={handleAddHeartProducts}
-              onDeleteHeart={handleDeleteHeartProducts}
-              productsCompare={compareIphones}
-              onAddCompare={handleAddCompareIphone}
-              onDeleteCompare={handleDeleteCompareIphone}
+              productsCart={cartProducts}                    
+              productsHeart={heartProducts}              
+              productsCompare={compareProducts}              
               countCart={countCart}
               countHeart={countHeart}
-              countItemCompare={countItemCompare}
+              countCompare={countCompare}
               products={currentItems}
               linkName={linkName}
               handleNext={handleNext}

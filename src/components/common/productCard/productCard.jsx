@@ -8,17 +8,14 @@ import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { IoIosGitCompare } from "react-icons/io";
 import { IoGitCompare } from "react-icons/io5";
-import BtnOnCard from "../buttons/btnOnCard/btnOnCard";
+import BtnOnCard from "../buttons/btnOnCard/BtnOnCardCart";
+import BtnOnCardHeart from "../buttons/btnOnCard/btnOnCardHeart";
+import BtnOnCardCompare from "../buttons/btnOnCard/BtnOnCardCompare";
 
 const ProductCard = ({
   catalog,
-  onDeleteCart,
-  cartProduct,
-  onAddHeart,
-  onDeleteHeart,
-  heartProduct,
-  onAddCompare,
-  onDeleteCompare,
+  cartProduct, 
+  heartProduct,  
   compareProduct,
   linkName, 
   ...product
@@ -27,26 +24,21 @@ const ProductCard = ({
     cart: {
       products: cartProduct,
       id: product._id,
-      currentProduct: product,      
-      onDelete: onDeleteCart,
+      currentProduct: product,           
       beforeLogo: <PiShoppingCartFill />,
       afterLogo: <PiShoppingCartBold />,
     },
     heart: {
       products: heartProduct,
       id: product._id,
-      currentProduct: product,
-      onAdd: onAddHeart,
-      onDelete: onDeleteHeart,
+      currentProduct: product,      
       beforeLogo: <FaHeart />,
       afterLogo: <FaRegHeart />,
     },
     compare: {
       products: compareProduct,
       id: product._id,
-      currentProduct: product,
-      onAdd: onAddCompare,
-      onDelete: onDeleteCompare,
+      currentProduct: product,      
       beforeLogo: <IoGitCompare />,
       afterLogo: <IoIosGitCompare />,
     },
@@ -98,8 +90,8 @@ const ProductCard = ({
         }
       >
         <BtnOnCard {...btnCard.cart} />
-        <BtnOnCard {...btnCard.heart} />
-        <BtnOnCard {...btnCard.compare} />
+        <BtnOnCardHeart {...btnCard.heart} />
+        <BtnOnCardCompare {...btnCard.compare} />
       </div>
     </div>
   );

@@ -1,17 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import IphoneCart from "./ProductCart";
 import BasketEmpty from "./basketEmpty";
-
-import { useHeart } from "../../hooks/useHeart";
 import { useSelector } from "react-redux";
-import { getCart, gethandleDeleteCartProducts } from "../../store/cart";
+import { getCart } from "../../store/cart";
+import { getHeart } from "../../store/heart";
 
 const BasketList = () => {
  
-  const cartProducts = useSelector(getCart());
-  const handleDeleteCartProducts = useSelector(gethandleDeleteCartProducts)
-  const { heartProducts, handleAddHeartProducts, handleDeleteHeartProducts } =
-    useHeart();
+  const cartProducts = useSelector(getCart());   
+  const heartProducts = useSelector(getHeart())
 
   if (cartProducts.length > 0) {
     return (
@@ -22,10 +19,8 @@ const BasketList = () => {
               <IphoneCart
                 key={product._id}
                 {...product}
-                heartProducts={heartProducts}
-                onDelete={handleDeleteCartProducts}
-                onAddHeart={handleAddHeartProducts}
-                onDeleteHeart={handleDeleteHeartProducts}
+                heartProducts={heartProducts}           
+                
               />
             );
           })}

@@ -12,14 +12,9 @@ import SortMenu from "../../ui/sortMenu/sortMenu";
 import _ from "lodash";
 
 const ProductsGrid = ({
-  productsCart,  
-  onDeleteCart,
-  productsHeart,
-  onAddHeart,
-  onDeleteHeart,
-  productsCompare,
-  onAddCompare,
-  onDeleteCompare,
+  productsCart,     
+  productsHeart,  
+  productsCompare, 
   linkName,
   products,
   handleNext,
@@ -109,14 +104,9 @@ const ProductsGrid = ({
           <ProductCard
             key={products._id}
             catalog={catalog}
-            cartProduct={productsCart}            
-            onDeleteCart={onDeleteCart}
-            heartProduct={productsHeart}
-            onAddHeart={onAddHeart}
-            onDeleteHeart={onDeleteHeart}
-            compareProduct={productsCompare}
-            onAddCompare={onAddCompare}
-            onDeleteCompare={onDeleteCompare}
+            cartProduct={productsCart}                       
+            heartProduct={productsHeart}            
+            compareProduct={productsCompare}            
             linkName={linkName}
             {...products}
           />

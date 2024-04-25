@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProductsGrid from "../../components/common/productsGrid/productsGrid";
 import GroupList from "../../components/common/groupList/groupList";
-import { useHeart } from "../../hooks/useHeart";
-import { useCompare } from "../../hooks/useCompare";
-import { useCart } from "../../hooks/useCart";
 import root from "../../style/root__style.module.css";
 import style from "./airPodsPage.module.css";
 import API from "../../api";
@@ -17,6 +14,9 @@ import {
   getSeriesAirPods,
   getSeriesAirPodsLoadingStatus,
 } from "../../store/airPods";
+import { getCart, getCountCart } from "../../store/cart";
+import { getCountHeart, getHeart } from "../../store/heart";
+import { getCompare, getCountCompare } from "../../store/compare";
 
 const AirPodsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -76,28 +76,19 @@ const AirPodsPage = () => {
       }
       return prev - 1;
     });
-  };
+  }; 
 
-  const {
-    cartProducts,
-    countCart,
-    handleAddCartProducts,
-    handleDeleteCartProducts,
-  } = useCart();
+  
 
-  const {
-    heartProducts,
-    countHeart,
-    handleAddHeartProducts,
-    handleDeleteHeartProducts,
-  } = useHeart();
+  const cartProducts = useSelector(getCart());
+  const countCart = useSelector(getCountCart());
 
-  const {
-    compareIphones,
-    countItemCompare,
-    handleAddCompareIphone,
-    handleDeleteCompareIphone,
-  } = useCompare();
+  const heartProducts = useSelector(getHeart())
+  const countHeart = useSelector(getCountHeart());    
+
+  const compareProducts = useSelector(getCompare())
+  const countCompare = useSelector(getCountCompare())
+
 
   const linkName = "Airpods";
 
@@ -125,18 +116,12 @@ const AirPodsPage = () => {
         <div className={style.airPodsPage__airPodsGrid}>
           {currentItems ? (
             <ProductsGrid
-              productsCart={cartProducts}
-              onAddCart={handleAddCartProducts}
-              onDeleteCart={handleDeleteCartProducts}
-              productsHeart={heartProducts}
-              onAddHeart={handleAddHeartProducts}
-              onDeleteHeart={handleDeleteHeartProducts}
-              productsCompare={compareIphones}
-              onAddCompare={handleAddCompareIphone}
-              onDeleteCompare={handleDeleteCompareIphone}
+              productsCart={cartProducts}              
+              productsHeart={heartProducts}              
+              productsCompare={compareProducts}
               countCart={countCart}
               countHeart={countHeart}
-              countItemCompare={countItemCompare}
+              countCompare={countCompare}
               products={currentItems}
               linkName={linkName}
               handleNext={handleNext}

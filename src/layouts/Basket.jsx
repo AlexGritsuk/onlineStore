@@ -3,11 +3,11 @@ import root from "../style/root__style.module.css";
 import BasketList from "../page/basketList/basketList";
 import BasketDetails from "../page/basketDetails/basketDetails";
 import style from "../style/basket.module.css";
-import { useCart } from "../hooks/useCart";
+import { useSelector } from "react-redux";
+import { getCountCart } from "../store/cart";
 
-const Basket = () => {
-  const { countCart } = useCart(); 
-
+const Basket = () => {  
+  const countCart = useSelector(getCountCart())
   return (
     <div className={root.container}>
       <div style={{ display: "flex" }}>
@@ -18,7 +18,6 @@ const Basket = () => {
         <div className={style.basket__info}>
           <BasketList />
         </div>
-
         <div className={style.basket__details}>
           <BasketDetails />
         </div>

@@ -13,14 +13,13 @@ import { FaRegHeart } from "react-icons/fa";
 import MenuLink from "./menuLink/MenuLink";
 import CountItem from "../common/countCart/countItem";
 import { IoIosGitCompare } from "react-icons/io";
-import { useCompare } from "../../hooks/useCompare";
-import { useCart } from "../../hooks/useCart";
-import { useHeart } from "../../hooks/useHeart";
 import { MdManageSearch } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { useClickOutSide } from "../../hooks/useClickOutSide";
 import { useSelector } from "react-redux";
 import { getCountCart } from "../../store/cart";
+import { getCountHeart } from "../../store/heart";
+import { getCountCompare } from "../../store/compare";
 
 const NavBar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -32,12 +31,11 @@ const NavBar = () => {
   const widthHeight = {
     width: "25px",
     height: "25px",
-  };
+  }; 
 
-  const { countItemCompare } = useCompare();
-  
-  const { countHeart } = useHeart();
-  const countCart = useSelector(getCountCart())
+  const countCart = useSelector(getCountCart());
+  const countHeart = useSelector(getCountHeart())
+  const countCompare = useSelector(getCountCompare())
 
   const icons = {
     cart: {
@@ -141,7 +139,7 @@ const NavBar = () => {
               <li>
                 <Link to="/Comparison">
                   <div className={style.navBar__cart_relative}>
-                    <CountItem count={countItemCompare} />
+                    <CountItem count={countCompare} />
                     <MenuLink items={icons.comparison} />
                   </div>
                 </Link>

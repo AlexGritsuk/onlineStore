@@ -2,12 +2,12 @@ import React from "react";
 import root from "../../src/style/root__style.module.css";
 import HeartList from "../page/heartList/heartList";
 import style from "../../src/style/heart.module.css";
-import { useHeart } from "../hooks/useHeart";
+import { useSelector } from "react-redux";
+import { getCountHeart } from "../store/heart";
 
 
 const Heart = () => {
-  const { countHeart } = useHeart();
-  console.log(countHeart);
+  const countHeart = useSelector(getCountHeart())
   return (
     <div className={root.container}>
       <div style={{ display: "flex" }}>

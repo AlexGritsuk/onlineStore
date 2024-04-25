@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
 import API from "../../api";
-import { useCart } from "../../hooks/useCart";
-import { useHeart } from "../../hooks/useHeart";
-import { useCompare } from "../../hooks/useCompare";
 import root from "../../style/root__style.module.css";
 import style from "./macBookPage.module.css";
 import GroupList from "../../components/common/groupList/groupList";
@@ -17,6 +14,9 @@ import {
   getSeriesMacBooks,
   getSeriesMacBooksLoadingStatus,
 } from "../../store/macBooks";
+import { getCart, getCountCart } from "../../store/cart";
+import { getCountHeart, getHeart } from "../../store/heart";
+import { getCompare, getCountCompare } from "../../store/compare";
 
 const MacBooksPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -31,6 +31,9 @@ const MacBooksPage = () => {
 
   const colorMacBooks = useSelector(getColorMacBooks());
   const isLoadingColorMacBooks = useSelector(getColorMacBooksLoadingStatus());
+
+  const cartProducts = useSelector(getCart());
+  const countCart = useSelector(getCountCart()); 
 
   useEffect(() => {
     API.macBooks.fetchAll().then((data) => setCurrentItems(data));
@@ -74,26 +77,11 @@ const MacBooksPage = () => {
     });
   };
 
-  const {
-    cartProducts,
-    countCart,
-    handleAddCartProducts,
-    handleDeleteCartProducts,
-  } = useCart();
+  const heartProducts = useSelector(getHeart());
+  const countHeart = useSelector(getCountHeart());  
 
-  const {
-    heartProducts,
-    countHeart,
-    handleAddHeartProducts,
-    handleDeleteHeartProducts,
-  } = useHeart();
-
-  const {
-    compareIphones,
-    countItemCompare,
-    handleAddCompareIphone,
-    handleDeleteCompareIphone,
-  } = useCompare();
+  const compareProducts = useSelector(getCompare());
+  const countCompare = useSelector(getCountCompare());
 
   const linkName = "macBooks";
 
@@ -123,18 +111,12 @@ const MacBooksPage = () => {
         <div className={style.macBookPage__macBookGrid}>
           {currentItems ? (
             <ProductsGrid
-              productsCart={cartProducts}
-              onAddCart={handleAddCartProducts}
-              onDeleteCart={handleDeleteCartProducts}
-              productsHeart={heartProducts}
-              onAddHeart={handleAddHeartProducts}
-              onDeleteHeart={handleDeleteHeartProducts}
-              productsCompare={compareIphones}
-              onAddCompare={handleAddCompareIphone}
-              onDeleteCompare={handleDeleteCompareIphone}
+              productsCart={cartProducts}              
+              productsHeart={heartProducts}            
+              productsCompare={compareProducts}              
               countCart={countCart}
               countHeart={countHeart}
-              countItemCompare={countItemCompare}
+              countCompare={countCompare}
               products={currentItems}
               linkName={linkName}
               handleNext={handleNext}
