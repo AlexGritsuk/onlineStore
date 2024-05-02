@@ -21,13 +21,17 @@ const cartSlice = createSlice({
     }
 });
 
+
+
 const { reducer: cartReducer, actions } = cartSlice;
 const { basketAdd, basketRemove } = actions;
 
-export const getCart = () => (state) => state.cart.entities;
+export const getCart = () => (state) => {   
+   return state.cart.entities
+};
 
-export const gethandleAddCartProducts = (product) => (dispatch) => {
-    dispatch(basketAdd(product));
+export const gethandleAddCartProducts = (product) => (dispatch, state) => {
+    dispatch(basketAdd(product));   
 };
 
 export const gethandleDeleteCartProducts = (id) => (dispatch) => {    

@@ -24,8 +24,7 @@ const heartSlice = createSlice({
 const { reducer: heartReducer, actions } = heartSlice;
 const { heartAdd, heartRemove } = actions;
 
-export const getHeart = () => (state) => {
-    console.log(state.heart.entities);
+export const getHeart = () => (state) => {    
    return state.heart.entities;
 };
 
@@ -38,8 +37,7 @@ export const handleDeleteHeart = (id) => (dispatch) => {
 };
 
 export const getCountHeart = () => (state) => {
-    if (state.heart.entities) {
-        console.log(state.heart.entities);
+    if (state.heart.entities) {        
         return state.heart.entities.length;
     };
     return 0;

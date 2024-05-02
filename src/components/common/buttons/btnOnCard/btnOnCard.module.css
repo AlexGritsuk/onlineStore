@@ -15,9 +15,28 @@
 }
 
 .btnOnCard__wrapper {
-  padding-left: 5px;
+  padding-left: 5px; 
 }
 
 .btnOnCard__wrapper:first-child{
   padding-left: 0px;
+}
+
+
+@media (max-width: 1068px) {
+  .btnOnCard,
+.btnOnCard_in { 
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 3px;  
+}
+}
+
+@media (max-width: 967px) {
+.btnOnCard,
+.btnOnCard_in { 
+  font-size: 10px;
+  padding: 8px;
+  border-radius: 2px;  
+}
 }

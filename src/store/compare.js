@@ -24,8 +24,7 @@ const compareSlice = createSlice({
 const { reducer: compareReducer, actions } = compareSlice;
 const { compareAdd, compareRemove } = actions;
 
-export const getCompare = () => (state) => {
-    console.log(state.compare.entities);
+export const getCompare = () => (state) => {    
     return state.compare.entities;
 };
 

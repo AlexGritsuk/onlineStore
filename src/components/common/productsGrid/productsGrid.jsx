@@ -13,7 +13,7 @@ import _ from "lodash";
 
 const ProductsGrid = ({
   productsCart,     
-  productsHeart,  
+  productsHeart,   
   productsCompare, 
   linkName,
   products,

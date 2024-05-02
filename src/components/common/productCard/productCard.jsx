@@ -41,7 +41,7 @@ const ProductCard = ({
       currentProduct: product,      
       beforeLogo: <IoGitCompare />,
       afterLogo: <IoIosGitCompare />,
-    },
+    }, 
   };
 
   return (
