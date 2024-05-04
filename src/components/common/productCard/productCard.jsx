@@ -27,7 +27,7 @@ const ProductCard = ({
       currentProduct: product,           
       beforeLogo: <PiShoppingCartFill />,
       afterLogo: <PiShoppingCartBold />,
-    },
+    }, 
     heart: {
       products: heartProduct,
       id: product._id,
