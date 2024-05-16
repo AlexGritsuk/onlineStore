@@ -24,14 +24,9 @@ import { getCountCompare } from "../../store/compare";
 const NavBar = () => {
   const [isOpen, setOpen] = useState(false);
   const menuRef = useRef(null);
-  useClickOutSide(menuRef, () => {
+  useClickOutSide(menuRef, () => { 
     if (isOpen) setTimeout(() => setOpen(false), 150);
-  });
-
-  const widthHeight = {
-    width: "25px",
-    height: "25px",
-  }; 
+  }); 
 
   const countCart = useSelector(getCountCart());
   const countHeart = useSelector(getCountHeart())
@@ -39,19 +34,19 @@ const NavBar = () => {
 
   const icons = {
     cart: {
-      icon: <SlBasket style={widthHeight} />,
+      icon: <SlBasket className={style.navBar__icon} />,
       name: "Корзина",
     },
     login: {
-      icon: <CiLogin style={widthHeight} />,
+      icon: <CiLogin className={style.navBar__icon} />,
       name: "Вход",
     },
     iPhones: {
-      icon: <MdOutlinePhoneIphone style={widthHeight} />,
+      icon: <MdOutlinePhoneIphone className={style.navBar__icon} />,
       name: "iPhones",
     },
     airPods: {
-      icon: <SlEarphones style={widthHeight} />,
+      icon: <SlEarphones className={style.navBar__icon} />,
       name: "AirPods",
     },
     macBook: {
@@ -59,15 +54,15 @@ const NavBar = () => {
       name: "MacBooks",
     },
     main: {
-      icon: <ImAppleinc style={widthHeight} />,
+      icon: <ImAppleinc className={style.navBar__icon} />,
       name: "AppleStore",
     },
     heart: {
-      icon: <FaRegHeart style={widthHeight} />,
+      icon: <FaRegHeart className={style.navBar__icon} />,
       name: "Избранное",
     },
     comparison: {
-      icon: <IoIosGitCompare style={widthHeight} />,
+      icon: <IoIosGitCompare className={style.navBar__icon} />,
       name: "Сравнение",
     },
   };
@@ -76,8 +71,8 @@ const NavBar = () => {
     <div className={root.container}>
       <nav className={style.navBar}>
         <div className={style.navBar__inner}>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <div>
+          <div className={style.navBar__main}>
+            <div className={style.navBar__emblem}>
               <ul>
                 <li>
                   <Link to="/">
@@ -87,7 +82,7 @@ const NavBar = () => {
               </ul>
             </div>
 
-            <div style={{ marginLeft: "20px" }}>
+            <div className={style.navBar__catalog}>
               <button
                 className={style.menu__button}
                 onClick={() => setOpen(!isOpen)}
@@ -134,7 +129,7 @@ const NavBar = () => {
             </div>
           </div>
 
-          <div>
+          <div className={style.navBar__menu}>
             <ul className={style.navBar__ul}>
               <li>
                 <Link to="/Comparison">

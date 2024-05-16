@@ -82,3 +82,15 @@ nav {
   justify-content: center;
   align-items: center;
 }
+
+@media (max-width: 660px) {
+  nav {
+    margin: 0px;
+  }
+}
+
+@media (max-width: 740px) {
+  nav {
+    margin: 0px;
+  }
+}

@@ -32,9 +32,7 @@ const ProductsGrid = ({
   //   if (window.innerWidth <= 867) {
   //     setCatalog(false);
   //   }
-  // });
-
-  console.log(window.innerWidth);
+  // });  
 
   const handleCatalogGrid = () => {
     setCatalog((catalog) => (catalog = true));
@@ -80,11 +78,11 @@ const ProductsGrid = ({
           <SortMenu
             onSort={handleSort}
             currentSort={sortBy}
-            name={"Рейтинг"}
+            name={"Рейтинг"} 
             sort={"rating"}
           />
         </div>
-        <div style={{ marginLeft: "25px" }}>
+        <div className={style.productsGrid__searchMenu}>
           <SearchMenu
             type={"text"}
             name={"searchQuery"}

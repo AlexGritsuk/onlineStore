@@ -12,5 +12,27 @@
 }
 
 .menuLink__icons {
-  margin-bottom: 10px;
+  margin-bottom: 10px; 
+}
+
+.menuLink__name {
+  font-size: 20px;
+}
+
+
+@media (max-width: 740px) {
+  .menuLink__name {
+    font-size: 16px;
+  }
+}
+
+
+@media (max-width: 660px) {
+  .menuLink {    
+    width: 85px;    
+  }
+
+  .menuLink__name {
+    font-size: 15px;
+  }
 }

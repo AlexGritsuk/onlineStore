@@ -12,3 +12,11 @@
   float: right;
   width: 60%;
 }
+
+
+@media (max-width: 660px) {
+  .iphonePage__iphoneGrid {
+    float: right;
+    width: 340px;
+  }
+}
