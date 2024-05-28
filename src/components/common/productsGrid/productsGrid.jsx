@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ProductCard from "../productCard/productCard";
 import { useState } from "react";
 import { pagesArray, paginate } from "../../../utils/paginate";
@@ -27,12 +27,6 @@ const ProductsGrid = ({
   const [catalog, setCatalog] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const pageSize = 6;
-
-  // useEffect(() => {
-  //   if (window.innerWidth <= 867) {
-  //     setCatalog(false);
-  //   }
-  // });  
 
   const handleCatalogGrid = () => {
     setCatalog((catalog) => (catalog = true));
@@ -64,9 +58,9 @@ const ProductsGrid = ({
 
   let pages = pagesArray(pagesCount);
   return (
-    <div>
-      <div className={style.productsGrid__sortMenu}>
-        <div>
+    <div className={style.product}>
+      <div className={style.products__sortMenu}>
+        <div className={style.products__sortMenu_item}>
           <SortMenu
             onSort={handleSort}
             currentSort={sortBy}
@@ -74,15 +68,15 @@ const ProductsGrid = ({
             sort={"price"}
           />
         </div>
-        <div style={{ marginLeft: "15px" }}>
+        <div className={style.products__sortMenu_item}>
           <SortMenu
             onSort={handleSort}
             currentSort={sortBy}
-            name={"Рейтинг"} 
+            name={"Рейтинг"}
             sort={"rating"}
           />
         </div>
-        <div className={style.productsGrid__searchMenu}>
+        <div  className={style.products__sortMenu_item}>
           <SearchMenu
             type={"text"}
             name={"searchQuery"}
@@ -91,21 +85,23 @@ const ProductsGrid = ({
             value={searchQuery}
           />
         </div>
-        <ul className={style.productsGrid__catalog}>
-          <li>
-            <a onClick={() => handleCatalogGrid()} role="button">
-              {catalog ? <IoGrid /> : <IoGridOutline />}
-            </a>
-          </li>
-          <li>
-            <a onClick={() => handleCatalogLine()} role="button">
-              {catalog ? <PiListLight /> : <PiListFill />}
-            </a>
-          </li>
-        </ul>
+        <div  className={style.products__sortMenu_item}>
+          <ul className={style.products__catalog}>
+            <li>
+              <a onClick={() => handleCatalogGrid()} role="button">
+                {catalog ? <IoGrid /> : <IoGridOutline />}
+              </a>
+            </li>
+            <li>
+              <a onClick={() => handleCatalogLine()} role="button">
+                {catalog ? <PiListLight /> : <PiListFill />}
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <div className={catalog ? style.productsGrid__item : ""}>
+      <div className={catalog ? style.products__grid : style.products__line}>
         {userCrop.map((products) => (
           <ProductCard
             key={products._id}
@@ -118,7 +114,7 @@ const ProductsGrid = ({
           />
         ))}
       </div>
-      <div className={style.productsGrid__pagin}>
+      <div className={style.products__pagin}>
         <Pagination
           pages={pages}
           onPageChange={handlePageChange}

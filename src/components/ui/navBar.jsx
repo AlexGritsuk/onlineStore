@@ -6,7 +6,6 @@ import { SlBasket } from "react-icons/sl";
 import { CiLogin } from "react-icons/ci";
 import { MdOutlinePhoneIphone } from "react-icons/md";
 import { RiMacbookLine } from "react-icons/ri";
-import { IoWatchOutline } from "react-icons/io5";
 import { SlEarphones } from "react-icons/sl";
 import { ImAppleinc } from "react-icons/im";
 import { FaRegHeart } from "react-icons/fa";
@@ -20,6 +19,7 @@ import { useSelector } from "react-redux";
 import { getCountCart } from "../../store/cart";
 import { getCountHeart } from "../../store/heart";
 import { getCountCompare } from "../../store/compare";
+import Catalog from "./catalog/catalog";
 
 const NavBar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -94,38 +94,7 @@ const NavBar = () => {
                 )}
                 <span>Каталог</span>
               </button>
-
-              <nav
-                className={style.menu + " " + (isOpen ? style.active : "")}
-                ref={menuRef}
-              >
-                <ul className={style.menu__list}>
-                  <Link to="/Iphones">
-                    <li className={style.menu__item}>
-                      <MdOutlinePhoneIphone style={{ marginRight: "10px" }} />
-                      <span>iPhones</span>
-                    </li>
-                  </Link>
-                  <Link to="/Airpods">
-                    <li className={style.menu__item}>
-                      <SlEarphones style={{ marginRight: "10px" }} />
-                      <span>AirPods</span>
-                    </li>
-                  </Link>
-                  <Link to="/MacBooks">
-                    <li className={style.menu__item}>
-                      <RiMacbookLine style={{ marginRight: "10px" }} />
-                      <span>MacBooks</span>
-                    </li>
-                  </Link>
-                  <Link to="/Airpods">
-                    <li className={style.menu__item}>
-                      <IoWatchOutline style={{ marginRight: "10px" }} />
-                      <span>Apple Watch</span>
-                    </li>
-                  </Link>
-                </ul>
-              </nav>
+              <Catalog isOpen={isOpen} menuRef={menuRef}/>
             </div>
           </div>
 

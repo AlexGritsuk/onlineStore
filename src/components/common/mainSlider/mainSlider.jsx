@@ -14,7 +14,7 @@ const MainSlider = ({ images }) => {
   const handleClick = () => {
     setMouseMoved(true);
     if (mouseMoved) history.push("/Iphones");
-  };
+  }; 
 
   
 

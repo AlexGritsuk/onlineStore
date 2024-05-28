@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 15px;
 
   width: 200px;
   height: 300px;
@@ -22,6 +21,8 @@
   display: flex;
   justify-content: left;
   align-items: center;
+
+  width: fit-content;
 
   position: absolute;
   bottom: 70px;
@@ -46,6 +47,7 @@
 
 .productCard__buttons_grid {
   display: flex;
+  width: fit-content;
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -136,43 +138,37 @@
 
 @media (max-width: 967px) {
   .productCard__grid {
-    width: 140px;
-    height: 220px;
+    width: 180px;
+    height: 280px;
   }
 
   .productCard__img {
-    width: 80px;
-    height: 100px;
+    width: 100px;
+    height: 120px;
   }
 
   .productCard__grid_price {
     font-size: 13px;
+    bottom: 60px;
   }
 
   .productCard__name {
     font-size: 12px;
+    margin-top: 10px;
   }
   .productCard__price {
     font-size: 12px;
-  }
-
-  .productCard__grid_price {
-    bottom: 52px;
   }
 }
 
 @media (max-width: 867px) {
   .productCard__grid {
-    display: flex;
     flex-direction: initial;
     align-items: center;
-
-    margin: 15px;
     padding: 15px;
     width: 95%;
-    min-width: inherit;
 
-    height: 200px;
+    height: 170px;
     box-shadow: 0px 0px 14px 6px rgba(1, 8, 37, 0.164);
     border-radius: 15px;
 
@@ -180,22 +176,15 @@
   }
 
   .productCard__grid_price {
-    display: flex;
     justify-content: right;
-
-    position: absolute;
-    bottom: 125px;
-    right: 20px;
+    bottom: 110px;
+    left: 85%;
     transform: translate(0, 0);
   }
 
   .productCard__buttons_grid {
-    display: flex;
-    position: absolute;
-    bottom: 70px;
-    right: -65px;
-    left: 90%;
-    z-index: 100;
+    bottom: 45px;
+    left: 83%;
   }
 
   .productCard__name {
@@ -207,61 +196,32 @@
 }
 
 @media (max-width: 740px) {
-  .productCard__grid {
-    height: 150px;
-  }
-  .productCard__name {
-    margin-left: 40px;
-  }
-
-  .productCard__buttons_grid {  
-    left: 86%;
-    width: 88px;
-    bottom: 40px;
-    
-  }
-
-  .productCard__grid_price {
-    bottom: 95px;
-    right: 30px;
-  }
 }
 
 @media (max-width: 660px) {
-
-  .card {
-    width: 340px;
-  }
-
-  .product_card {
-    width: 340px;
-  }
-
   .product_card__link {
     min-width: none;
-
     width: 200px;
   }
-  .productCard__grid {  
-
+  .productCard__grid {
   }
 
   .productCard__buttons_grid {
     left: 80%;
     right: 0;
-    bottom: 5px;
+    bottom: 18px;
     z-index: 100;
   }
 
   .productCard__name {
     position: absolute;
-    top: 20px;
+    top: 15px;
     left: 20%;
     z-index: 10;
   }
 
   .productCard__grid_price {
-    justify-content: end;
-    bottom: 65px;
+    bottom: 75px;
+    left: 80%;
   }
 }

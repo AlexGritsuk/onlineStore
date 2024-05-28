@@ -69,6 +69,8 @@ import iphone14ProWhite from "./images/iphones/14Pro/14ProWhite.png";
 import iphone14ProGold from "./images/iphones/14Pro/14ProGold.png";
 
 
+
+
 const simCard = {
     oneNanoSim: {
         _id: "67rdca3eeb6", name: "1 nano-SIM"

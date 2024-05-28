@@ -14,34 +14,34 @@ import BtnOnCardCompare from "../buttons/btnOnCard/BtnOnCardCompare";
 
 const ProductCard = ({
   catalog,
-  cartProduct, 
-  heartProduct,  
+  cartProduct,
+  heartProduct,
   compareProduct,
-  linkName, 
+  linkName,
   ...product
 }) => {
   const btnCard = {
     cart: {
       products: cartProduct,
       id: product._id,
-      currentProduct: product,           
+      currentProduct: product,
       beforeLogo: <PiShoppingCartFill />,
       afterLogo: <PiShoppingCartBold />,
-    }, 
+    },
     heart: {
       products: heartProduct,
       id: product._id,
-      currentProduct: product,      
+      currentProduct: product,
       beforeLogo: <FaHeart />,
       afterLogo: <FaRegHeart />,
     },
     compare: {
       products: compareProduct,
       id: product._id,
-      currentProduct: product,      
+      currentProduct: product,
       beforeLogo: <IoGitCompare />,
       afterLogo: <IoIosGitCompare />,
-    }, 
+    },
   };
 
   return (

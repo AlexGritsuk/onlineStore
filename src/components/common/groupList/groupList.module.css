@@ -1,6 +1,5 @@
-.groupList {
-  margin-top: 15px;
-  padding: 25px;
+.groupList { 
+  padding-left: 25px;
 }
 
 .groupList__item,
@@ -34,6 +33,20 @@
 .groupList__btn button:hover {
   background-color: var(--blue-colorHover);
 }
+
+@media (max-width: 740px) {
+  .groupList__item,
+  .groupList__item__active {      
+    font-size: 18px;
+  }
+
+
+  h3 {
+    font-size: 22px;
+  }
+
+}
+
 
 @media (max-width: 660px) {
   .groupList__item,

@@ -1,50 +1,80 @@
-.productsGrid__item {
+.product {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-.productsGrid__catalog {
+.products__sortMenu {
   display: flex;
-  justify-content: end;
-  margin-right: 15px;
+  justify-content: space-between;
+  align-items: center;  
+  margin-bottom: 15px;
+} 
+
+.products__sortMenu_item {
+  
 }
 
-.productsGrid__catalog > li {
-  margin-left: 10px;
-  cursor: pointer; 
-}
- 
-.productsGrid__pagin {
+
+.products__pagin {
   display: flex;
   justify-content: center;
 }
 
-.productsGrid__loading {
+.products__grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 25px;
+}
+
+.products__line {
+  display: flex;
+  flex-direction: column;
+}
+
+.products__catalog {
+  display: flex;
+  justify-content: space-between; 
+  width: 50px; 
+  margin-left: 10px;
+}
+
+.products__catalog > li {  
+  cursor: pointer; 
+}
+
+
+.products__loading {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 300px;
 }
 
-.productsGrid__sortMenu {
-  display: flex;
-  align-items: center;  
-  margin-bottom: 10px;
-} 
 
-.productsGrid__searchMenu {
+
+.products__searchMenu {
   margin-left: 25px;
 }
 
+
+
+
 @media(max-width: 867px) {
-  .productsGrid__catalog {
+  .products__catalog {
     display: none;
   }
-  .productsGrid__sortMenu > span {
+  .products__sortMenu > span {
     font-size: 10px;
   } 
 
-  .productsGrid__item {
+  .products__grid {      
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: none;
+    margin-bottom: 25px;
+  }
+
+  .products__item {
     display: block;
     flex-wrap: nowrap;
   }
@@ -54,18 +84,22 @@
 
 
 @media (max-width: 660px) {
-  .productsGrid__searchMenu {
+  .products__searchMenu {
     margin-left: 0px;
   }  
 
-  .productsGrid__sortMenu {
-    
-    max-width: 340px;
-    margin-left: 10px;
+  .products__sortMenu {    
+    justify-content: unset;
   } 
 
-  .productsGrid__item {
+  .products__item {
     max-width: 340px;
+  }
+
+  .products__pagin {
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
   }
 
 

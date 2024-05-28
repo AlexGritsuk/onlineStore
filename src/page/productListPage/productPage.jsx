@@ -28,7 +28,6 @@ const ProductPage = ({ product, push }) => {
     <div className={root.container}>
       <div>
         <h3>
-          {" "}
           {product.name.name} <span>{product.visualAppearance.name}</span>
         </h3>
       </div>

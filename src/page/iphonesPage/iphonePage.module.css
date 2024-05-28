@@ -1,18 +1,23 @@
 .iphonePage {
   display: flex;
-  margin-top: 40px;
+  justify-content: space-between;
+  margin-top: 30px;
 }
 
 .iphonePage__groupList {
-  float: left;
-  width: 40%;
+  
 }
 
 .iphonePage__iphoneGrid {
-  float: right;
-  width: 60%;
+  margin-right: 20px;
 }
 
+
+@media (max-width: 867px) {
+  .iphonePage__iphoneGrid {
+    margin-right: 0px;
+  }
+}
 
 @media (max-width: 660px) {
   .iphonePage__iphoneGrid {

@@ -8,6 +8,7 @@ import mainImg from "./fake.api/main.api";
 import macBooks from "./fake.api/makBook.api";
 import seriesMacBooks from "./fake.api/seriesMacBook.api";
 import visualAppearanceMacBook from "./fake.api/visualAppearanceMacBook.api";
+import catalogImg from "./fake.api/catalog.api";
 
 const API = {
     iphones,
@@ -20,6 +21,7 @@ const API = {
     visualAppearanceAirPods,
     visualAppearanceMacBook,
     mainImg,
+    catalogImg
 }
  
 export default API;

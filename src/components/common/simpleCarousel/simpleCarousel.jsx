@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import style from "./simpleCarousel.module.css";
+
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -52,7 +52,6 @@ const SimpleCarousel = ({ images }) => {
     prevArrow: <SamplePrevArrow />,
   };
 
-  console.log(images[2]);
 
   return (
     <Slider {...settings}>
