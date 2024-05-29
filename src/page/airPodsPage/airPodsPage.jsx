@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ProductsGrid from "../../components/common/productsGrid/productsGrid";
 import GroupList from "../../components/common/groupList/groupList";
 import root from "../../style/root__style.module.css";
-import style from "./airPodsPage.module.css";
+import style from "../iphonesPage/iphonePage.module.css";
 import API from "../../api";
 import Loading from "../../components/common/loading/loading";
 import { useSelector } from "react-redux";
@@ -94,13 +94,13 @@ const AirPodsPage = () => {
 
   const handleClearFilter = () => {
     setCurrentItems(product);
-    setSelectedItem(undefined);
+    setSelectedItem(undefined); 
   };
 
   return (
     <div className={root.container}>
-      <div className={style.airPodsPage}>
-        <div className={style.airPodsPage__groupList}>
+      <div className={style.iphonePage}>
+        <div className={style.iphonePage__groupList}>
           {!isLoading && !isLoadingColor && !isLoadingSeriesAirPods && (
             <GroupList
               chooseCategory={handleChooseCategory}
@@ -113,7 +113,7 @@ const AirPodsPage = () => {
             />
           )}
         </div>
-        <div className={style.airPodsPage__airPodsGrid}>
+        <div className={style.iphonePage__iphoneGrid}>
           {currentItems ? (
             <ProductsGrid
               productsCart={cartProducts}              

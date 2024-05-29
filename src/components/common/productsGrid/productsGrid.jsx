@@ -76,7 +76,7 @@ const ProductsGrid = ({
             sort={"rating"}
           />
         </div>
-        <div  className={style.products__sortMenu_item}>
+        <div className={style.products__sortMenu_item}>
           <SearchMenu
             type={"text"}
             name={"searchQuery"}
@@ -85,7 +85,7 @@ const ProductsGrid = ({
             value={searchQuery}
           />
         </div>
-        <div  className={style.products__sortMenu_item}>
+        <div className={style.products__sortMenu_item}>
           <ul className={style.products__catalog}>
             <li>
               <a onClick={() => handleCatalogGrid()} role="button">
@@ -100,6 +100,10 @@ const ProductsGrid = ({
           </ul>
         </div>
       </div>
+
+      {/* <div className={style.products__filter}>
+        <button>Фильтр</button>
+      </div> */}
 
       <div className={catalog ? style.products__grid : style.products__line}>
         {userCrop.map((products) => (

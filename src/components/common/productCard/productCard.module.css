@@ -225,3 +225,10 @@
     left: 80%;
   }
 }
+
+
+@media (max-width: 557px) {
+  .productCard__grid {    
+    width: 100%;    
+  }
+}

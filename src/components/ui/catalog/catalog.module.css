@@ -30,7 +30,7 @@
 }
 
 .catalog__list {
-  display: flex;
+  display: flex;  
   justify-content: center;
   margin: 0;
   width: 100%;
@@ -40,6 +40,7 @@
 
 .catalog__item {
   display: flex;
+  flex-direction: column;
   align-items: center;
   font-size: 20px;
   font-weight: 500;
@@ -51,6 +52,11 @@
 
 .catalog__item > img {
   width: 70px;
+  height: 75px;
+}
+
+.catalog__item > span {
+  margin-top: 15px;
 }
 
 .catalog__item:hover {

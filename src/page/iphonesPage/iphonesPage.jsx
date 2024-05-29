@@ -23,6 +23,9 @@ const IphonesPage = () => {
   const [currentItems, setCurrentItems] = useState();
   const [selectedItem, setSelectedItem] = useState();
 
+  const [filters, setFilters] = useState(true);
+  
+
   const product = useSelector(getIphones());
   const isLoading = useSelector(getIphonesLoadingStatus());
 
@@ -36,17 +39,14 @@ const IphonesPage = () => {
     API.iphones.fetchAll().then((data) => setCurrentItems(data));
   }, []);
 
- 
-
   const cartProducts = useSelector(getCart());
-  const countCart = useSelector(getCountCart()); 
-  
-  const heartProducts = useSelector(getHeart())
+  const countCart = useSelector(getCountCart());
+
+  const heartProducts = useSelector(getHeart());
   const countHeart = useSelector(getCountHeart());
-  
+
   const compareProducts = useSelector(getCompare());
-  const countCompare = useSelector(getCountCompare())
- 
+  const countCompare = useSelector(getCountCompare());
 
   const linkName = "Iphones";
 
@@ -93,11 +93,18 @@ const IphonesPage = () => {
     setSelectedItem(undefined);
   };
 
+  const handleFilterOn = () => {
+    setFilters((filters) => (filters = !filters));
+  };
+
   let groupName = "iPhone";
   return (
     <div className={root.container}>
       <div className={style.iphonePage}>
-        <div className={style.iphonePage__groupList}>
+        <div className={style.iphonePage__filter}>
+          <button onClick={() => handleFilterOn()}>Фильтр</button>
+        </div>
+        <div className={filters ? style.iphonePage__groupList : style.active}>
           {!isLoading && !isLoadingSeriesIphone && !isLoadingColorIphone && (
             <GroupList
               chooseCategory={handleChooseCategory}
@@ -107,15 +114,16 @@ const IphonesPage = () => {
               groupName={groupName}
               selectedItem={selectedItem}
               clearFilter={handleClearFilter}
+              filters={filters}
             />
           )}
         </div>
         <div className={style.iphonePage__iphoneGrid}>
           {currentItems ? (
             <ProductsGrid
-              productsCart={cartProducts}                    
-              productsHeart={heartProducts}              
-              productsCompare={compareProducts}              
+              productsCart={cartProducts}
+              productsHeart={heartProducts}
+              productsCompare={compareProducts}
               countCart={countCart}
               countHeart={countHeart}
               countCompare={countCompare}

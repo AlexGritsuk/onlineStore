@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import API from "../../api";
 import root from "../../style/root__style.module.css";
-import style from "./macBookPage.module.css";
+import style from "../iphonesPage/iphonePage.module.css";
 import GroupList from "../../components/common/groupList/groupList";
 import ProductsGrid from "../../components/common/productsGrid/productsGrid";
 import Loading from "../../components/common/loading/loading";
@@ -92,8 +92,8 @@ const MacBooksPage = () => {
 
   return (
     <div className={root.container}>
-      <div className={style.macBookPage}>
-        <div className={style.macBookPage__groupList}>
+      <div className={style.iphonePage}>
+        <div className={style.iphonePage__groupList}>
           {!isLoading &&
             !isLoadingSeriesMacBooks &&
             !isLoadingColorMacBooks && (
@@ -108,7 +108,7 @@ const MacBooksPage = () => {
               />
             )}
         </div>
-        <div className={style.macBookPage__macBookGrid}>
+        <div className={style.iphonePage__iphoneGrid}>
           {currentItems ? (
             <ProductsGrid
               productsCart={cartProducts}              
