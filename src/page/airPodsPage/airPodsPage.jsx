@@ -21,20 +21,18 @@ import { getCompare, getCountCompare } from "../../store/compare";
 const AirPodsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentItems, setCurrentItems] = useState();
+  const [selectedItem, setSelectedItem] = useState();
+  const [filters, setFilters] = useState(false);
 
   const product = useSelector(getAirPods());
   const isLoading = useSelector(getAirPodsLoadingStatus());
-
   const seriesAirPods = useSelector(getSeriesAirPods());
   const isLoadingSeriesAirPods = useSelector(getSeriesAirPodsLoadingStatus());
-
   const colorAirPods = useSelector(getColorAirPods());
   const isLoadingColor = useSelector(getColorAirPodsLoadingStatus());
 
-
-  const [selectedItem, setSelectedItem] = useState();
-
   
+
   useEffect(() => {
     API.airPods.fetchAll().then((data) => setCurrentItems(data));
   }, []);
@@ -76,48 +74,62 @@ const AirPodsPage = () => {
       }
       return prev - 1;
     });
-  }; 
-
-  
+  };
 
   const cartProducts = useSelector(getCart());
   const countCart = useSelector(getCountCart());
 
-  const heartProducts = useSelector(getHeart())
-  const countHeart = useSelector(getCountHeart());    
+  const heartProducts = useSelector(getHeart());
+  const countHeart = useSelector(getCountHeart());
 
-  const compareProducts = useSelector(getCompare())
-  const countCompare = useSelector(getCountCompare())
-
+  const compareProducts = useSelector(getCompare());
+  const countCompare = useSelector(getCountCompare());
 
   const linkName = "Airpods";
 
   const handleClearFilter = () => {
     setCurrentItems(product);
-    setSelectedItem(undefined); 
+    setSelectedItem(undefined);
+  };
+
+  const handleFilterOn = () => {
+    setFilters((filters) => (filters = !filters));
   };
 
   return (
     <div className={root.container}>
       <div className={style.iphonePage}>
-        <div className={style.iphonePage__groupList}>
-          {!isLoading && !isLoadingColor && !isLoadingSeriesAirPods && (
-            <GroupList
-              chooseCategory={handleChooseCategory}
-              chooseCategoryColor={handleChooseCategoryColor}
-              items={seriesAirPods}
-              itemsColor={colorAirPods}
-              groupName={linkName}
-              selectedItem={selectedItem}
-              clearFilter={handleClearFilter}
-            />
-          )}
+        <div className={style.iphonePage__accordion}>
+          <div className={style.iphonePage__filter}>
+            <button onClick={() => handleFilterOn()}>Фильтр</button>
+          </div>
+          <div className={style.iphonePage__groupList_container}>
+            <div
+              className={
+                filters
+                  ? style.iphonePage__groupList
+                  : style.iphonePage__groupList + " " + style.active
+              }
+            >
+              {!isLoading && !isLoadingColor && !isLoadingSeriesAirPods && (
+                <GroupList
+                  chooseCategory={handleChooseCategory}
+                  chooseCategoryColor={handleChooseCategoryColor}
+                  items={seriesAirPods}
+                  itemsColor={colorAirPods}
+                  groupName={linkName}
+                  selectedItem={selectedItem}
+                  clearFilter={handleClearFilter}
+                />
+              )}
+            </div>
+          </div>
         </div>
         <div className={style.iphonePage__iphoneGrid}>
           {currentItems ? (
             <ProductsGrid
-              productsCart={cartProducts}              
-              productsHeart={heartProducts}              
+              productsCart={cartProducts}
+              productsHeart={heartProducts}
               productsCompare={compareProducts}
               countCart={countCart}
               countHeart={countHeart}

@@ -2,7 +2,7 @@ import React from "react";
 import { IoIosGitCompare } from "react-icons/io";
 import style from "./compareEmpty.module.css";
 
-const CompareEmpty = () => {
+const CompareEmpty = () => { 
   return (
     <div className={style.compareEmpty}>
       <h3 style={{ marginRight: "15px" }}>

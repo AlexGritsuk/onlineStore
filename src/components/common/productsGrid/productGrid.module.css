@@ -131,4 +131,7 @@
   .products__filter { 
     display: flex;
   }
+  .products__pagin {    
+    margin-right: 0;
+  }
 }

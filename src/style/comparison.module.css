@@ -1,0 +1,25 @@
+.comparison {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+
+.comparison__head > h2 {
+    margin-left: 8px; 
+    color: #8e8e93;
+}
+.comparison__head {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 507px) {
+    .comparison h1 {
+        font-size: 30px;
+    }
+
+    .comparison h2 {
+        font-size: 23px;
+    }
+}

@@ -16,8 +16,8 @@ const ProductHeart = ({
   const compareProducts = useSelector(getCompare());  
   return (
     <div className={style.productHeart__wrapper}>
-      <div className={style.productHeart}>
-        <div>
+      <div className={style.productHeart}> 
+        <div className={style.productHeart__image}>
           <img
             className={root.img + " " + style.productHeart__img}
             src={product.img[0]}
@@ -25,29 +25,35 @@ const ProductHeart = ({
           />
         </div>
 
-        <div style={{ width: "260px" }}>
-          <div className={style.productHeart__name}>
-            <div>{product.name.name}</div>
-            <div>{product.memories?.memory}</div>
-          </div>
-          <div>{product.visualAppearance.name}</div>
-          <div className={style.productHeart__btns}>
-            <BtnCompare 
-              products={compareProducts}
-              id={product._id}
-              currentProduct={product}              
-            />
-            <BtnDeleteHeart id={product._id} />
-          </div>
-        </div>
+        <div className={style.productHeart__other}>
 
-        <div>
-          <div className={style.productHeart__price}>{product.price} ₽</div>
-          <BtnCart
-            products={cartProducts}
-            id={product._id}
-            currentProduct={product}            
-          />
+          <div className={style.productHeart__info1}>
+            <div className={style.productHeart__name}>
+              <div>{product.name.name}</div>
+              <div>{product.memories?.memory}</div>
+            </div>
+            <div>{product.visualAppearance.name}</div>
+            <div className={style.productHeart__btns}>
+              <BtnCompare 
+                products={compareProducts}
+                id={product._id}
+                currentProduct={product}              
+              />
+              <BtnDeleteHeart id={product._id} />
+            </div>
+          </div>
+          
+          <div className={style.productHeart__info2}>
+            <div className={style.productHeart__price}>{product.price} <span>₽</span></div>
+            <div className={style.productHeart__btnCart}>
+            <BtnCart
+              products={cartProducts}
+              id={product._id}
+              currentProduct={product}            
+            />
+            </div>            
+          </div>
+
         </div>
       </div>
     </div>

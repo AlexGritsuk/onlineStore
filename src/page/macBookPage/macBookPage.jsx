@@ -22,6 +22,7 @@ const MacBooksPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentItems, setCurrentItems] = useState();
   const [selectedItem, setSelectedItem] = useState();
+  const [filters, setFilters] = useState(false);
 
   const product = useSelector(getMacBooks());
   const isLoading = useSelector(getMacBooksLoadingStatus());
@@ -33,7 +34,7 @@ const MacBooksPage = () => {
   const isLoadingColorMacBooks = useSelector(getColorMacBooksLoadingStatus());
 
   const cartProducts = useSelector(getCart());
-  const countCart = useSelector(getCountCart()); 
+  const countCart = useSelector(getCountCart());
 
   useEffect(() => {
     API.macBooks.fetchAll().then((data) => setCurrentItems(data));
@@ -78,7 +79,7 @@ const MacBooksPage = () => {
   };
 
   const heartProducts = useSelector(getHeart());
-  const countHeart = useSelector(getCountHeart());  
+  const countHeart = useSelector(getCountHeart());
 
   const compareProducts = useSelector(getCompare());
   const countCompare = useSelector(getCountCompare());
@@ -90,30 +91,47 @@ const MacBooksPage = () => {
     setSelectedItem(undefined);
   };
 
+  const handleFilterOn = () => {
+    setFilters((filters) => (filters = !filters));
+  };
+
   return (
     <div className={root.container}>
       <div className={style.iphonePage}>
-        <div className={style.iphonePage__groupList}>
-          {!isLoading &&
-            !isLoadingSeriesMacBooks &&
-            !isLoadingColorMacBooks && (
-              <GroupList
-                chooseCategory={handleChooseCategory}
-                chooseCategoryColor={handleChooseCategoryColor}
-                items={seriesMacBooks}
-                itemsColor={colorMacBooks}
-                groupName={linkName}
-                selectedItem={selectedItem}
-                clearFilter={handleClearFilter}
-              />
-            )}
+        <div className={style.iphonePage__accordion}>
+          <div className={style.iphonePage__filter}>
+            <button onClick={() => handleFilterOn()}>Фильтр</button>
+          </div>
+          <div className={style.iphonePage__groupList_container}>
+            <div
+              className={
+                filters
+                  ? style.iphonePage__groupList
+                  : style.iphonePage__groupList + " " + style.active
+              }
+            >
+              {!isLoading &&
+                !isLoadingSeriesMacBooks &&
+                !isLoadingColorMacBooks && (
+                  <GroupList
+                    chooseCategory={handleChooseCategory}
+                    chooseCategoryColor={handleChooseCategoryColor}
+                    items={seriesMacBooks}
+                    itemsColor={colorMacBooks}
+                    groupName={linkName}
+                    selectedItem={selectedItem}
+                    clearFilter={handleClearFilter}
+                  />
+                )}
+            </div>
+          </div>
         </div>
         <div className={style.iphonePage__iphoneGrid}>
           {currentItems ? (
             <ProductsGrid
-              productsCart={cartProducts}              
-              productsHeart={heartProducts}            
-              productsCompare={compareProducts}              
+              productsCart={cartProducts}
+              productsHeart={heartProducts}
+              productsCompare={compareProducts}
               countCart={countCart}
               countHeart={countHeart}
               countCompare={countCompare}

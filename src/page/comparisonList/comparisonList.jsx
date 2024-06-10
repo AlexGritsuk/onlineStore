@@ -5,7 +5,7 @@ import ProductCompare from "./productCompare";
 import AddCompareProduct from "../../components/common/addCompareProduct/addCompareProduct";
 import { useSelector } from "react-redux";
 import { getCompare } from "../../store/compare";
-
+ 
 const ComparisonList = () => {  
   const compareProducts = useSelector(getCompare()) 
   if (compareProducts.length > 0) {

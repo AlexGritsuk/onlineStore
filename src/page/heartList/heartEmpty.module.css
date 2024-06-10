@@ -1,0 +1,12 @@
+.heartEmpty {
+    display: flex;
+    flex-direction: column;
+}
+
+.heartEmpty > h2 {
+    margin-bottom: 20px;
+}
+
+.heartEmpty > h2 {
+
+}

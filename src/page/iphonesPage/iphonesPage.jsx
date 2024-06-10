@@ -23,8 +23,7 @@ const IphonesPage = () => {
   const [currentItems, setCurrentItems] = useState();
   const [selectedItem, setSelectedItem] = useState();
 
-  const [filters, setFilters] = useState(true);
-  
+  const [filters, setFilters] = useState(false);
 
   const product = useSelector(getIphones());
   const isLoading = useSelector(getIphonesLoadingStatus());
@@ -101,22 +100,34 @@ const IphonesPage = () => {
   return (
     <div className={root.container}>
       <div className={style.iphonePage}>
-        <div className={style.iphonePage__filter}>
-          <button onClick={() => handleFilterOn()}>Фильтр</button>
-        </div>
-        <div className={filters ? style.iphonePage__groupList : style.active}>
-          {!isLoading && !isLoadingSeriesIphone && !isLoadingColorIphone && (
-            <GroupList
-              chooseCategory={handleChooseCategory}
-              chooseCategoryColor={handleChooseCategoryColor}
-              items={seriesIphone}
-              itemsColor={colorIphone}
-              groupName={groupName}
-              selectedItem={selectedItem}
-              clearFilter={handleClearFilter}
-              filters={filters}
-            />
-          )}
+        <div className={style.iphonePage__accordion}>
+          <div className={style.iphonePage__filter}>
+            <button onClick={() => handleFilterOn()}>Фильтр</button>
+          </div>
+          <div className={style.iphonePage__groupList_container}>
+            <div
+              className={
+                filters
+                  ? style.iphonePage__groupList
+                  : style.iphonePage__groupList + " " + style.active
+              }
+            >
+              {!isLoading &&
+                !isLoadingSeriesIphone &&
+                !isLoadingColorIphone && (
+                  <GroupList
+                    chooseCategory={handleChooseCategory}
+                    chooseCategoryColor={handleChooseCategoryColor}
+                    items={seriesIphone}
+                    itemsColor={colorIphone}
+                    groupName={groupName}
+                    selectedItem={selectedItem}
+                    clearFilter={handleClearFilter}
+                    filters={filters}
+                  />
+                )}
+            </div>
+          </div>
         </div>
         <div className={style.iphonePage__iphoneGrid}>
           {currentItems ? (

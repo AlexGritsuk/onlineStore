@@ -9,13 +9,13 @@ import { gethandleAddCartProducts, gethandleDeleteCartProducts } from "../../../
 const BtnCart = ({ products, id, currentProduct }) => {
   const dispatch = useDispatch();
   return (
-    <div> 
+    <div className={style.btnCart__wrapper}> 
       {!isHave(products, id) ? (
         <button
           onClick={() => dispatch(gethandleAddCartProducts(currentProduct))}
           className={style.btn + " " + style.btnCart}
         >
-          <PiShoppingCartBold style={{ width: "20px", height: "20px" }} /> В
+          <PiShoppingCartBold className={style.btnCart__icon} /> В
           корзину
         </button>
       ) : (
@@ -23,7 +23,7 @@ const BtnCart = ({ products, id, currentProduct }) => {
           onClick={() => dispatch(gethandleDeleteCartProducts(id))}
           className={style.btnCart + " " + style.btnCart__in}
         >
-          <PiShoppingCartBold style={{ width: "20px", height: "20px" }} /> В
+          <PiShoppingCartBold className={style.btnCart__icon} /> В
           корзине
         </button>
       )}

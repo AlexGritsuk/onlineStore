@@ -65,3 +65,19 @@
   cursor: pointer;
   color: var(--danger-color);
 }
+
+@media (max-width: 507px) {  
+  .catalog {
+    top: 95px;
+    padding: 0;
+  }
+  .catalog__list {
+    display: block;
+    
+  }
+
+  .catalog__item > img {
+    width: 65px;
+    height: 70px;
+  }
+}

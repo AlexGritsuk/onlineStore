@@ -19,3 +19,21 @@
 .btnCart__in {
   background-color: var(--danger-color);
 }
+
+.btnCart__icon {
+  width: 20px;
+  height: 20px;
+}
+
+
+@media (max-width: 400px) {
+.btnCart {
+  font-size: 13px;
+  width: 105px;
+}
+
+.btnCart__icon {
+  width: 18px;
+  height: 18px;
+}
+}

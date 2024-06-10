@@ -95,10 +95,7 @@
 }
 
 @media (max-width: 660px) {
-
-
-  .menu { 
- 
+  .menu {  
     width: 335px;
     min-width: 335px;
     height: 100vh;
@@ -111,8 +108,7 @@
     background: #dad6ff;
     padding: 10px 0px;
     margin-right: -20px;
-    z-index: 2000; 
-    
+    z-index: 2000;     
   }
 
   .active {
@@ -123,7 +119,6 @@
 
   .navBar__menu {
     display: block;
-
     position: fixed;
     height: 80px;
     z-index: 101;
