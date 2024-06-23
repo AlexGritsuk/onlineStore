@@ -24,6 +24,7 @@ import Catalog from "./catalog/catalog";
 const NavBar = () => {
   const [isOpen, setOpen] = useState(false);
   const menuRef = useRef(null);
+  
   useClickOutSide(menuRef, () => { 
     if (isOpen) setTimeout(() => setOpen(false), 150);
   }); 

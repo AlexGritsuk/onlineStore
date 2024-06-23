@@ -24,8 +24,12 @@
   background-color: var(--blue-colorHover);
 }
 
-.iphonePage__iphoneGrid {
+.iphonePage__iphoneGrid {  
   margin-right: 20px;
+}
+
+.iphonePage_loading {
+  margin: 250px;
 }
 
 @media (max-width: 867px) {
@@ -39,12 +43,16 @@
     float: right;
     width: 340px;
   }
+  .iphonePage_loading {
+    margin: 150px;
+  }
+  
 }
 
 @media (max-width: 557px) {
-  .iphonePage__accordion {
+  .iphonePage_loading {
+    margin: 250px;
   }
-
   .iphonePage {
     flex-direction: column;
     margin-top: 15px;
@@ -76,5 +84,11 @@
 
   .iphonePage__filter {
     display: flex;
+  }
+}
+
+@media (max-width: 430px) {
+  .iphonePage_loading {
+    margin: 195px;
   }
 }

@@ -1,8 +1,23 @@
+.comparisonList__flex {
+    display: flex;
+    margin-top: 15px;
+}
+
+.comparisonList__noflex {
+    margin-top: 15px;
+    width: fit-content;
+}
+
+
 .comparisonList {
     display: flex;   
 } 
 
-.comparisonList__wrapper {
-    display: flex;
-    margin-top: 15px;
+
+.comparisonList__addCompare {
+    padding: "30px";
+}
+
+.disactive {
+    display: none;
 }

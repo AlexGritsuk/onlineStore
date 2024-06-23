@@ -131,22 +131,26 @@ const IphonesPage = () => {
         </div>
         <div className={style.iphonePage__iphoneGrid}>
           {currentItems ? (
-            <ProductsGrid
-              productsCart={cartProducts}
-              productsHeart={heartProducts}
-              productsCompare={compareProducts}
-              countCart={countCart}
-              countHeart={countHeart}
-              countCompare={countCompare}
-              products={currentItems}
-              linkName={linkName}
-              handleNext={handleNext}
-              handlePrev={handlePrev}
-              handlePageChange={handlePageChange}
-              currentPage={currentPage}
-            />
+            <div>
+              <ProductsGrid
+                productsCart={cartProducts}
+                productsHeart={heartProducts}
+                productsCompare={compareProducts}
+                countCart={countCart}
+                countHeart={countHeart}
+                countCompare={countCompare}
+                products={currentItems}
+                linkName={linkName}
+                handleNext={handleNext}
+                handlePrev={handlePrev}
+                handlePageChange={handlePageChange}
+                currentPage={currentPage}
+              />
+            </div>
           ) : (
-            <Loading />
+            <div className={style.iphonePage_loading}>
+              <Loading />
+            </div>
           )}
         </div>
       </div>

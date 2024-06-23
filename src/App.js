@@ -82,9 +82,9 @@ function App() {
           <Redirect to="./Main" />
         </Switch>
       </main>
-      <footer className="footer">
+      {/* <footer className="footer">
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   );
 }

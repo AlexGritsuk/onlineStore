@@ -72,8 +72,7 @@
     padding: 0;
   }
   .catalog__list {
-    display: block;
-    
+    display: block;    
   }
 
   .catalog__item > img {

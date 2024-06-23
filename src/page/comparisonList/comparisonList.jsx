@@ -10,14 +10,14 @@ const ComparisonList = () => {
   const compareProducts = useSelector(getCompare()) 
   if (compareProducts.length > 0) {
     return (
-      <div className={style.comparisonList__wrapper}>
+      <div className={compareProducts.length < 2 ? style.comparisonList__flex  : style.comparisonList__noflex}>
         <div className={style.comparisonList}>
           {compareProducts.map((compareIphone) => (
             <ProductCompare key={compareIphone._id} {...compareIphone} />
           ))}
         </div>
-        <div style={{ padding: "30px" }}>
-          {compareProducts.length < 2 ? <AddCompareProduct /> : ""}
+        <div className={compareProducts.length < 2 ? style.comparisonList__addCompare : style.disactive}>
+          <AddCompareProduct />
         </div>
       </div>
     );
@@ -25,4 +25,4 @@ const ComparisonList = () => {
   return <CompareEmpty />;
 };
 
-export default ComparisonList;
+export default ComparisonList; 
