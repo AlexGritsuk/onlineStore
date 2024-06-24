@@ -21,3 +21,45 @@
 .disactive {
     display: none;
 }
+
+
+.comparisonList__factory {
+    margin-top: 25px;
+}
+
+.comparisonList__factory > h3 {
+    margin-top: 15px;
+}
+
+
+
+.comparisonList__factory::before {
+    content: '';
+    display: block;
+    height: 1px;
+    background: black;
+}
+
+.comparisonList__factory_item {
+    margin-top: 20px;
+}
+
+.comparisonList__factory_item > h5 {
+    color: var(--gray--color);
+}
+
+
+.comparisonList__factory_element {
+    margin-top: 15px;
+    
+
+    display: flex;  
+    justify-content: start;
+    align-items: center;
+    
+}
+
+.compareFactory {
+    margin-right: 120px;
+    min-width: 200px;
+}

@@ -108,6 +108,7 @@ const airPods = [
     visualAppearance: visualAppearance.white,
     price: 11900,
     rating: 10,
+    made: "Китай"
   },
   {
     _id: "50063131133",
@@ -116,6 +117,7 @@ const airPods = [
     visualAppearance: visualAppearance.blue,
     price: 13900,
     rating: 10,
+    made: "Китай"
   },
   {
     _id: "511631311",
@@ -124,6 +126,7 @@ const airPods = [
     visualAppearance: visualAppearance.gold,
     price: 18900,
     rating: 7,
+    made: "Китай"
   },
   {
     _id: "500631312",
@@ -132,6 +135,7 @@ const airPods = [
     visualAppearance: visualAppearance.black,
     price: 17200,
     rating: 7.1,
+    made: "Китай"
   },
   {
     _id: "500631313",
@@ -140,6 +144,7 @@ const airPods = [
     visualAppearance: visualAppearance.green,
     price: 23000,
     rating: 6.9,
+    made: "Китай"
   },
   {
     _id: "500631314",
@@ -148,6 +153,7 @@ const airPods = [
     visualAppearance: visualAppearance.white,
     price: 17800,
     rating: 9.3,
+    made: "Китай"
   },
   {
     _id: "500631315",
@@ -156,6 +162,7 @@ const airPods = [
     visualAppearance: visualAppearance.black,
     price: 24000,
     rating: 6.8,
+    made: "Китай"
   },
   {
     _id: "500631316",
@@ -164,6 +171,7 @@ const airPods = [
     visualAppearance: visualAppearance.pink,
     price: 21000,
     rating: 6.6,
+    made: "Китай"
   },
   {
     _id: "500631317",
@@ -172,6 +180,7 @@ const airPods = [
     visualAppearance: visualAppearance.red,
     price: 23600,
     rating: 6.6,
+    made: "Китай"
   },
   {
     _id: "500631318",
@@ -180,6 +189,7 @@ const airPods = [
     visualAppearance: visualAppearance.perple,
     price: 22700,
     rating: 5.5,
+    made: "Китай"
   },
   {
     _id: "500631319",
@@ -188,6 +198,7 @@ const airPods = [
     visualAppearance: visualAppearance.white,
     price: 18900,
     rating: 4.2,
+    made: "Китай"
   },
   {
     _id: "5006313191",
@@ -196,6 +207,7 @@ const airPods = [
     visualAppearance: visualAppearance.black,
     price: 22900,
     rating: 4.2,
+    made: "Китай"
   },
   {
     _id: "5006313110",
@@ -204,6 +216,7 @@ const airPods = [
     visualAppearance: visualAppearance.pink,
     price: 42900,
     rating: 4.5,
+    made: "Китай"
   },
   {
     _id: "5006313111",
@@ -212,6 +225,7 @@ const airPods = [
     visualAppearance: visualAppearance.black,
     price: 45900,
     rating: 5.1,
+    made: "Китай"
   },
   {
     _id: "5006313112",
@@ -220,6 +234,7 @@ const airPods = [
     visualAppearance: visualAppearance.green,
     price: 44900,
     rating: 6.1,
+    made: "Китай"
   },
 ];
 

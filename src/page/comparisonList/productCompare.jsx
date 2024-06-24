@@ -43,7 +43,7 @@ const ProductCompare = ({ ...compareIphone }) => {
             />
           </div>
         </div>
-      </div>
+      </div>      
     </div>
   );
 };

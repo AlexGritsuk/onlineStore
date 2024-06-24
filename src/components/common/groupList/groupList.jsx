@@ -68,7 +68,7 @@ GroupList.propTypes = {
   valueProperty: PropTypes.string.isRequired,
   contentPtoperty: PropTypes.string.isRequired,
   groupName: PropTypes.string.isRequired,
-  selectedItem: PropTypes.object.isRequired,
+  selectedItem: PropTypes.object,
   clearFilter: PropTypes.func.isRequired,
 };
 

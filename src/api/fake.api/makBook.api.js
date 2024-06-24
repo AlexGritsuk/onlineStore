@@ -21,7 +21,8 @@ const macBooks = [
         img: imageMacBook.macBookAir13.black,
         visualAppearance: visualAppearanceMacBook.black,
         price: 92000,
-        rating: 8
+        rating: 8,
+        made: "Китай"
     },
     {
         _id: "121",
@@ -29,7 +30,8 @@ const macBooks = [
         img: imageMacBook.macBookAir13.white,
         visualAppearance: visualAppearanceMacBook.white,
         price: 87300,
-        rating: 8.2
+        rating: 8.2,
+        made: "Китай"
     },
     {
         _id: "122",
@@ -37,7 +39,8 @@ const macBooks = [
         img: imageMacBook.macBookAir13.gold,
         visualAppearance: visualAppearanceMacBook.gold,
         price: 95500,
-        rating: 7.9
+        rating: 7.9,
+        made: "Китай"
     },
     {
         _id: "123",
@@ -45,7 +48,8 @@ const macBooks = [
         img: imageMacBook.macBookAir13.silver,
         visualAppearance: visualAppearanceMacBook.silver, 
         price: 85000,
-        rating: 8.5
+        rating: 8.5,
+        made: "Китай"
     }
 ];
 

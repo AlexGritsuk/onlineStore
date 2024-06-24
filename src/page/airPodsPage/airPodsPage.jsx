@@ -127,10 +127,11 @@ const AirPodsPage = () => {
         </div>
         <div className={style.iphonePage__iphoneGrid}>
           {currentItems ? (
+            <div>
             <ProductsGrid
               productsCart={cartProducts}
               productsHeart={heartProducts}
-              productsCompare={compareProducts}
+              productsCompare={compareProducts} 
               countCart={countCart}
               countHeart={countHeart}
               countCompare={countCompare}
@@ -141,8 +142,11 @@ const AirPodsPage = () => {
               handlePageChange={handlePageChange}
               currentPage={currentPage}
             />
+            </div>
           ) : (
-            <Loading />
+            <div className={style.iphonePage_loading}>
+              <Loading />
+            </div>
           )}
         </div>
       </div>
