@@ -5,18 +5,41 @@ import style from "./btnCompare.module.css";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { handleAddCompare, handleDeleteCompare } from "../../../../store/compare";
+import { handleAddCompareAirPods, handleDeleteCompareAirPods } from "../../../../store/compareAirPods";
 
 const BtnCompare = ({
-  products,
+  productIphone,
+  productAirPods,
   id,
   currentProduct,  
 }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+
+  console.log("productIphone",productIphone);
+  console.log("productAirPods",productAirPods);
+
+  const handleIdentifyProduct = (product) => {
+      if(product.hasOwnProperty("Specifications")) {
+       return handleAddCompare(product)
+      } else {
+       return handleAddCompareAirPods(product)
+      }
+  }
+
+  const handleIdentifyId = (id) => {
+    if(id[0] === "5") {
+      return handleDeleteCompareAirPods(id)
+    }
+    if (id[0] === "3") {
+      return handleDeleteCompare(id)
+    }
+  }
+
   return (
     <div>
-      {!isHave(products, id, currentProduct) ? (
+      {!isHave(productAirPods, id) && !isHave(productIphone, id) ? (
         <button
-          onClick={() => dispatch(handleAddCompare(currentProduct))}
+          onClick={() => dispatch(handleIdentifyProduct(currentProduct))}
           className={style.btnCompare__delete}
         >
           <IoIosGitCompare style={{ width: "20px", height: "20px" }} />
@@ -24,7 +47,7 @@ const BtnCompare = ({
         </button>
       ) : (
         <button
-          onClick={() => dispatch(handleDeleteCompare(id))}
+          onClick={() => dispatch(handleIdentifyId(id))}
           className={style.btnCompare__delete_in}
         >
           <IoIosGitCompare style={{ width: "20px", height: "20px" }} />
@@ -36,7 +59,8 @@ const BtnCompare = ({
 };
 
 BtnCompare.propTypes = {
-  products: PropTypes.array.isRequired,
+  productIphone: PropTypes.array.isRequired,
+  productAirPods: PropTypes.array.isRequired,
   id: PropTypes.string.isRequired,
   currentProduct: PropTypes.object.isRequired, 
 };

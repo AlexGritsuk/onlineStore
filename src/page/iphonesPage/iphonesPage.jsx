@@ -17,6 +17,7 @@ import {
 import { getCart, getCountCart } from "../../store/cart";
 import { getHeart, getCountHeart } from "../../store/heart";
 import { getCompare, getCountCompare } from "../../store/compare";
+import { handleAddCompare, handleDeleteCompare } from "../../store/compare";
 
 const IphonesPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -46,6 +47,7 @@ const IphonesPage = () => {
 
   const compareProducts = useSelector(getCompare());
   const countCompare = useSelector(getCountCompare());
+  console.log("Iphones", compareProducts);
 
   const linkName = "Iphones";
 
@@ -145,6 +147,8 @@ const IphonesPage = () => {
                 handlePrev={handlePrev}
                 handlePageChange={handlePageChange}
                 currentPage={currentPage}
+                addCompare={handleAddCompare}
+                deleteCompare={handleDeleteCompare}
               />
             </div>
           ) : (

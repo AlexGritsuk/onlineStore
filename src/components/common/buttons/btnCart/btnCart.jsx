@@ -7,8 +7,9 @@ import { useDispatch } from "react-redux";
 import { gethandleAddCartProducts, gethandleDeleteCartProducts } from "../../../../store/cart"; 
 
 const BtnCart = ({ products, id, currentProduct }) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch();  
   return (
+    
     <div className={style.btnCart__wrapper}> 
       {!isHave(products, id) ? (
         <button

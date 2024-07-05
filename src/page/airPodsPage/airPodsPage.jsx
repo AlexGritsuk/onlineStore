@@ -16,7 +16,8 @@ import {
 } from "../../store/airPods";
 import { getCart, getCountCart } from "../../store/cart";
 import { getCountHeart, getHeart } from "../../store/heart";
-import { getCompare, getCountCompare } from "../../store/compare";
+import { getCompareAirPods, getCountCompareAirPods } from "../../store/compareAirPods";
+import {handleAddCompareAirPods, handleDeleteCompareAirPods} from "../../store/compareAirPods";
 
 const AirPodsPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -30,8 +31,6 @@ const AirPodsPage = () => {
   const isLoadingSeriesAirPods = useSelector(getSeriesAirPodsLoadingStatus());
   const colorAirPods = useSelector(getColorAirPods());
   const isLoadingColor = useSelector(getColorAirPodsLoadingStatus());
-
-  
 
   useEffect(() => {
     API.airPods.fetchAll().then((data) => setCurrentItems(data));
@@ -82,8 +81,10 @@ const AirPodsPage = () => {
   const heartProducts = useSelector(getHeart());
   const countHeart = useSelector(getCountHeart());
 
-  const compareProducts = useSelector(getCompare());
-  const countCompare = useSelector(getCountCompare());
+  const compareProductsAirPods = useSelector(getCompareAirPods());
+  const countCompare = useSelector(getCountCompareAirPods());
+
+  console.log("Airpods", compareProductsAirPods);
 
   const linkName = "Airpods";
 
@@ -131,7 +132,7 @@ const AirPodsPage = () => {
             <ProductsGrid
               productsCart={cartProducts}
               productsHeart={heartProducts}
-              productsCompare={compareProducts} 
+              productsCompare={compareProductsAirPods} 
               countCart={countCart}
               countHeart={countHeart}
               countCompare={countCompare}
@@ -141,6 +142,8 @@ const AirPodsPage = () => {
               handlePrev={handlePrev}
               handlePageChange={handlePageChange}
               currentPage={currentPage}
+              addCompare = {handleAddCompareAirPods}
+              deleteCompare = {handleDeleteCompareAirPods}
             />
             </div>
           ) : (

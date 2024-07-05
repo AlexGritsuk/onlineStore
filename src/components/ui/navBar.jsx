@@ -20,19 +20,22 @@ import { getCountCart } from "../../store/cart";
 import { getCountHeart } from "../../store/heart";
 import { getCountCompare } from "../../store/compare";
 import Catalog from "./catalog/catalog";
+import { getCountCompareAirPods } from "../../store/compareAirPods";
 
 const NavBar = () => {
   const [isOpen, setOpen] = useState(false);
   const menuRef = useRef(null);
-  
-  useClickOutSide(menuRef, () => { 
+
+  useClickOutSide(menuRef, () => {
     if (isOpen) setTimeout(() => setOpen(false), 150);
-  }); 
+  });
 
   const countCart = useSelector(getCountCart());
-  const countHeart = useSelector(getCountHeart())
-  const countCompare = useSelector(getCountCompare())
-
+  const countHeart = useSelector(getCountHeart());
+  const countCompareIphone = useSelector(getCountCompare());
+  const countCompareAirPods = useSelector(getCountCompareAirPods());
+  const countCompare = countCompareIphone + countCompareAirPods;
+  
   const icons = {
     cart: {
       icon: <SlBasket className={style.navBar__icon} />,
@@ -95,7 +98,7 @@ const NavBar = () => {
                 )}
                 <span>Каталог</span>
               </button>
-              <Catalog isOpen={isOpen} menuRef={menuRef}/>
+              <Catalog isOpen={isOpen} menuRef={menuRef} />
             </div>
           </div>
 

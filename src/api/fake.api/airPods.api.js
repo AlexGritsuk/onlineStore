@@ -225,7 +225,7 @@ const airPods = [
     visualAppearance: visualAppearance.black,
     price: 45900,
     rating: 5.1,
-    made: "Китай"
+    made: "Китай" 
   },
   {
     _id: "5006313112",

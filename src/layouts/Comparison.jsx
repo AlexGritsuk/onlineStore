@@ -4,9 +4,12 @@ import style from "../style/comparison.module.css";
 import ComparisonList from "../page/comparisonList/comparisonList";
 import { useSelector } from "react-redux";
 import { getCountCompare } from "../store/compare";
+import { getCountCompareAirPods } from "../store/compareAirPods";
 
 const Comparison = () => {
-  const countCompare = useSelector(getCountCompare());
+  const countCompareIphone = useSelector(getCountCompare());
+  const countCompareAirPods = useSelector(getCountCompareAirPods());
+  const countCompare = countCompareIphone + countCompareAirPods;
   return (
     <div className={root.container}>
       <div className={style.comparison}>

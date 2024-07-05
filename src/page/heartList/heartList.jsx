@@ -19,7 +19,7 @@ const HeartList = () => {
               />
             );
           })}
-        </div>
+        </div> 
       </div>
     );
   }

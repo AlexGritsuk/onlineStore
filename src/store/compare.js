@@ -5,7 +5,7 @@ const compareSlice = createSlice({
     initialState: {
         entities: [],
         count: 0,
-    },
+    }, 
     reducers: {
         compareAdd: (state, action) => {
             state.entities.push(action.payload)

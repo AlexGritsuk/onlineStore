@@ -779,7 +779,7 @@ const iphones = [
         }
     },
     {
-        _id: "4000165221",
+        _id: "3000165221",
         name: seriesIphone.iphoneSE2022,
         img: imageIphone.iphoneSE2022.white,
         memories: memories.sixfour,
@@ -810,7 +810,7 @@ const iphones = [
         }
     },
     {
-        _id: "4000165222",
+        _id: "3000165222",
         name: seriesIphone.iphoneSE2022,
         img: imageIphone.iphoneSE2022.red,
         memories: memories.sixfour,
@@ -841,7 +841,7 @@ const iphones = [
         }
     },
     {
-        _id: "400016522223",
+        _id: "300016522223",
         name: seriesIphone.iphoneSE2022,
         img: imageIphone.iphoneSE2022.black,
         memories: memories.sixfour,
@@ -1410,6 +1410,9 @@ const iphones = [
         rating: 5.5,
         Specifications: {
             factoryData: {
+                head: "Заводские данные",
+                subHeadOne: "Страна",
+                subHeadTwo: "Год производства",
                 made: "Китай",
                 date: 2022
             }, 

@@ -7,14 +7,20 @@ import BtnDeleteHeart from "../../components/common/buttons/btnHeart/btnDeleteHe
 import { useSelector } from "react-redux";
 import { getCart } from "../../store/cart";
 import { getCompare } from "../../store/compare";
+import { getCompareAirPods } from "../../store/compareAirPods";
 
 
 const ProductHeart = ({    
   ...product
-}) => {
+}) => { 
+  
   const cartProducts = useSelector(getCart());
   const compareProducts = useSelector(getCompare());  
+  const compareProductAirPods = useSelector(getCompareAirPods());  
+
+  // console.log(compareProducts);
   return (
+
     <div className={style.productHeart__wrapper}>
       <div className={style.productHeart}> 
         <div className={style.productHeart__image}>
@@ -35,7 +41,8 @@ const ProductHeart = ({
             <div>{product.visualAppearance.name}</div>
             <div className={style.productHeart__btns}>
               <BtnCompare 
-                products={compareProducts}
+                productIphone={compareProducts}
+                productAirPods={compareProductAirPods}
                 id={product._id}
                 currentProduct={product}              
               />

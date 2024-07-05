@@ -1,0 +1,14 @@
+.tabs {
+    display: flex;
+    flex-direction: row;
+}
+
+.tab {
+    padding: 12px;
+    margin: 10px;
+    cursor: pointer;
+    color: var(--white-color);
+
+    background-color: var(--blue-color);
+    border-radius: 5px;
+}

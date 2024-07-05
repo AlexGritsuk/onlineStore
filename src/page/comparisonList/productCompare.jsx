@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { getCart } from "../../store/cart";
 import BtnDeleteCompare from "../../components/common/buttons/btnCompare/btnDeleteCompare";
 
-const ProductCompare = ({ ...compareIphone }) => {  
+const ProductCompare = ({ deleteCompare, ...compareIphone }) => {  
     const cartProducts = useSelector(getCart());
 
   return (
@@ -29,7 +29,7 @@ const ProductCompare = ({ ...compareIphone }) => {
 
         <div>{compareIphone.price} ₽</div>
 
-        <div style={{ marginTop: "15px" }}>
+        <div style={{ marginTop: "15px" }}> 
           <div>
             <BtnCart
               products={cartProducts}
@@ -39,7 +39,8 @@ const ProductCompare = ({ ...compareIphone }) => {
           </div>
           <div style={{ marginTop: "15px" }}>
             <BtnDeleteCompare
-              id={compareIphone._id}              
+              id={compareIphone._id} 
+              deleteCompare ={ deleteCompare}             
             />
           </div>
         </div>

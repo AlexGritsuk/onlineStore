@@ -7,4 +7,4 @@ const CountItem = ({ count }) => {
   return <div className={style.countItem_absolute}>{count}</div>; 
 };
 
-export default CountItem;
+export default CountItem; 

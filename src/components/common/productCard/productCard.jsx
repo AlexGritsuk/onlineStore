@@ -18,6 +18,8 @@ const ProductCard = ({
   heartProduct,
   compareProduct,
   linkName,
+  addCompare,
+  deleteCompare,
   ...product
 }) => {
   const btnCard = {
@@ -37,6 +39,8 @@ const ProductCard = ({
     },
     compare: {
       products: compareProduct,
+      addCompare: addCompare,
+      deleteCompare: deleteCompare,
       id: product._id,
       currentProduct: product,
       beforeLogo: <IoGitCompare />,

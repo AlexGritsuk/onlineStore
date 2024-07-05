@@ -18,7 +18,7 @@ const Heart = () => {
         </h2>
       </div>
       <div>
-      <HeartList />
+      <HeartList /> 
       </div>
     </div>
   </div>

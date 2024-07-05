@@ -22,6 +22,8 @@ const ProductsGrid = ({
   handlePrev,
   handlePageChange,
   currentPage,
+  addCompare,
+  deleteCompare,
 }) => {
   const [sortBy, setSortBy] = useState({ iter: "price", order: "asc" });
   const [catalog, setCatalog] = useState(true);
@@ -115,6 +117,8 @@ const ProductsGrid = ({
             compareProduct={productsCompare}
             linkName={linkName}
             {...products}
+            addCompare={addCompare}
+            deleteCompare={deleteCompare}
           />
         ))}
       </div>
