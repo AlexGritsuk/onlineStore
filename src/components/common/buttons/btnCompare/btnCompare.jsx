@@ -13,10 +13,7 @@ const BtnCompare = ({
   id,
   currentProduct,  
 }) => {
-  const dispatch = useDispatch();
-
-  console.log("productIphone",productIphone);
-  console.log("productAirPods",productAirPods);
+  const dispatch = useDispatch();  
 
   const handleIdentifyProduct = (product) => {
       if(product.hasOwnProperty("Specifications")) {
