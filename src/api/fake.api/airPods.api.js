@@ -96,7 +96,7 @@ const imageAirPods = {
   airPodsMax: {
     pink: [airPodsMaxPink, airPodsMaxPink2],
     black: [airPodsMaxBlack, airPodsMaxBlack2],
-    green: [airPodsMaxGreen, airPodsMaxGreen2], 
+    green: [airPodsMaxGreen, airPodsMaxGreen2],
   },
 };
 
@@ -108,7 +108,25 @@ const airPods = [
     visualAppearance: visualAppearance.white,
     price: 11900,
     rating: 10,
-    made: "Китай"
+    Specifications: {
+      factoryData: {
+        made: "Китай",
+        date: 2019
+      },
+      General: {
+        Earpads: "Вкладыши"
+      },
+      timeJob: {
+        case: "24",
+        fullTime: "5",
+        timeCall: "3"
+      },
+      DimensionsAndWeight: {
+        Dimensions: "16.5 x 18.0 x 40.5",
+        weight: "48"
+      }
+    }
+
   },
   {
     _id: "50063131133",
@@ -117,7 +135,24 @@ const airPods = [
     visualAppearance: visualAppearance.blue,
     price: 13900,
     rating: 10,
-    made: "Китай"
+    Specifications: {
+      factoryData: {
+        made: "Китай",
+        date: 2019
+      },
+      General: {
+        Earpads: "Вкладыши"
+      },
+      timeJob: {
+        case: "24",
+        fullTime: "5",
+        timeCall: "3"
+      },
+      DimensionsAndWeight: {
+        Dimensions: "16.5 x 18.0 x 40.5",
+        weight: "48"
+      }
+    }
   },
   {
     _id: "511631311",
@@ -126,7 +161,24 @@ const airPods = [
     visualAppearance: visualAppearance.gold,
     price: 18900,
     rating: 7,
-    made: "Китай"
+    Specifications: {
+      factoryData: {
+        made: "Китай",
+        date: 2019
+      },
+      General: {
+        Earpads: "Вкладыши"
+      },
+      timeJob: {
+        case: "24",
+        fullTime: "5",
+        timeCall: "3"
+      },
+      DimensionsAndWeight: {
+        Dimensions: "16.5 x 18.0 x 40.5",
+        weight: "48"
+      }
+    }
   },
   {
     _id: "500631312",
@@ -135,7 +187,24 @@ const airPods = [
     visualAppearance: visualAppearance.black,
     price: 17200,
     rating: 7.1,
-    made: "Китай"
+    Specifications: {
+      factoryData: {
+        made: "Китай",
+        date: 2019
+      },
+      General: {
+        Earpads: "Вкладыши"
+      },
+      timeJob: {
+        case: "24",
+        fullTime: "5",
+        timeCall: "3"
+      },
+      DimensionsAndWeight: {
+        Dimensions: "16.5 x 18.0 x 40.5",
+        weight: "48"
+      }
+    }
   },
   {
     _id: "500631313",
@@ -144,7 +213,24 @@ const airPods = [
     visualAppearance: visualAppearance.green,
     price: 23000,
     rating: 6.9,
-    made: "Китай"
+    Specifications: {
+      factoryData: {
+        made: "Китай",
+        date: 2019
+      },
+      General: {
+        Earpads: "Вкладыши"
+      },
+      timeJob: {
+        case: "24",
+        fullTime: "5",
+        timeCall: "3"
+      },
+      DimensionsAndWeight: {
+        Dimensions: "16.5 x 18.0 x 40.5",
+        weight: "48"
+      }
+    }
   },
   {
     _id: "500631314",
@@ -153,7 +239,24 @@ const airPods = [
     visualAppearance: visualAppearance.white,
     price: 17800,
     rating: 9.3,
-    made: "Китай"
+    Specifications: {
+      factoryData: {
+        made: "Китай",
+        date: 2021
+      },
+      General: {
+        Earpads: "Вкладыши"
+      },
+      timeJob: {
+        case: "30",
+        fullTime: "6",
+        timeCall: "4"
+      },
+      DimensionsAndWeight: {
+        Dimensions: "18,26 x 19,21 x 30,79",
+        weight: "37,9"
+      }
+    }
   },
   {
     _id: "500631315",
@@ -162,7 +265,24 @@ const airPods = [
     visualAppearance: visualAppearance.black,
     price: 24000,
     rating: 6.8,
-    made: "Китай"
+    Specifications: {
+      factoryData: {
+        made: "Китай",
+        date: 2021
+      },
+      General: {
+        Earpads: "Вкладыши"
+      },
+      timeJob: {
+        case: "30",
+        fullTime: "6",
+        timeCall: "4"
+      },
+      DimensionsAndWeight: {
+        Dimensions: "18,26 x 19,21 x 30,79",
+        weight: "37,9"
+      }
+    }
   },
   {
     _id: "500631316",
@@ -171,7 +291,24 @@ const airPods = [
     visualAppearance: visualAppearance.pink,
     price: 21000,
     rating: 6.6,
-    made: "Китай"
+    Specifications: {
+      factoryData: {
+        made: "Китай",
+        date: 2021
+      },
+      General: {
+        Earpads: "Вкладыши"
+      },
+      timeJob: {
+        case: "30",
+        fullTime: "6",
+        timeCall: "4"
+      },
+      DimensionsAndWeight: {
+        Dimensions: "18,26 x 19,21 x 30,79",
+        weight: "37,9"
+      }
+    }
   },
   {
     _id: "500631317",
@@ -180,7 +317,24 @@ const airPods = [
     visualAppearance: visualAppearance.red,
     price: 23600,
     rating: 6.6,
-    made: "Китай"
+    Specifications: {
+      factoryData: {
+        made: "Китай",
+        date: 2021
+      },
+      General: {
+        Earpads: "Вкладыши"
+      },
+      timeJob: {
+        case: "30",
+        fullTime: "6",
+        timeCall: "4"
+      },
+      DimensionsAndWeight: {
+        Dimensions: "18,26 x 19,21 x 30,79",
+        weight: "37,9"
+      }
+    }
   },
   {
     _id: "500631318",
@@ -189,7 +343,24 @@ const airPods = [
     visualAppearance: visualAppearance.perple,
     price: 22700,
     rating: 5.5,
-    made: "Китай"
+    Specifications: {
+      factoryData: {
+        made: "Китай",
+        date: 2021
+      },
+      General: {
+        Earpads: "Вкладыши"
+      },
+      timeJob: {
+        case: "30",
+        fullTime: "6",
+        timeCall: "4"
+      },
+      DimensionsAndWeight: {
+        Dimensions: "18,26 x 19,21 x 30,79",
+        weight: "37,9"
+      }
+    }
   },
   {
     _id: "500631319",
@@ -198,7 +369,24 @@ const airPods = [
     visualAppearance: visualAppearance.white,
     price: 18900,
     rating: 4.2,
-    made: "Китай"
+    Specifications: {
+      factoryData: {
+        made: "Китай",
+        date: 2022
+      },
+      General: {
+        Earpads: "Вставные (вакуумные)"
+      },
+      timeJob: {
+        case: "30",
+        fullTime: "5,5",
+        timeCall: "4,5"
+      },
+      DimensionsAndWeight: {
+        Dimensions: "24 x 21,9 x 30,9",
+        weight: "45,6"
+      }
+    }
   },
   {
     _id: "5006313191",
@@ -207,7 +395,24 @@ const airPods = [
     visualAppearance: visualAppearance.black,
     price: 22900,
     rating: 4.2,
-    made: "Китай"
+    Specifications: {
+      factoryData: {
+        made: "Китай",
+        date: 2022
+      },
+      General: {
+        Earpads: "Вставные (вакуумные)"
+      },
+      timeJob: {
+        case: "30",
+        fullTime: "5,5",
+        timeCall: "4,5"
+      },
+      DimensionsAndWeight: {
+        Dimensions: "24 x 21,9 x 30,9",
+        weight: "45,6"
+      }
+    }
   },
   {
     _id: "5006313110",
@@ -216,7 +421,24 @@ const airPods = [
     visualAppearance: visualAppearance.pink,
     price: 42900,
     rating: 4.5,
-    made: "Китай"
+    Specifications: {
+      factoryData: {
+        made: "Китай",
+        date: 2020
+      },
+      General: {
+        Earpads: "Накладные"
+      },
+      timeJob: {
+        case: "20",
+        fullTime: "20",
+        timeCall: "10"
+      },
+      DimensionsAndWeight: {
+        Dimensions: "187,7 x 168,6 x 83,4",
+        weight: "385"
+      }
+    }
   },
   {
     _id: "5006313111",
@@ -225,7 +447,7 @@ const airPods = [
     visualAppearance: visualAppearance.black,
     price: 45900,
     rating: 5.1,
-    made: "Китай" 
+    made: "Китай"
   },
   {
     _id: "5006313112",
@@ -234,7 +456,24 @@ const airPods = [
     visualAppearance: visualAppearance.green,
     price: 44900,
     rating: 6.1,
-    made: "Китай"
+    Specifications: {
+      factoryData: {
+        made: "Китай",
+        date: 2020
+      },
+      General: {
+        Earpads: "Накладные"
+      },
+      timeJob: {
+        case: "20",
+        fullTime: "20",
+        timeCall: "10"
+      },
+      DimensionsAndWeight: {
+        Dimensions: "187,7 x 168,6 x 83,4",
+        weight: "385"
+      }
+    }
   },
 ];
 

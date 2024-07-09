@@ -7,6 +7,7 @@ import { thunk } from "./middleware/thunk";
 import heartReducer from "./heart";
 import compareReducer from "./compare";
 import compareReducerAirPods from "./compareAirPods";
+import compareReducerMacBooks from "./compareMacBooks";
 
 
 
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
     heart: heartReducer,
     compare: compareReducer,
     compareAirPods: compareReducerAirPods,
+    compareMacBooks: compareReducerMacBooks,
 });
 
 

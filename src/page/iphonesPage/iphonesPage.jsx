@@ -47,7 +47,6 @@ const IphonesPage = () => {
 
   const compareProducts = useSelector(getCompare());
   const countCompare = useSelector(getCountCompare());
-  console.log("Iphones", compareProducts);
 
   const linkName = "Iphones";
 

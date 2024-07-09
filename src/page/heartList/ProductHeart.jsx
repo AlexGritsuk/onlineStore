@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { getCart } from "../../store/cart";
 import { getCompare } from "../../store/compare";
 import { getCompareAirPods } from "../../store/compareAirPods";
+import { getCompareMacBooks } from "../../store/compareMacBooks";
 
 
 const ProductHeart = ({    
@@ -17,8 +18,8 @@ const ProductHeart = ({
   const cartProducts = useSelector(getCart());
   const compareProducts = useSelector(getCompare());  
   const compareProductAirPods = useSelector(getCompareAirPods());  
-
-  // console.log(compareProducts);
+  const compareProductMacBooks = useSelector(getCompareMacBooks());  
+ 
   return (
 
     <div className={style.productHeart__wrapper}>
@@ -43,6 +44,7 @@ const ProductHeart = ({
               <BtnCompare 
                 productIphone={compareProducts}
                 productAirPods={compareProductAirPods}
+                productMacBooks={compareProductMacBooks}
                 id={product._id}
                 currentProduct={product}              
               />

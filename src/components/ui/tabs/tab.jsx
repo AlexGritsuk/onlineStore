@@ -3,10 +3,12 @@ import style from "./tabs.module.css";
 import { getCountCompare } from "../../../store/compare";
 import { getCountCompareAirPods } from "../../../store/compareAirPods";
 import { useSelector } from "react-redux";
+import { getCountCompareMacBooks } from "../../../store/compareMacBooks";
 
 const Tab = ({ item, tab, setTab }) => {
   const countIphone = useSelector(getCountCompare());
   const countAirPods = useSelector(getCountCompareAirPods());
+  const countMacBooks = useSelector(getCountCompareMacBooks());
   const isVear = item.label;
 
   function renderTags(isVear) {
@@ -22,6 +24,12 @@ const Tab = ({ item, tab, setTab }) => {
         return (
           <div>
             AirPods <span>{countAirPods}</span>
+          </div>
+        );
+        case "MacBooks":
+        return (
+          <div>
+            MacBooks <span>{countMacBooks}</span>
           </div>
         );
       default:

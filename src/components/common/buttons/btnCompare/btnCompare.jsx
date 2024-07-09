@@ -6,10 +6,12 @@ import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { handleAddCompare, handleDeleteCompare } from "../../../../store/compare";
 import { handleAddCompareAirPods, handleDeleteCompareAirPods } from "../../../../store/compareAirPods";
+import { handleAddCompareMacBooks, handleDeleteCompareMacBooks } from "../../../../store/compareMacBooks";
 
 const BtnCompare = ({
   productIphone,
   productAirPods,
+  productMacBooks,
   id,
   currentProduct,  
 }) => {
@@ -18,9 +20,13 @@ const BtnCompare = ({
   const handleIdentifyProduct = (product) => {
       if(product.hasOwnProperty("Specifications")) {
        return handleAddCompare(product)
-      } else {
-       return handleAddCompareAirPods(product)
       }
+      if(product.hasOwnProperty("specificationsMacBooks")) {
+        return handleAddCompareMacBooks(product)
+       }
+      // else {
+      //  return handleAddCompareAirPods(product)
+      // }
   }
 
   const handleIdentifyId = (id) => {
@@ -30,11 +36,14 @@ const BtnCompare = ({
     if (id[0] === "3") {
       return handleDeleteCompare(id)
     }
-  }
+    if (id[0] === "1") {
+      return handleDeleteCompareMacBooks(id)
+    }
+  } 
 
   return (
     <div>
-      {!isHave(productAirPods, id) && !isHave(productIphone, id) ? (
+      {!isHave(productAirPods, id) && !isHave(productIphone, id) && !isHave(productMacBooks, id) ? (
         <button
           onClick={() => dispatch(handleIdentifyProduct(currentProduct))}
           className={style.btnCompare__delete}

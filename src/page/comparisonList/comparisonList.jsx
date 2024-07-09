@@ -5,17 +5,26 @@ import { getCompare, getCountCompare } from "../../store/compare";
 import CompareCards from "./compareCards";
 import CompareParametrsIpnones from "./compareParametrsIphones";
 import Tabs from "../../components/ui/tabs/tabs";
-import { getCompareAirPods, getCountCompareAirPods } from "../../store/compareAirPods";
+import {
+  getCompareAirPods,
+  getCountCompareAirPods,
+} from "../../store/compareAirPods";
 import { handleDeleteCompareAirPods } from "../../store/compareAirPods";
 import { handleDeleteCompare } from "../../store/compare";
+import CompareParametrsAirPods from "./compareParametrsAirPods";
+import {
+  getCompareMacBooks,
+  getCountCompareMacBooks,
+  handleDeleteCompareMacBooks,
+} from "../../store/compareMacBooks";
 
 const ComparisonList = () => {
   const compareIphones = useSelector(getCompare());
   const compareAirPods = useSelector(getCompareAirPods());
+  const compareMacBooks = useSelector(getCompareMacBooks());
   const countIphone = useSelector(getCountCompare());
   const countAirPods = useSelector(getCountCompareAirPods());
-
-  
+  const countMacBooks = useSelector(getCountCompareMacBooks());
 
   const [tab, setTab] = useState("section1");
 
@@ -46,11 +55,19 @@ const ComparisonList = () => {
               compareProducts={compareAirPods}
               deleteCompare={handleDeleteCompareAirPods}
             />
+            <CompareParametrsAirPods compareProducts={compareAirPods} />
           </div>
         );
       }
       case "section3": {
-        return <div>Здесь будут макбуки</div>;
+        return (
+          <div>
+            <CompareCards
+              compareProducts={compareMacBooks}
+              deleteCompare={handleDeleteCompareMacBooks}
+            />
+          </div>
+        );
       }
       case "section4": {
         return <div>Здесь будут эплвочи</div>;
@@ -62,7 +79,7 @@ const ComparisonList = () => {
     }
   }
 
-  if (countIphone > 0 || countAirPods > 0) {
+  if (countIphone > 0 || countAirPods > 0 || countMacBooks > 0) {
     return (
       <>
         <Tabs

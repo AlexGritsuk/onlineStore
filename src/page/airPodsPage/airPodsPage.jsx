@@ -82,9 +82,7 @@ const AirPodsPage = () => {
   const countHeart = useSelector(getCountHeart());
 
   const compareProductsAirPods = useSelector(getCompareAirPods());
-  const countCompare = useSelector(getCountCompareAirPods());
-
-  console.log("Airpods", compareProductsAirPods);
+  const countCompare = useSelector(getCountCompareAirPods());  
 
   const linkName = "Airpods";
 

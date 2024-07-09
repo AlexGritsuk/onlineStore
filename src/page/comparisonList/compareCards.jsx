@@ -14,8 +14,8 @@ const CompareCards = ({compareProducts, deleteCompare}) => {
       }
     >
       <div className={style.comparisonList}>
-        {compareProducts.map((compareIphone) => (
-          <ProductCompare key={compareIphone._id} {...compareIphone} deleteCompare={deleteCompare}/>
+        {compareProducts.map((compare) => (
+          <ProductCompare key={compare._id} {...compare} deleteCompare={deleteCompare}/>
         ))}
       </div>
       <div

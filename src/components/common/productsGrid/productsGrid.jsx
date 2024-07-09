@@ -101,12 +101,7 @@ const ProductsGrid = ({
             </li>
           </ul>
         </div>
-      </div>
-
-      {/* <div className={style.products__filter}>
-        <button>Фильтр</button>
-      </div> */}
-
+      </div>      
       <div className={catalog ? style.products__grid : style.products__line}>
         {userCrop.map((products) => (
           <ProductCard

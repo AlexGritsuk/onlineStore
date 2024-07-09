@@ -6,11 +6,7 @@ const Tabs = ({
   tabs = [],
   renderTabContent,
   tab,
-  setTab,
-  vertical = false,
-  tabStyle = {},
-  activeTabStyle = {},
-  contentStyle = {},
+  setTab,  
 }) => {
   return (
     <div>

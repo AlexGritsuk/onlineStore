@@ -13,7 +13,7 @@ const BtnOnCardCompare = ({
   afterLogo,
   addCompare,
   deleteCompare
-}) => {  
+}) => {   
   const dispatch = useDispatch();
   return (
     <div className={style.btnOnCard__wrapper}>
@@ -23,7 +23,7 @@ const BtnOnCardCompare = ({
             dispatch(addCompare(currentProduct));
           }}
           className={style.btnOnCard}
-        >
+        > 
           {beforeLogo}
         </button>
       ) : (

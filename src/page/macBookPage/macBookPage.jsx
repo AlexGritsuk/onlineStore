@@ -16,7 +16,7 @@ import {
 } from "../../store/macBooks";
 import { getCart, getCountCart } from "../../store/cart";
 import { getCountHeart, getHeart } from "../../store/heart";
-import { getCompare, getCountCompare } from "../../store/compare";
+import { getCompareMacBooks, getCountCompareMacBooks, handleAddCompareMacBooks, handleDeleteCompareMacBooks } from "../../store/compareMacBooks";
 
 const MacBooksPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -81,10 +81,10 @@ const MacBooksPage = () => {
   const heartProducts = useSelector(getHeart());
   const countHeart = useSelector(getCountHeart());
 
-  const compareProducts = useSelector(getCompare());
-  const countCompare = useSelector(getCountCompare());
+  const compareProductsMacBooks = useSelector(getCompareMacBooks());
+  const countCompare = useSelector(getCountCompareMacBooks());  
 
-  const linkName = "macBooks";
+  const linkName = "MacBooks";
 
   const handleClearFilter = () => {
     setCurrentItems(product);
@@ -94,8 +94,8 @@ const MacBooksPage = () => {
   const handleFilterOn = () => {
     setFilters((filters) => (filters = !filters));
   };
-
-  return (
+  
+    return (
     <div className={root.container}>
       <div className={style.iphonePage}>
         <div className={style.iphonePage__accordion}>
@@ -132,7 +132,7 @@ const MacBooksPage = () => {
               <ProductsGrid
                 productsCart={cartProducts}
                 productsHeart={heartProducts}
-                productsCompare={compareProducts}
+                productsCompare={compareProductsMacBooks}
                 countCart={countCart}
                 countHeart={countHeart}
                 countCompare={countCompare}
@@ -142,6 +142,8 @@ const MacBooksPage = () => {
                 handlePrev={handlePrev}
                 handlePageChange={handlePageChange}
                 currentPage={currentPage}
+                addCompare = {handleAddCompareMacBooks}
+              deleteCompare = {handleDeleteCompareMacBooks}
               />
             </div>
           ) : (

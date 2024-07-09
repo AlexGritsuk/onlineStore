@@ -21,6 +21,7 @@ import { getCountHeart } from "../../store/heart";
 import { getCountCompare } from "../../store/compare";
 import Catalog from "./catalog/catalog";
 import { getCountCompareAirPods } from "../../store/compareAirPods";
+import { getCountCompareMacBooks } from "../../store/compareMacBooks";
 
 const NavBar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -34,8 +35,10 @@ const NavBar = () => {
   const countHeart = useSelector(getCountHeart());
   const countCompareIphone = useSelector(getCountCompare());
   const countCompareAirPods = useSelector(getCountCompareAirPods());
-  const countCompare = countCompareIphone + countCompareAirPods;
-  
+  const countCompareMacBooks = useSelector(getCountCompareMacBooks());
+  const countCompare =
+    countCompareIphone + countCompareAirPods + countCompareMacBooks;
+
   const icons = {
     cart: {
       icon: <SlBasket className={style.navBar__icon} />,

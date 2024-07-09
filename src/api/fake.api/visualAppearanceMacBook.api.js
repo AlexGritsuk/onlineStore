@@ -19,6 +19,11 @@ export const visualAppearanceMacBook = {
         name: "Серебристый",
         color: "silver"
     },
+    StarLight: {
+        _id: "124ab",
+        name: "Сияющая звезда",
+        color: "StarLight"
+    }
 }
 
 
