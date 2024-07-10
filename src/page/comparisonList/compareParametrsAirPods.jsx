@@ -13,7 +13,7 @@ const CompareParametrsAirPods = ({ compareProducts }) => {
             {compareProducts.map((compareAirPods) => (
               <CompareFactory
                 key={compareAirPods._id}
-                factory={compareAirPods.Specifications.factoryData.made}
+                factory={compareAirPods.specificationsAirPods.factoryData.made}
               />
             ))}
           </div>
@@ -24,7 +24,7 @@ const CompareParametrsAirPods = ({ compareProducts }) => {
             {compareProducts.map((compareAirPods) => (
               <CompareFactory
                 key={compareAirPods._id}
-                factory={compareAirPods.Specifications.factoryData.date}
+                factory={compareAirPods.specificationsAirPods.factoryData.date}
               />
             ))}
           </div>
@@ -39,7 +39,7 @@ const CompareParametrsAirPods = ({ compareProducts }) => {
             {compareProducts.map((compareAirPods) => (
               <CompareFactory
                 key={compareAirPods._id}
-                factory={compareAirPods.Specifications.General.Earpads}
+                factory={compareAirPods.specificationsAirPods.General.Earpads}
               />
             ))}
           </div>
@@ -54,7 +54,7 @@ const CompareParametrsAirPods = ({ compareProducts }) => {
             {compareProducts.map((compareAirPods) => (
               <CompareFactory
                 key={compareAirPods._id}
-                factory={compareAirPods.Specifications.timeJob.case}
+                factory={compareAirPods.specificationsAirPods.timeJob.case}
               />
             ))}
           </div>
@@ -66,7 +66,7 @@ const CompareParametrsAirPods = ({ compareProducts }) => {
               <CompareFactory
                 key={compareAirPods._id}
                 factory={
-                    compareAirPods.Specifications.timeJob.fullTime
+                    compareAirPods.specificationsAirPods.timeJob.fullTime
                 }
               />
             ))}
@@ -78,7 +78,7 @@ const CompareParametrsAirPods = ({ compareProducts }) => {
             {compareProducts.map((compareAirPods) => (
               <CompareFactory
                 key={compareAirPods._id}
-                factory={compareAirPods.Specifications.timeJob.timeCall}
+                factory={compareAirPods.specificationsAirPods.timeJob.timeCall}
               />
             ))}
           </div>
@@ -94,7 +94,7 @@ const CompareParametrsAirPods = ({ compareProducts }) => {
               <CompareFactory
                 key={compareAirPods._id}
                 factory={
-                    compareAirPods.Specifications.DimensionsAndWeight.Dimensions
+                    compareAirPods.specificationsAirPods.DimensionsAndWeight.Dimensions
                 }
               />
             ))}
@@ -107,7 +107,7 @@ const CompareParametrsAirPods = ({ compareProducts }) => {
               <CompareFactory
                 key={compareAirPods._id}
                 factory={
-                    compareAirPods.Specifications.DimensionsAndWeight.weight
+                    compareAirPods.specificationsAirPods.DimensionsAndWeight.weight
                 }
               />
             ))}

@@ -24,9 +24,9 @@ const BtnCompare = ({
       if(product.hasOwnProperty("specificationsMacBooks")) {
         return handleAddCompareMacBooks(product)
        }
-      // else {
-      //  return handleAddCompareAirPods(product)
-      // }
+      if(product.hasOwnProperty("specificationsAirPods")) {
+        return handleAddCompareAirPods(product)
+      }      
   }
 
   const handleIdentifyId = (id) => {

@@ -4,7 +4,6 @@ import { isHave } from "../../../../utils/isHave";
 import style from "./btnOnCard.module.css";
 import { useDispatch } from "react-redux";
 
-
 const BtnOnCardCompare = ({
   products,
   id,

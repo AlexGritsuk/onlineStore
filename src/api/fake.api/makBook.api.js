@@ -1,9 +1,7 @@
 import { visualAppearanceMacBook } from "./visualAppearanceMacBook.api";
 import { seriesMacBooks } from "./seriesMacBook.api";
-
 import makBookAir from "./images/macbooks/macBook 13.png";
 import makBookAir15 from "./images/macbooks/MacBook Air 15.png";
-
 
 const imageMacBook = {
     macBookAir13: {
@@ -16,7 +14,6 @@ const imageMacBook = {
         StarLight: [makBookAir15]
     }
 };
-
 
 const macBooks = [
     {

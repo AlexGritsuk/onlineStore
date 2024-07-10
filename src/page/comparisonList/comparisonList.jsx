@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CompareEmpty from "./compareEmpty";
 import { useSelector } from "react-redux";
 import { getCompare, getCountCompare } from "../../store/compare";
@@ -27,6 +27,22 @@ const ComparisonList = () => {
   const countMacBooks = useSelector(getCountCompareMacBooks());
 
   const [tab, setTab] = useState("section1");
+  const [tabLine, setTabLine] = useState([
+    { label: "iPhones", value: "section1" },
+    { label: "AirPods", value: "section2" },
+    { label: "MacBooks", value: "section3" },
+    { label: "Apple watch", value: "section4" },
+  ]);
+
+  useEffect(() => {
+    if (countIphone === 0) {
+      setTabLine([
+        { label: "AirPods", value: "section2" },
+        { label: "MacBooks", value: "section3" },
+        { label: "Apple watch", value: "section4" },
+      ]);
+    }
+  }, []);
 
   const tabs = [
     { label: "iPhones", value: "section1" },
@@ -34,6 +50,22 @@ const ComparisonList = () => {
     { label: "MacBooks", value: "section3" },
     { label: "Apple watch", value: "section4" },
   ];
+
+  function isCount() {
+    if (countIphone !== 0) {
+      return (
+        <div>
+          <CompareCards
+            compareProducts={compareIphones}
+            deleteCompare={handleDeleteCompare}
+          />
+          <CompareParametrsIpnones compareProducts={compareIphones} />
+        </div>
+      );
+    } else {
+      return <div style={{ display: "none" }}></div>;
+    }
+  }
 
   function renderTabContent() {
     switch (tab) {
@@ -83,7 +115,7 @@ const ComparisonList = () => {
     return (
       <>
         <Tabs
-          tabs={tabs}
+          tabs={tabLine}
           renderTabContent={renderTabContent}
           tab={tab}
           setTab={setTab}
