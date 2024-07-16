@@ -35,6 +35,7 @@ const Tab = ({ item, tab, setTab }) => {
     }
     return <div style={{opacity: 0}}>kk</div>;
   }
+
   function renderTags(isVear) {
     switch (isVear) {
       case "iPhones":
