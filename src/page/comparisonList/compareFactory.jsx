@@ -6,3 +6,4 @@ const CompareFactory = ({ factory }) => {
 };
 
 export default CompareFactory;
+ 

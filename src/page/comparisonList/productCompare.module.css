@@ -1,40 +1,73 @@
 .productCompare__wrapper {
   width: fit-content;
-  height: 466px; 
+  height: 466px;
   margin-right: 45px;
 }
 
-.productCompare__img > img {
+.productCompare__img {
   width: 241px;
   height: 278px;
 }
 
 .productCompare {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   align-items: center;
 }
 
-.productCompare__description { 
-    margin-top: 15px;
-}
-
-.productCompare__description__item {
+.productCompare__info {
   display: flex;
-  margin-bottom: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.productCompare__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.productCompare__description div {
+  margin-top: 10px;
+}
+
+.productCompare__btns {
+  margin-top: 15px;
 }
 
 
-@media (max-width: 660px) {
-  .productCompare__description { 
-    margin-top: 15px;
-}
-.productCompare__img > img {
-  width: 210px;
-  height: 240px;
-}
+.productCompare__btn_cart {
+
 }
 
-@media (max-width: 480px) {
+.productCompare__btn_compare {
+  margin-top: 15px;
+}
 
+@media (max-width: 740px) {
+  .productCompare__img {
+    width: 200px;
+    height: 220px;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .productCompare__img {
+    width: 180px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 460px) {
+  .productCompare__img {
+    width: 160px;
+    height: 180px;
+  }
+
+  .productCompare__description{
+    font-size: 16px;
+  }
 }

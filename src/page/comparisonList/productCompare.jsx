@@ -11,37 +11,35 @@ const ProductCompare = ({ deleteCompare, ...compare }) => {
   return (
     <div className={style.productCompare__wrapper}>
       <div className={style.productCompare}>
-        <div className={style.productCompare__img}>
-          <img src={compare.img[0]} alt="" />
-        </div>
+        <div className={style.productCompare__info}>
+          <div className={style.productCompare__imges}>
+            <img
+              className={style.productCompare__img}
+              src={compare.img[0]}
+              alt=""
+            />
+          </div>
 
-        <div className={style.productCompare__description}>
-          <div className={style.productCompare__description__item}>
-            <div>{compare.name.name}</div>
-            <div style={{ marginLeft: "10px" }}>
-              {compare.memories?.memory}
+          <div className={style.productCompare__description}>
+            <div>
+              {compare.name.name}
+              <span> {compare.memories?.memory}</span>
             </div>
-          </div>
-          <div className={style.productCompare__description__item}>
-            {compare.visualAppearance.name}
+            <div>{compare.visualAppearance.name}</div>
+            <div>{compare.price} ₽</div>
           </div>
         </div>
 
-        <div>{compare.price} ₽</div>
-
-        <div style={{ marginTop: "15px" }}>
-          <div>
+        <div className={style.productCompare__btns}>
+          <div className={style.productCompare__btn_cart}>
             <BtnCart
               products={cartProducts}
               id={compare._id}
               currentProduct={compare}
             />
           </div>
-          <div style={{ marginTop: "15px" }}>
-            <BtnDeleteCompare
-              id={compare._id}
-              deleteCompare={deleteCompare}
-            />
+          <div className={style.productCompare__btn_compare}>
+            <BtnDeleteCompare id={compare._id} deleteCompare={deleteCompare} />
           </div>
         </div>
       </div>

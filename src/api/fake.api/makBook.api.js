@@ -20,7 +20,7 @@ const macBooks = [
         _id: "120",
         name: seriesMacBooks.macBookAir13,
         img: imageMacBook.macBookAir13.black,
-        visualAppearance: visualAppearanceMacBook.black,
+        visualAppearance: visualAppearanceMacBook.black, 
         price: 92000,
         rating: 8,
         specificationsMacBooks: {
@@ -32,11 +32,12 @@ const macBooks = [
                 diagonal: "13.3",
                 ScreenResolution: "2560 x 1600",
                 typeDisplay: "IPS",
-                core: "8"
+                
             },
             processor: {
-                RAM: "8",
-                line: "Apple M1"
+                ram: "8",
+                line: "Apple M1",
+                core: "8"
             },
             battery: {
                 type: "Li-Pol",
@@ -71,11 +72,12 @@ const macBooks = [
                 diagonal: "13.3",
                 ScreenResolution: "2560 x 1600",
                 typeDisplay: "IPS",
-                core: "8"
+                
             },
             processor: {
-                RAM: "8",
-                line: "Apple M1"
+                ram: "8",
+                line: "Apple M1",
+                core: "8"
             },
             battery: {
                 type: "Li-Pol",
@@ -109,12 +111,12 @@ const macBooks = [
             display: {
                 diagonal: "13.3",
                 ScreenResolution: "2560 x 1600",
-                typeDisplay: "IPS",
-                core: "8"
+                typeDisplay: "IPS",                
             },
             processor: {
-                RAM: "8",
-                line: "Apple M1"
+                ram: "8",
+                line: "Apple M1",
+                core: "8"
             },
             battery: {
                 type: "Li-Pol",
@@ -149,11 +151,12 @@ const macBooks = [
                 diagonal: "13.3",
                 ScreenResolution: "2560 x 1600",
                 typeDisplay: "IPS",
-                core: "8"
+                
             },
             processor: {
-                RAM: "8",
-                line: "Apple M1"
+                ram: "8",
+                line: "Apple M1",
+                core: "8"
             },
             battery: {
                 type: "Li-Pol",
@@ -187,19 +190,19 @@ const macBooks = [
             display: {
                 diagonal: "15.3",
                 ScreenResolution: "2880 x 1864",
-                typeDisplay: "IPS",
-                core: "10"
+                typeDisplay: "IPS",                
             },
             processor: {
-                RAM: "16",
-                line: "Apple M3"
+                ram: "16",
+                line: "Apple M3",
+                core: "10"
             },
             battery: {
                 type: "Li-Pol",
                 typeOn: "15"
             },
             DimensionsAndWeight: {
-                Dimensions: "340 x 11 x 237",
+                Dimensions: "340 x 237 x 11",
                 weight: "1510"
             }
         },

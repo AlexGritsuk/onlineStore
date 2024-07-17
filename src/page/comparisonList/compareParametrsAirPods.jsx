@@ -4,10 +4,10 @@ import CompareFactory from "./compareFactory";
 
 const CompareParametrsAirPods = ({ compareProducts }) => {
   return (
-    <div>
+    <div className={style.comparisonList__wrapper}>
       <div className={style.comparisonList__factory}>
         <h3>Заводские данные</h3>
-        <div className={style.comparisonList__factory_item}>
+        <div className={style.comparisonList__factory_item}> 
           <h5>Страна</h5>
           <div className={style.comparisonList__factory_element}>
             {compareProducts.map((compareAirPods) => (

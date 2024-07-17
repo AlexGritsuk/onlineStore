@@ -5,6 +5,7 @@ import ProductCompare from "./productCompare";
 
 
 const CompareCards = ({compareProducts, deleteCompare}) => {
+  console.log(compareProducts);
   return (
     <div
       className={

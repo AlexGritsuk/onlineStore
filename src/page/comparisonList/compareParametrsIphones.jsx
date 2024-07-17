@@ -4,7 +4,7 @@ import CompareFactory from "./compareFactory";
 
 const CompareParametrsIpnones = ({ compareProducts }) => {
   return (
-    <div>
+    <div className={style.comparisonList__wrapper}>
       <div className={style.comparisonList__factory}>
         <h3>Заводские данные</h3>
         <div className={style.comparisonList__factory_item}>

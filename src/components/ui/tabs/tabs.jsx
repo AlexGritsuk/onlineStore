@@ -19,6 +19,7 @@ import {
 import CompareCards from "../../../page/comparisonList/compareCards";
 import CompareParametrsIpnones from "../../../page/comparisonList/compareParametrsIphones";
 import CompareParametrsAirPods from "../../../page/comparisonList/compareParametrsAirPods";
+import CompareParametrsMacBooks from "../../../page/comparisonList/compareParametrsMacBooks";
 
 const Tabs = () => {
   const compareIphones = useSelector(getCompare());
@@ -103,10 +104,11 @@ const Tabs = () => {
               compareProducts={compareMacBooks}
               deleteCompare={handleDeleteCompareMacBooks}
             />
+            <CompareParametrsMacBooks compareProducts={compareMacBooks} />
           </div>
         </div>
       </div>
-    </div>   
+    </div>
   );
 };
 
