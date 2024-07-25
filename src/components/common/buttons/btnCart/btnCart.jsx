@@ -3,10 +3,11 @@ import { isHave } from "../../../../utils/isHave";
 import { PiShoppingCartBold } from "react-icons/pi";
 import style from "./btnCart.module.css";
 import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
-import { gethandleAddCartProducts, gethandleDeleteCartProducts } from "../../../../store/cart"; 
+import { useDispatch, useSelector } from "react-redux";
+import { getCart, gethandleAddCartProducts, gethandleDeleteCartProducts } from "../../../../store/cart"; 
 
-const BtnCart = ({ products, id, currentProduct }) => {
+const BtnCart = ({ id, currentProduct }) => {
+  const products = useSelector(getCart());
   const dispatch = useDispatch();  
   return (
     
@@ -32,8 +33,7 @@ const BtnCart = ({ products, id, currentProduct }) => {
   );
 };
 
-BtnCart.propTypes = {
-  products: PropTypes.array.isRequired,
+BtnCart.propTypes = { 
   id: PropTypes.string.isRequired,
   currentProduct: PropTypes.object.isRequired,  
 };

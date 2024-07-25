@@ -96,9 +96,20 @@
 
     .comparisonList {
        width: 400px; 
+       height: 400px;
     } 
 }
 
 @media (max-width: 460px) {
-
+    .compareFactory {
+        margin-right: 70px;
+        min-width: 130px;        
+    }
+    .comparisonList {
+        width: 350px; 
+        
+     } 
+     .comparisonList__factory {
+        margin-top: 10px;    
+    }
 }

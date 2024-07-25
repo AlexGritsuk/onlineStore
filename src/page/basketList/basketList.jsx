@@ -19,8 +19,7 @@ const BasketList = () => {
               <IphoneCart
                 key={product._id}
                 {...product}
-                heartProducts={heartProducts}           
-                
+                heartProducts={heartProducts}
               />
             );
           })}

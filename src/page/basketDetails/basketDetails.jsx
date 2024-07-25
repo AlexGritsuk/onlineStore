@@ -34,7 +34,6 @@ const BasketDetails = () => {
           </div>
           <div className={style.basketDetails__item}>
             <Accordion faqList={accordionDiscount} />
-
             <div>{""}</div>
           </div>
           <div className={style.basketDetails__item}>

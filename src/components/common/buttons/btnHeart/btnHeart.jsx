@@ -3,10 +3,12 @@ import { isHave } from "../../../../utils/isHave";
 import PropTypes from "prop-types";
 import { FaRegHeart } from "react-icons/fa";
 import style from "./btnHeart.module.css";
-import { useDispatch } from "react-redux";
-import { handleAddHeart, handleDeleteHeart } from "../../../../store/heart";
+import { useDispatch, useSelector } from "react-redux";
+import { getHeart, handleAddHeart, handleDeleteHeart } from "../../../../store/heart";
 
-const BtnHeart = ({ products, id, currentProduct, onDeleteHeart }) => {
+const BtnHeart = ({ id, currentProduct }) => {
+  const products = useSelector(getHeart());
+
   const dispatch = useDispatch();
   return (
     <div className={style.btnHeart}>
@@ -31,8 +33,7 @@ const BtnHeart = ({ products, id, currentProduct, onDeleteHeart }) => {
   );
 };
 
-BtnHeart.propTypes = {
-  products: PropTypes.array.isRequired,
+BtnHeart.propTypes = {  
   id: PropTypes.string.isRequired,
   currentProduct: PropTypes.object.isRequired,  
 };

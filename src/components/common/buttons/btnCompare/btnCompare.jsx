@@ -3,18 +3,20 @@ import { isHave } from "../../../../utils/isHave";
 import { IoIosGitCompare } from "react-icons/io";
 import style from "./btnCompare.module.css";
 import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
-import { handleAddCompare, handleDeleteCompare } from "../../../../store/compare";
-import { handleAddCompareAirPods, handleDeleteCompareAirPods } from "../../../../store/compareAirPods";
-import { handleAddCompareMacBooks, handleDeleteCompareMacBooks } from "../../../../store/compareMacBooks";
+import { useDispatch, useSelector } from "react-redux";
+import { getCompare, handleAddCompare, handleDeleteCompare } from "../../../../store/compare";
+import { getCompareAirPods, handleAddCompareAirPods, handleDeleteCompareAirPods } from "../../../../store/compareAirPods";
+import { getCompareMacBooks, handleAddCompareMacBooks, handleDeleteCompareMacBooks } from "../../../../store/compareMacBooks";
 
-const BtnCompare = ({
-  productIphone,
-  productAirPods,
-  productMacBooks,
+const BtnCompare = ({  
   id,
   currentProduct,  
 }) => {
+
+  const productIphone = useSelector(getCompare());
+  const productAirPods = useSelector(getCompareAirPods());
+  const productMacBooks = useSelector(getCompareMacBooks());
+
   const dispatch = useDispatch();  
 
   const handleIdentifyProduct = (product) => {
@@ -64,9 +66,7 @@ const BtnCompare = ({
   );
 };
 
-BtnCompare.propTypes = {
-  productIphone: PropTypes.array.isRequired,
-  productAirPods: PropTypes.array.isRequired,
+BtnCompare.propTypes = {  
   id: PropTypes.string.isRequired,
   currentProduct: PropTypes.object.isRequired, 
 };

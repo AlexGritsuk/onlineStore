@@ -1,12 +1,9 @@
 import React from "react";
 import style from "./productCompare.module.css";
 import BtnCart from "../../components/common/buttons/btnCart/btnCart";
-import { useSelector } from "react-redux";
-import { getCart } from "../../store/cart";
 import BtnDeleteCompare from "../../components/common/buttons/btnCompare/btnDeleteCompare";
 
-const ProductCompare = ({ deleteCompare, ...compare }) => {
-  const cartProducts = useSelector(getCart());
+const ProductCompare = ({ deleteCompare, ...compare }) => {  
 
   return (
     <div className={style.productCompare__wrapper}>
@@ -32,8 +29,7 @@ const ProductCompare = ({ deleteCompare, ...compare }) => {
 
         <div className={style.productCompare__btns}>
           <div className={style.productCompare__btn_cart}>
-            <BtnCart
-              products={cartProducts}
+            <BtnCart              
               id={compare._id}
               currentProduct={compare}
             />

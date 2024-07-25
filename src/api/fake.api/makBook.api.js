@@ -3,6 +3,16 @@ import { seriesMacBooks } from "./seriesMacBook.api";
 import makBookAir from "./images/macbooks/macBook 13.png";
 import makBookAir15 from "./images/macbooks/MacBook Air 15.png";
 
+import iMacSilver1 from "././images/macbooks/1Apple iMac 24 silver.png";
+import iMacSilver2 from "././images/macbooks/2Apple iMac 24 silver.png";
+import iMacSilver3 from "././images/macbooks/3Apple iMac 24 silver.png";
+
+import iMacBlue1 from "././images/macbooks/1Apple iMac 24 blue.png";
+import iMacBlue2 from "././images/macbooks/2Apple iMac 24 blue.png";
+
+import iMacPink1 from "././images/macbooks/1Apple iMac 24 pink.png";
+import iMacPink2 from "././images/macbooks/2Apple iMac 24 pink.png";
+
 const imageMacBook = {
     macBookAir13: {
         black: [makBookAir],
@@ -12,6 +22,11 @@ const imageMacBook = {
     },
     macBookAir15: {
         StarLight: [makBookAir15]
+    },
+    iMac: {
+        silver: [iMacSilver1, iMacSilver2, iMacSilver3],
+        blue: [iMacBlue1, iMacBlue2],
+        pink: [iMacPink1, iMacPink2]
     }
 };
 
@@ -20,7 +35,7 @@ const macBooks = [
         _id: "120",
         name: seriesMacBooks.macBookAir13,
         img: imageMacBook.macBookAir13.black,
-        visualAppearance: visualAppearanceMacBook.black, 
+        visualAppearance: visualAppearanceMacBook.black,
         price: 92000,
         rating: 8,
         specificationsMacBooks: {
@@ -32,7 +47,7 @@ const macBooks = [
                 diagonal: "13.3",
                 ScreenResolution: "2560 x 1600",
                 typeDisplay: "IPS",
-                
+
             },
             processor: {
                 ram: "8",
@@ -72,7 +87,7 @@ const macBooks = [
                 diagonal: "13.3",
                 ScreenResolution: "2560 x 1600",
                 typeDisplay: "IPS",
-                
+
             },
             processor: {
                 ram: "8",
@@ -111,7 +126,7 @@ const macBooks = [
             display: {
                 diagonal: "13.3",
                 ScreenResolution: "2560 x 1600",
-                typeDisplay: "IPS",                
+                typeDisplay: "IPS",
             },
             processor: {
                 ram: "8",
@@ -151,7 +166,7 @@ const macBooks = [
                 diagonal: "13.3",
                 ScreenResolution: "2560 x 1600",
                 typeDisplay: "IPS",
-                
+
             },
             processor: {
                 ram: "8",
@@ -190,7 +205,7 @@ const macBooks = [
             display: {
                 diagonal: "15.3",
                 ScreenResolution: "2880 x 1864",
-                typeDisplay: "IPS",                
+                typeDisplay: "IPS",
             },
             processor: {
                 ram: "16",
@@ -210,7 +225,119 @@ const macBooks = [
         Ноутбук работает на чипе Apple M3 с восьмиядерным центральным процессором и 
         интегрированным графическим процессором с 10 ядрами. Обработка изображений и 
         вычислительная производительность поднялись на новый уровень, а Wi-Fi стал быстрее в два раза.`
-    }
+    },
+    {
+        _id: "125",
+        name: seriesMacBooks.iMac,
+        img: imageMacBook.iMac.pink,
+        visualAppearance: visualAppearanceMacBook.pink,
+        price: 145000,
+        rating: 6.1,
+        specificationsMacBooks: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "23.5",
+                ScreenResolution: "4480 x 2520",
+                typeDisplay: "IPS",
+
+            },
+            processor: {
+                ram: "8",
+                line: "Apple M1",
+                core: "8"
+            },
+            battery: {
+                type: "Li-Pol",
+                typeOn: "18"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "461 x 547 x 147",
+                weight: "4460"
+            }
+        },
+        describe: `Новый iMac с дисплеем Retina 24 дюйма с разрешением 4,5K наделен силой чипа M1, объединяющем в себе центральный и графический процессоры, память и ряд других компонентов. В iMac приложения открываются молниеносно, а вся система функционирует слаженно и быстро.
+        Мощная начинка размещена в стильном и очень тонком корпусе — его толщина составляет всего 11,5 мм.
+        Благодаря широкому цветовому охвату (более миллиарда цветов) и высочайшему разрешению 4480x2520 пикселей изображение на экране выглядит реалистично и четко.`
+    },
+    {
+        _id: "126",
+        name: seriesMacBooks.iMac,
+        img: imageMacBook.iMac.silver,
+        visualAppearance: visualAppearanceMacBook.silver,
+        price: 169000,
+        rating: 6.1,
+        specificationsMacBooks: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "23.5",
+                ScreenResolution: "4480 x 2520",
+                typeDisplay: "IPS",
+
+            },
+            processor: {
+                ram: "8",
+                line: "Apple M3",
+                core: "8"
+            },
+            battery: {
+                type: "Li-Pol",
+                typeOn: "18"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "461 x 547 x 147",
+                weight: "4460"
+            }
+        },
+        describe: `iMac – это компьютер вида "Моноблок" от Apple, 
+        который невероятно сложно сравнивать с аналогичными гаджетами от 
+        других брендов. Ведь здесь мы получаем буквально все, о чем может мечтать 
+        современный пользователей. В тонкий корпус поместилось и мощное "Железо", и 
+        отличный экран, и Full HD камера, которая повысила уровень видеозвонков на совершенно иной уровень.`
+    },
+    {
+        _id: "127",
+        name: seriesMacBooks.iMac,
+        img: imageMacBook.iMac.blue,
+        visualAppearance: visualAppearanceMacBook.blue,
+        price: 184000,
+        rating: 6.1,
+        specificationsMacBooks: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "23.5",
+                ScreenResolution: "4480 x 2520",
+                typeDisplay: "IPS",
+
+            },
+            processor: {
+                ram: "8",
+                line: "Apple M3",
+                core: "8"
+            },
+            battery: {
+                type: "Li-Pol",
+                typeOn: "18"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "461 x 547 x 147",
+                weight: "4460"
+            }
+        },
+        describe: `iMac – это компьютер вида "Моноблок" от Apple, 
+        который невероятно сложно сравнивать с аналогичными гаджетами от 
+        других брендов. Ведь здесь мы получаем буквально все, о чем может мечтать 
+        современный пользователей. В тонкий корпус поместилось и мощное "Железо", и 
+        отличный экран, и Full HD камера, которая повысила уровень видеозвонков на совершенно иной уровень.`
+    },
 ];
 
 const fetchAll = () =>

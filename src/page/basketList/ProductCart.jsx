@@ -1,50 +1,38 @@
 import React from "react";
 import style from "./iphoneCart.module.css";
 import root from "../../style/root__style.module.css";
-import { FaRegSquarePlus } from "react-icons/fa6";
-import { LuMinusSquare } from "react-icons/lu";
 import BtnDelete from "../../components/common/buttons/btnDelete/btnDelete";
 import BtnHeart from "../../components/common/buttons/btnHeart/btnHeart";
 
-const ProductCart = ({    
-  heartProducts, 
-  ...product
-}) => {
+const ProductCart = ({...product }) => {
   return (
     <div className={style.iphoneCart__wrapper}>
       <div className={style.iphoneCart}>
-        <div style={{ margin: "20px" }}>
+        <div className={style.iphoneCart__imges}>
           <img
             className={root.img + " " + style.iphoneCart__img}
-            src={product.img[0]}
+            src={product.img[0]} 
             alt="Картинка"
           />
         </div>
 
-        <div className={style.iphoneCart__item}>{product.name.name}</div>
+        <div className={style.iphoneCart__name}>{product.name.name}</div>
 
-        <div className={style.iphoneCart__item}>
-          <div>
-            <LuMinusSquare /> 1 <FaRegSquarePlus />
-          </div>
-
-          <div style={{ ["marginTop"]: "30px" }}>
-            <BtnDelete id={product._id} />
-            <div style={{marginTop: "20px"}}>
-              <BtnHeart
-                products={heartProducts}
-                id={product._id}                
-                currentProduct={product}                
-              />
+        <div>
+          <div className={style.iphoneCart__item}>           
+            <div style={{ ["marginTop"]: "30px" }}>          
+              <BtnDelete id={product._id} />
+              <div style={{ marginTop: "20px" }}>
+                <BtnHeart                  
+                  id={product._id}
+                  currentProduct={product}
+                />
+              </div>
+          
             </div>
           </div>
-        </div>
-
-        <div
-          style={{ ["marginRight"]: "20px" }}
-          className={style.iphoneCart__item}
-        >
-          {product.price} ₽
+          
+          <div className={style.iphoneCart__price}>{product.price}₽</div>
         </div>
       </div>
     </div>

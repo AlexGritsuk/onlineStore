@@ -6,9 +6,7 @@ import { useSelector } from "react-redux";
 import { getAirPodsById } from "../../store/airPods";
 import { getMacBooksById } from "../../store/macBooks";
 
-const ProductListPage = ({ productId }) => {  
-   
- 
+const ProductListPage = ({ productId }) => {   
   const iphones = useSelector(getIphoneById(productId));
   const airPods = useSelector(getAirPodsById(productId));
   const macBooks = useSelector(getMacBooksById(productId));  

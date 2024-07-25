@@ -23,6 +23,16 @@ export const visualAppearanceMacBook = {
         _id: "124ab",
         name: "Сияющая звезда",
         color: "StarLight"
+    },
+    pink: {
+        _id: "125ab",
+        name: "Розовый",
+        color: "Pink"
+    },
+    blue: {
+        _id: "126ab",
+        name: "Синий",
+        color: "blue"
     }
 }
 
