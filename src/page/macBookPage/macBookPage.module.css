@@ -1,14 +1,14 @@
-.airPodsPage {
+.macBookPage {
     display: flex;
     margin-top: 40px;
   }
   
-  .airPodsPage__groupList {
+  .macBookPage__groupList {
     float: left;
     width: 40%;
-  }
+  } 
   
-  .airPodsPage__airPodsGrid {
+  .macBookPage__macBookGrid {
     float: right;
     width: 60%;
   }

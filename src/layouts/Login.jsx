@@ -11,16 +11,10 @@ const Login = () => {
     type === "register" ? type : "login"
   );
 
-  const FormTypeRegister = () => {
-    setFormType((prevState) => {
-      return (prevState = "register");
-    });
-  };
-
-  const FormTypeLogin = () => {
-    setFormType((prevState) => {
-      return (prevState = "login");
-    });
+  const toggleFromType = () => {
+    setFormType((prevState) =>
+      prevState === "register" ? "login" : "register"
+    );
   };
 
   return (
@@ -32,10 +26,10 @@ const Login = () => {
         </div>
         <div className={style.login__item} style={{ marginTop: "15px" }}>
           <div className={style.login__link}>
-            <a role="button" onClick={FormTypeLogin}>
+            <a role="button" onClick={toggleFromType}>
               Вход
             </a>
-            <a role="button" onClick={FormTypeRegister}>
+            <a role="button" onClick={toggleFromType}>
               Регистрация
             </a>
           </div>

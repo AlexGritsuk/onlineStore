@@ -2,25 +2,30 @@ import React from "react";
 import { isHave } from "../../../../utils/isHave";
 import { PiShoppingCartBold } from "react-icons/pi";
 import style from "./btnCart.module.css";
-import PropTypes from "prop-types"; 
+import PropTypes from "prop-types";
+import { useDispatch, useSelector } from "react-redux";
+import { getCart, gethandleAddCartProducts, gethandleDeleteCartProducts } from "../../../../store/cart"; 
 
-const BtnCart = ({ products, id, currentProduct, onDelete, onAddCart }) => {
+const BtnCart = ({ id, currentProduct }) => {
+  const products = useSelector(getCart());
+  const dispatch = useDispatch();  
   return (
-    <div>
+    
+    <div className={style.btnCart__wrapper}> 
       {!isHave(products, id) ? (
         <button
-          onClick={() => onAddCart(currentProduct)}
+          onClick={() => dispatch(gethandleAddCartProducts(currentProduct))}
           className={style.btn + " " + style.btnCart}
         >
-          <PiShoppingCartBold style={{ width: "20px", height: "20px" }} /> В
+          <PiShoppingCartBold className={style.btnCart__icon} /> В
           корзину
         </button>
       ) : (
         <button
-          onClick={() => onDelete(id)}
+          onClick={() => dispatch(gethandleDeleteCartProducts(id))}
           className={style.btnCart + " " + style.btnCart__in}
         >
-          <PiShoppingCartBold style={{ width: "20px", height: "20px" }} /> В
+          <PiShoppingCartBold className={style.btnCart__icon} /> В
           корзине
         </button>
       )}
@@ -28,12 +33,9 @@ const BtnCart = ({ products, id, currentProduct, onDelete, onAddCart }) => {
   );
 };
 
-BtnCart.propTypes = {
-  products: PropTypes.array.isRequired,
+BtnCart.propTypes = { 
   id: PropTypes.string.isRequired,
-  currentProduct: PropTypes.object.isRequired,
-  onDelete: PropTypes.func.isRequired,
-  onAddCart: PropTypes.func.isRequired,
+  currentProduct: PropTypes.object.isRequired,  
 };
 
 export default BtnCart;

@@ -4,8 +4,7 @@ import { pagesArray } from "../../../utils/paginate";
 import PropTypes from "prop-types";
 import _ from "lodash";
 
-const Pagination = ({ currentPage, onPageChange, onNext, onPrev, pages }) => {
-  console.log(pages);
+const Pagination = ({ currentPage, onPageChange, onNext, onPrev, pages }) => {  
   if (pages.length === 1) {
     return null;
   }
@@ -42,7 +41,7 @@ const Pagination = ({ currentPage, onPageChange, onNext, onPrev, pages }) => {
 };
 
 Pagination.propTypes = {
-  currentPage: PropTypes.object.isRequired,
+  currentPage: PropTypes.number.isRequired,
   onPageChange: PropTypes.func.isRequired,
   onNext: PropTypes.func.isRequired,
   onPrev: PropTypes.func.isRequired,

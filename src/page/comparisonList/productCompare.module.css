@@ -1,24 +1,78 @@
 .productCompare__wrapper {
-  width: 288px;
-  height: 466px; 
-  margin-right: 15px;
+  width: fit-content;
+  height: 466px;
+  margin-right: 45px;
 }
 
 .productCompare__img {
-    transform: scale(0.7);
+  width: 241px;
+  height: 278px;
 }
 
 .productCompare {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   align-items: center;
 }
 
-.productCompare__description { 
-    margin-top: -15px;
+.productCompare__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.productCompare__description__item {
+.productCompare__description {
   display: flex;
-  margin-bottom: 10px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.productCompare__description div {
+  margin-top: 10px;
+}
+
+.productCompare__btns {
+  margin-top: 15px;
+}
+
+
+
+
+.productCompare__btn_compare {
+  margin-top: 15px;
+}
+
+@media (max-width: 740px) {
+  .productCompare__img {
+    width: 200px;
+    height: 220px;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .productCompare__img {
+    width: 180px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 460px) {
+  .productCompare__img {
+    width: 160px;
+    height: 180px;
+  }
+
+  .productCompare__description{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .productCompare__img {
+    width: 140px;
+    height: 160px;
+  }
 }

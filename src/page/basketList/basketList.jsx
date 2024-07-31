@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import IphoneCart from "./ProductCart";
 import BasketEmpty from "./basketEmpty";
-import { useCart } from "../../hooks/useCart";
-import { useHeart } from "../../hooks/useHeart";
+import { useSelector } from "react-redux";
+import { getCart } from "../../store/cart";
+import { getHeart } from "../../store/heart";
 
 const BasketList = () => {
-  const { cartProducts, handleDeleteCartProducts } = useCart();
-  const { heartProducts, handleAddHeartProducts, handleDeleteHeartProducts } =
-    useHeart();
+ 
+  const cartProducts = useSelector(getCart());   
+  const heartProducts = useSelector(getHeart())
 
   if (cartProducts.length > 0) {
     return (
@@ -19,9 +20,6 @@ const BasketList = () => {
                 key={product._id}
                 {...product}
                 heartProducts={heartProducts}
-                onDelete={handleDeleteCartProducts}
-                onAddHeart={handleAddHeartProducts}
-                onDeleteHeart={handleDeleteHeartProducts}
               />
             );
           })}

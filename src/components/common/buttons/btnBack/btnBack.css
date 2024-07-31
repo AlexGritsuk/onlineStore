@@ -1,0 +1,19 @@
+.btnBack {
+    margin-top: 25px;
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;  
+  }
+
+  .btnArrow {
+    margin: 5px;
+  }
+
+  @media (max-width: 400px) {
+    .btnBack {
+      margin-top: 10px;
+    }
+  }

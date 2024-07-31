@@ -1,25 +1,42 @@
-import React from "react";
-import { useCompare } from "../../hooks/useCompare";
+import React, { useEffect, useState } from "react";
 import CompareEmpty from "./compareEmpty";
-import style from "./comparisonList.module.css";
-import ProductCompare from "./productCompare";
-import AddCompareProduct from "../../components/common/addCompareProduct/addCompareProduct";
+import { useSelector } from "react-redux";
+import { getCompare, getCountCompare } from "../../store/compare";
+import CompareCards from "./compareCards";
+import CompareParametrsIpnones from "./compareParametrsIphones";
+import Tabs from "../../components/ui/tabs/tabs";
+import {
+  getCompareAirPods,
+  getCountCompareAirPods,
+} from "../../store/compareAirPods";
+import { handleDeleteCompareAirPods } from "../../store/compareAirPods";
+import { handleDeleteCompare } from "../../store/compare";
+import CompareParametrsAirPods from "./compareParametrsAirPods";
+import {
+  getCompareMacBooks,
+  getCountCompareMacBooks,
+  handleDeleteCompareMacBooks,
+} from "../../store/compareMacBooks";
+
+const initialList = [
+  { id: 0, label: "iPhones", value: "section1" },
+  { id: 1, label: "AirPods", value: "section2" },
+  { id: 2, label: "MacBooks", value: "section3" },
+];
 
 const ComparisonList = () => {
-  const { compareIphones } = useCompare();
-  console.log(compareIphones);
-  if (compareIphones.length > 0) {
+  const compareIphones = useSelector(getCompare());
+  const compareAirPods = useSelector(getCompareAirPods());
+  const compareMacBooks = useSelector(getCompareMacBooks());
+  const countIphone = useSelector(getCountCompare());
+  const countAirPods = useSelector(getCountCompareAirPods());
+  const countMacBooks = useSelector(getCountCompareMacBooks());
+
+  if (countIphone > 0 || countAirPods > 0 || countMacBooks > 0) {
     return (
-      <div className={style.comparisonList__wrapper}>
-        <div className={style.comparisonList}>
-          {compareIphones.map((compareIphone) => (
-            <ProductCompare key={compareIphone._id} {...compareIphone} />
-          ))}
-        </div>
-        <div style={{ padding: "30px" }}>
-          {compareIphones.length < 2 ? <AddCompareProduct /> : ""}
-        </div>
-      </div>
+      <>
+        <Tabs />
+      </>
     );
   }
   return <CompareEmpty />;

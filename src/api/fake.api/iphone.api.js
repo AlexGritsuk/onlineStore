@@ -68,7 +68,6 @@ import iphone14ProBlack from "./images/iphones/14Pro/14ProBlack.png";
 import iphone14ProWhite from "./images/iphones/14Pro/14ProWhite.png";
 import iphone14ProGold from "./images/iphones/14Pro/14ProGold.png";
 
-
 const simCard = {
     oneNanoSim: {
         _id: "67rdca3eeb6", name: "1 nano-SIM"
@@ -84,7 +83,6 @@ const simCard = {
     },
 }
 
-
 const memories = {
     sixfour: { _id: "67rdca3eeb7f6fgeed471822", memory: "64GB" },
     oneTwoEight: { _id: "67rdca3eeb7f6fgeed471818", memory: "128GB" },
@@ -92,8 +90,6 @@ const memories = {
     fiveOneTwo: { _id: "67rdca3eeb7f6fgeed471814", memory: "512GB" },
     giga: { _id: "67rdca3eeb7f6fgeed471819", memory: "1024GB" },
 }
-
-
 
 // const imageIphone = {
 //     iphone13MiniBlack: "https://pitergsm.ru/upload/iblock/aaf/aaf63030ae8948d8f0ee62aad8391719.png",
@@ -153,7 +149,6 @@ const imageIphone = {
     },
 }
 
-
 const iphones = [
     {
         _id: "300631311",
@@ -164,7 +159,28 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 82900,
         bookmark: false,
-        rating: 8
+        rating: 8,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.65",
+                weight: "173"
+            }
+        },
+        describe: `Смартфон iPhone 13 — совершенный гаджет от Apple, работающий под управлением операционной системы iOS 15. Смартфон поддерживает диапазоны 5G, оснащен современным мощным и быстрым чипом A15 Bionic и системой двух 12 Мп камер, поддерживающими новые возможности вычислительной фотографии. Снимайте качественные фото и видео, играйте без тормозов, серфите и общайтесь!`
     },
     {
         _id: "300631312",
@@ -175,7 +191,28 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 77999,
         bookmark: false,
-        rating: 8.1
+        rating: 8.1,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.65",
+                weight: "173"
+            }
+        },
+        describe: `Смартфон iPhone 13 — совершенный гаджет от Apple, работающий под управлением операционной системы iOS 15. Смартфон поддерживает диапазоны 5G, оснащен современным мощным и быстрым чипом A15 Bionic и системой двух 12 Мп камер, поддерживающими новые возможности вычислительной фотографии. Снимайте качественные фото и видео, играйте без тормозов, серфите и общайтесь!`
     },
     {
         _id: "300631323",
@@ -186,7 +223,28 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 74999,
         bookmark: false,
-        rating: 8.2
+        rating: 8.2,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.65",
+                weight: "173"
+            }
+        },
+        describe: `Смартфон iPhone 13 — совершенный гаджет от Apple, работающий под управлением операционной системы iOS 15. Смартфон поддерживает диапазоны 5G, оснащен современным мощным и быстрым чипом A15 Bionic и системой двух 12 Мп камер, поддерживающими новые возможности вычислительной фотографии. Снимайте качественные фото и видео, играйте без тормозов, серфите и общайтесь!`
     },
     {
         _id: "300631324",
@@ -197,7 +255,28 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 74999,
         bookmark: false,
-        rating: 8.3
+        rating: 8.3,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.65",
+                weight: "173"
+            }
+        },
+        describe: `Смартфон iPhone 13 — совершенный гаджет от Apple, работающий под управлением операционной системы iOS 15. Смартфон поддерживает диапазоны 5G, оснащен современным мощным и быстрым чипом A15 Bionic и системой двух 12 Мп камер, поддерживающими новые возможности вычислительной фотографии. Снимайте качественные фото и видео, играйте без тормозов, серфите и общайтесь!`
     },
     {
         _id: "300631335",
@@ -208,7 +287,28 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 75999,
         bookmark: false,
-        rating: 8.4
+        rating: 8.4,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.65",
+                weight: "173"
+            }
+        },
+        describe: `Смартфон iPhone 13 — совершенный гаджет от Apple, работающий под управлением операционной системы iOS 15. Смартфон поддерживает диапазоны 5G, оснащен современным мощным и быстрым чипом A15 Bionic и системой двух 12 Мп камер, поддерживающими новые возможности вычислительной фотографии. Снимайте качественные фото и видео, играйте без тормозов, серфите и общайтесь!`
     },
     {
         _id: "300631336",
@@ -219,7 +319,28 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 75999,
         bookmark: false,
-        rating: 8.5
+        rating: 8.5,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.65",
+                weight: "173"
+            }
+        },
+        describe: `Смартфон iPhone 13 — совершенный гаджет от Apple, работающий под управлением операционной системы iOS 15. Смартфон поддерживает диапазоны 5G, оснащен современным мощным и быстрым чипом A15 Bionic и системой двух 12 Мп камер, поддерживающими новые возможности вычислительной фотографии. Снимайте качественные фото и видео, играйте без тормозов, серфите и общайтесь!`
     },
     {
         _id: "3006313368",
@@ -230,7 +351,28 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 78999,
         bookmark: false,
-        rating: 8.5
+        rating: 8.5,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.65",
+                weight: "173"
+            }
+        },
+        describe: `Смартфон iPhone 13 — совершенный гаджет от Apple, работающий под управлением операционной системы iOS 15. Смартфон поддерживает диапазоны 5G, оснащен современным мощным и быстрым чипом A15 Bionic и системой двух 12 Мп камер, поддерживающими новые возможности вычислительной фотографии. Снимайте качественные фото и видео, играйте без тормозов, серфите и общайтесь!`
     },
     {
         _id: "300631347",
@@ -241,7 +383,29 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 64999,
         bookmark: false,
-        rating: 7.5
+        rating: 7.5,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "5.4",
+                ScreenResolution: "2340 x 1080",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "64.2 x 131.5 x 7.65",
+                weight: "140"
+            }
+        },
+        describe: `Смартфон iPhone 13 mini — совершенный гаджет от Apple, работающий под управлением операционной системы iOS 15. Смартфон поддерживает диапазоны 5G, оснащен современным мощным и быстрым чипом A15 Bionic и системой двух 12 Мп камер, поддерживающими новые возможности вычислительной фотографии. Снимайте качественные фото и видео, играйте без тормозов, серфите и общайтесь!`
+
     },
     {
         _id: "300631348",
@@ -252,7 +416,29 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 64999,
         bookmark: false,
-        rating: 7.4
+        rating: 7.4,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "5.4",
+                ScreenResolution: "2340 x 1080",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "64.2 x 131.5 x 7.65",
+                weight: "140"
+            }
+        },
+        describe: `Смартфон iPhone 13 mini — совершенный гаджет от Apple, работающий под управлением операционной системы iOS 15. Смартфон поддерживает диапазоны 5G, оснащен современным мощным и быстрым чипом A15 Bionic и системой двух 12 Мп камер, поддерживающими новые возможности вычислительной фотографии. Снимайте качественные фото и видео, играйте без тормозов, серфите и общайтесь!`
+
     },
     {
         _id: "300631359",
@@ -263,7 +449,29 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 64900,
         bookmark: false,
-        rating: 7.3
+        rating: 7.3,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "5.4",
+                ScreenResolution: "2340 x 1080",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "64.2 x 131.5 x 7.65",
+                weight: "140"
+            }
+        },
+        describe: `Смартфон iPhone 13 mini — совершенный гаджет от Apple, работающий под управлением операционной системы iOS 15. Смартфон поддерживает диапазоны 5G, оснащен современным мощным и быстрым чипом A15 Bionic и системой двух 12 Мп камер, поддерживающими новые возможности вычислительной фотографии. Снимайте качественные фото и видео, играйте без тормозов, серфите и общайтесь!`
+
     },
     {
         _id: "3006313510",
@@ -274,7 +482,28 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 69900,
         bookmark: false,
-        rating: 7.2
+        rating: 7.2,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "5.4",
+                ScreenResolution: "2340 x 1080",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "64.2 x 131.5 x 7.65",
+                weight: "140"
+            }
+        },
+        describe: `Смартфон iPhone 13 mini — совершенный гаджет от Apple, работающий под управлением операционной системы iOS 15. Смартфон поддерживает диапазоны 5G, оснащен современным мощным и быстрым чипом A15 Bionic и системой двух 12 Мп камер, поддерживающими новые возможности вычислительной фотографии. Снимайте качественные фото и видео, играйте без тормозов, серфите и общайтесь!`
     },
     {
         _id: "3006313611",
@@ -285,7 +514,29 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 64900,
         bookmark: false,
-        rating: 7.1
+        rating: 7.1,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "5.4",
+                ScreenResolution: "2340 x 1080",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "64.2 x 131.5 x 7.65",
+                weight: "140"
+            }
+        },
+        describe: `Смартфон iPhone 13 mini — совершенный гаджет от Apple, работающий под управлением операционной системы iOS 15. Смартфон поддерживает диапазоны 5G, оснащен современным мощным и быстрым чипом A15 Bionic и системой двух 12 Мп камер, поддерживающими новые возможности вычислительной фотографии. Снимайте качественные фото и видео, играйте без тормозов, серфите и общайтесь!`
+
     },
     {
         _id: "3006313612",
@@ -296,7 +547,29 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 69900,
         bookmark: false,
-        rating: 7
+        rating: 7,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "5.4",
+                ScreenResolution: "2340 x 1080",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "64.2 x 131.5 x 7.65",
+                weight: "140"
+            }
+        },
+        describe: `Смартфон iPhone 13 mini — совершенный гаджет от Apple, работающий под управлением операционной системы iOS 15. Смартфон поддерживает диапазоны 5G, оснащен современным мощным и быстрым чипом A15 Bionic и системой двух 12 Мп камер, поддерживающими новые возможности вычислительной фотографии. Снимайте качественные фото и видео, играйте без тормозов, серфите и общайтесь!`
+
     },
     {
         _id: "3006313713",
@@ -307,7 +580,29 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 64900,
         bookmark: false,
-        rating: 6.9
+        rating: 6.9,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "5.4",
+                ScreenResolution: "2340 x 1080",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "64.2 x 131.5 x 7.65",
+                weight: "140"
+            }
+        },
+        describe: `Смартфон iPhone 13 mini — совершенный гаджет от Apple, работающий под управлением операционной системы iOS 15. Смартфон поддерживает диапазоны 5G, оснащен современным мощным и быстрым чипом A15 Bionic и системой двух 12 Мп камер, поддерживающими новые возможности вычислительной фотографии. Снимайте качественные фото и видео, играйте без тормозов, серфите и общайтесь!`
+
     },
     {
         _id: "3006313714",
@@ -318,7 +613,29 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 69900,
         bookmark: false,
-        rating: 6.8
+        rating: 6.8,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "5.4",
+                ScreenResolution: "2340 x 1080",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "64.2 x 131.5 x 7.65",
+                weight: "140"
+            }
+        },
+        describe: `Смартфон iPhone 13 mini — совершенный гаджет от Apple, работающий под управлением операционной системы iOS 15. Смартфон поддерживает диапазоны 5G, оснащен современным мощным и быстрым чипом A15 Bionic и системой двух 12 Мп камер, поддерживающими новые возможности вычислительной фотографии. Снимайте качественные фото и видео, играйте без тормозов, серфите и общайтесь!`
+
     },
     {
         _id: "30063137145",
@@ -329,7 +646,29 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 74900,
         bookmark: false,
-        rating: 6.8
+        rating: 6.8,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2021
+            },
+            display: {
+                diagonal: "5.4",
+                ScreenResolution: "2340 x 1080",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "64.2 x 131.5 x 7.65",
+                weight: "140"
+            }
+        },
+        describe: `Смартфон iPhone 13 mini — совершенный гаджет от Apple, работающий под управлением операционной системы iOS 15. Смартфон поддерживает диапазоны 5G, оснащен современным мощным и быстрым чипом A15 Bionic и системой двух 12 Мп камер, поддерживающими новые возможности вычислительной фотографии. Снимайте качественные фото и видео, играйте без тормозов, серфите и общайтесь!`
+
     },
     {
         _id: "300621",
@@ -340,7 +679,29 @@ const iphones = [
         simCard: [simCard.oneNanoSim],
         price: 35900,
         bookmark: false,
-        rating: 9
+        rating: 9,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2020
+            },
+            display: {
+                diagonal: "4.7",
+                ScreenResolution: "1334 x 750",
+                matrix: "HD"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "нет",
+                frontCamera: "7"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "67.3 x 138.4 x 7.3",
+                weight: "148"
+            }
+        },
+        describe: `Классический компактный дизайн, самый мощный процессор iPhone и масса других достоинств. iPhone SE создан, чтобы стать вашим идеальным смартфоном. Быстрый процессор A13 Bionic, видео 4К, технология Touch ID, True Tone, тактильный отклик при нажатии, быстрый Wi-Fi и сотовая связь, стереозвук, дополненная реальность.`
+
     },
     {
         _id: "30067622",
@@ -351,7 +712,29 @@ const iphones = [
         simCard: [simCard.oneNanoSim],
         price: 38900,
         bookmark: false,
-        rating: 9.5
+        rating: 9.5,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2020
+            },
+            display: {
+                diagonal: "4.7",
+                ScreenResolution: "1334 x 750",
+                matrix: "HD"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "нет",
+                frontCamera: "7"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "67.3 x 138.4 x 7.3",
+                weight: "148"
+            }
+        },
+        describe: `Классический компактный дизайн, самый мощный процессор iPhone и масса других достоинств. iPhone SE создан, чтобы стать вашим идеальным смартфоном. Быстрый процессор A13 Bionic, видео 4К, технология Touch ID, True Tone, тактильный отклик при нажатии, быстрый Wi-Fi и сотовая связь, стереозвук, дополненная реальность.`
+
     },
     {
         _id: "30067623",
@@ -362,7 +745,29 @@ const iphones = [
         simCard: [simCard.oneNanoSim],
         price: 38900,
         bookmark: false,
-        rating: 9.4
+        rating: 9.4,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2020
+            },
+            display: {
+                diagonal: "4.7",
+                ScreenResolution: "1334 x 750",
+                matrix: "HD"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "нет",
+                frontCamera: "7"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "67.3 x 138.4 x 7.3",
+                weight: "148"
+            }
+        },
+        describe: `Классический компактный дизайн, самый мощный процессор iPhone и масса других достоинств. iPhone SE создан, чтобы стать вашим идеальным смартфоном. Быстрый процессор A13 Bionic, видео 4К, технология Touch ID, True Tone, тактильный отклик при нажатии, быстрый Wi-Fi и сотовая связь, стереозвук, дополненная реальность.`
+
     },
     {
         _id: "300676231",
@@ -373,10 +778,32 @@ const iphones = [
         simCard: [simCard.oneNanoSim],
         price: 42900,
         bookmark: false,
-        rating: 9.4
+        rating: 9.4,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2020
+            },
+            display: {
+                diagonal: "4.7",
+                ScreenResolution: "1334 x 750",
+                matrix: "HD"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "нет",
+                frontCamera: "7"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "67.3 x 138.4 x 7.3",
+                weight: "148"
+            }
+        },
+        describe: `Классический компактный дизайн, самый мощный процессор iPhone и масса других достоинств. iPhone SE создан, чтобы стать вашим идеальным смартфоном. Быстрый процессор A13 Bionic, видео 4К, технология Touch ID, True Tone, тактильный отклик при нажатии, быстрый Wi-Fi и сотовая связь, стереозвук, дополненная реальность.`
+
     },
     {
-        _id: "4000165221",
+        _id: "3000165221",
         name: seriesIphone.iphoneSE2022,
         img: imageIphone.iphoneSE2022.white,
         memories: memories.sixfour,
@@ -384,10 +811,39 @@ const iphones = [
         simCard: [simCard.oneNanoSim],
         price: 38990,
         bookmark: false,
-        rating: 9.8
+        rating: 9.8,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2022
+            },
+            display: {
+                diagonal: "4.7",
+                ScreenResolution: "1334 x 750",
+                matrix: "HD"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "нет",
+                frontCamera: "7"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "67.3 x 138.4 x 7.3",
+                weight: "144"
+            }
+        },
+        describe: `Apple iPhone SE 2022 — маленький и удобный смартфон 
+        с производительной «начинкой». Модель оснащена сверхбыстрым чипом 
+        A15 Bionic и достойной камерой на 12 Мп с 5-кратным цифровым зумом. 
+        Благодаря мощному чипу загрузка приложений в Apple iPhone SE 2022 происходит 
+        буквально молниеносно. А еще он помогает системе увеличить время работы без подзарядки.
+        iPhone SE 2022 надежно защищен от воды и пыли по стандарту IP67. У смартфона диагональ 
+        экрана составляет 4.7", разрешение — 1334 x 750 пикселей. Девайс поддерживает 
+        технологию Touch ID — разблокировка айфона пальцем работает безотказно.`
+
     },
     {
-        _id: "4000165222",
+        _id: "3000165222",
         name: seriesIphone.iphoneSE2022,
         img: imageIphone.iphoneSE2022.red,
         memories: memories.sixfour,
@@ -395,10 +851,38 @@ const iphones = [
         simCard: [simCard.oneNanoSim],
         price: 37900,
         bookmark: false,
-        rating: 9.8
+        rating: 9.8,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2022
+            },
+            display: {
+                diagonal: "4.7",
+                ScreenResolution: "1334 x 750",
+                matrix: "HD"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "нет",
+                frontCamera: "7"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "67.3 x 138.4 x 7.3",
+                weight: "144"
+            }
+        },
+        describe: `Apple iPhone SE 2022 — маленький и удобный смартфон 
+        с производительной «начинкой». Модель оснащена сверхбыстрым чипом 
+        A15 Bionic и достойной камерой на 12 Мп с 5-кратным цифровым зумом. 
+        Благодаря мощному чипу загрузка приложений в Apple iPhone SE 2022 происходит 
+        буквально молниеносно. А еще он помогает системе увеличить время работы без подзарядки.
+        iPhone SE 2022 надежно защищен от воды и пыли по стандарту IP67. У смартфона диагональ 
+        экрана составляет 4.7", разрешение — 1334 x 750 пикселей. Девайс поддерживает 
+        технологию Touch ID — разблокировка айфона пальцем работает безотказно.`
     },
     {
-        _id: "400016522223",
+        _id: "300016522223",
         name: seriesIphone.iphoneSE2022,
         img: imageIphone.iphoneSE2022.black,
         memories: memories.sixfour,
@@ -406,7 +890,35 @@ const iphones = [
         simCard: [simCard.oneNanoSim],
         price: 38900,
         bookmark: false,
-        rating: 9.8
+        rating: 9.8,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2022
+            },
+            display: {
+                diagonal: "4.7",
+                ScreenResolution: "1334 x 750",
+                matrix: "HD"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "нет",
+                frontCamera: "7"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "67.3 x 138.4 x 7.3",
+                weight: "144"
+            }
+        },
+        describe: `Apple iPhone SE 2022 — маленький и удобный смартфон 
+        с производительной «начинкой». Модель оснащена сверхбыстрым чипом 
+        A15 Bionic и достойной камерой на 12 Мп с 5-кратным цифровым зумом. 
+        Благодаря мощному чипу загрузка приложений в Apple iPhone SE 2022 происходит 
+        буквально молниеносно. А еще он помогает системе увеличить время работы без подзарядки.
+        iPhone SE 2022 надежно защищен от воды и пыли по стандарту IP67. У смартфона диагональ 
+        экрана составляет 4.7", разрешение — 1334 x 750 пикселей. Девайс поддерживает 
+        технологию Touch ID — разблокировка айфона пальцем работает безотказно.`
     },
     {
         _id: "300635041",
@@ -417,7 +929,30 @@ const iphones = [
         simCard: [simCard.nanoSim_eSim],
         price: 79900,
         bookmark: false,
-        rating: 8.7
+        rating: 8.7,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2020
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.4",
+                weight: "162"
+            }
+        },
+        describe: `iPhone 12 – технологии будущего для нашего настоящего. Инженерам Apple 
+        удалось создать современный смартфон, 
+        который с легкостью оставляет позади большинство флагманских Android-смартфонов.`
     },
     {
         _id: "3006350412",
@@ -428,7 +963,30 @@ const iphones = [
         simCard: [simCard.nanoSim_eSim],
         price: 79900,
         bookmark: false,
-        rating: 8.8
+        rating: 8.8,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2020
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.4",
+                weight: "162"
+            }
+        },
+        describe: `iPhone 12 – технологии будущего для нашего настоящего. Инженерам Apple 
+        удалось создать современный смартфон, 
+        который с легкостью оставляет позади большинство флагманских Android-смартфонов.`
     },
     {
         _id: "300635042",
@@ -439,7 +997,30 @@ const iphones = [
         simCard: [simCard.nanoSim_eSim],
         price: 79900,
         bookmark: false,
-        rating: 8.8
+        rating: 8.8,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2020
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.4",
+                weight: "162"
+            }
+        },
+        describe: `iPhone 12 – технологии будущего для нашего настоящего. Инженерам Apple 
+        удалось создать современный смартфон, 
+        который с легкостью оставляет позади большинство флагманских Android-смартфонов.`
     },
     {
         _id: "3006350421",
@@ -450,7 +1031,30 @@ const iphones = [
         simCard: [simCard.nanoSim_eSim],
         price: 72000,
         bookmark: false,
-        rating: 8.85
+        rating: 8.85,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2020
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.4",
+                weight: "162"
+            }
+        },
+        describe: `iPhone 12 – технологии будущего для нашего настоящего. Инженерам Apple 
+        удалось создать современный смартфон, 
+        который с легкостью оставляет позади большинство флагманских Android-смартфонов.`
     },
     {
         _id: "300635043",
@@ -461,7 +1065,30 @@ const iphones = [
         simCard: [simCard.nanoSim_eSim],
         price: 79000,
         bookmark: false,
-        rating: 8.1
+        rating: 8.1,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2020
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.4",
+                weight: "162"
+            }
+        },
+        describe: `iPhone 12 – технологии будущего для нашего настоящего. Инженерам Apple 
+        удалось создать современный смартфон, 
+        который с легкостью оставляет позади большинство флагманских Android-смартфонов.`
     },
     {
         _id: "3006551011",
@@ -472,7 +1099,31 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 84999,
         bookmark: false,
-        rating: 9.2
+        rating: 9.2,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2022
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.8",
+                weight: "172"
+            }
+        },
+        describe: `Технические характеристики iPhone 14 как всегда на высоте. 
+        Новая модель работает на базе привычного процессора A15 Bionic, который был улучшен. 
+        Обновленный шестиядерный чип с 5-ядерным графическим процессором обеспечит 
+        айфону более крутую графику и прирост производительности в играх как минимум на 25%.`
     },
     {
         _id: "3006551012",
@@ -483,7 +1134,31 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 92999,
         bookmark: false,
-        rating: 9.3
+        rating: 9.3,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2022
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.8",
+                weight: "172"
+            }
+        },
+        describe: `Технические характеристики iPhone 14 как всегда на высоте. 
+        Новая модель работает на базе привычного процессора A15 Bionic, который был улучшен. 
+        Обновленный шестиядерный чип с 5-ядерным графическим процессором обеспечит 
+        айфону более крутую графику и прирост производительности в играх как минимум на 25%.`
     },
     {
         _id: "3006551013",
@@ -494,7 +1169,31 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 109990,
         bookmark: false,
-        rating: 9.4
+        rating: 9.4,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2022
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.8",
+                weight: "172"
+            }
+        },
+        describe: `Технические характеристики iPhone 14 как всегда на высоте. 
+        Новая модель работает на базе привычного процессора A15 Bionic, который был улучшен. 
+        Обновленный шестиядерный чип с 5-ядерным графическим процессором обеспечит 
+        айфону более крутую графику и прирост производительности в играх как минимум на 25%.`
     },
     {
         _id: "300655102",
@@ -505,7 +1204,31 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 84999,
         bookmark: false,
-        rating: 9
+        rating: 9,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2022
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.8",
+                weight: "172"
+            }
+        },
+        describe: `Технические характеристики iPhone 14 как всегда на высоте. 
+        Новая модель работает на базе привычного процессора A15 Bionic, который был улучшен. 
+        Обновленный шестиядерный чип с 5-ядерным графическим процессором обеспечит 
+        айфону более крутую графику и прирост производительности в играх как минимум на 25%.`
     },
     {
         _id: "3006551021",
@@ -516,7 +1239,31 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 84999,
         bookmark: false,
-        rating: 9
+        rating: 9,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2022
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.8",
+                weight: "172"
+            }
+        },
+        describe: `Технические характеристики iPhone 14 как всегда на высоте. 
+        Новая модель работает на базе привычного процессора A15 Bionic, который был улучшен. 
+        Обновленный шестиядерный чип с 5-ядерным графическим процессором обеспечит 
+        айфону более крутую графику и прирост производительности в играх как минимум на 25%.`
     },
     {
         _id: "3006551034",
@@ -527,7 +1274,31 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 84999,
         bookmark: false,
-        rating: 9.2
+        rating: 9.2,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2022
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.8",
+                weight: "172"
+            }
+        },
+        describe: `Технические характеристики iPhone 14 как всегда на высоте. 
+        Новая модель работает на базе привычного процессора A15 Bionic, который был улучшен. 
+        Обновленный шестиядерный чип с 5-ядерным графическим процессором обеспечит 
+        айфону более крутую графику и прирост производительности в играх как минимум на 25%.`
     },
     {
         _id: "3006551035",
@@ -538,7 +1309,31 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 119990,
         bookmark: false,
-        rating: 8.2
+        rating: 8.2,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2022
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2532 x 1170",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "12",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 146.7 x 7.8",
+                weight: "172"
+            }
+        },
+        describe: `Технические характеристики iPhone 14 как всегда на высоте. 
+        Новая модель работает на базе привычного процессора A15 Bionic, который был улучшен. 
+        Обновленный шестиядерный чип с 5-ядерным графическим процессором обеспечит 
+        айфону более крутую графику и прирост производительности в играх как минимум на 25%.`
     },
     {
         _id: "3006512811",
@@ -549,7 +1344,36 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 149990,
         bookmark: false,
-        rating: 6.9
+        rating: 6.9,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2022
+            },
+            display: {
+                diagonal: "6.1",
+                ScreenResolution: "2556 x 1179",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "48",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "71.5 x 147.5 x 7.85",
+                weight: "206"
+            }
+        },
+        describe: `Смартфон Apple iPhone 14 Pro получил 6.1 дюймовый дисплей Super Retina XDR и новый вырез 
+        Dynamic Island — «динамический остров». 
+        Камеру и сенсоры расположили так, чтобы они не бросались в глаза, 
+        а на черном пространстве теперь отображаются различные уведомления и фоновая активность.
+        Разрешение экрана у iPhone 14 Pro составляет 2556 на 1179 пикселей при 
+        плотности 460 пикселей на дюйм. Яркость экрана достигает 2000 нит — 
+        это рекордное значение для смартфонов.
+        Новинка работает на базе Apple A16 Bionic, в которой применен самый 
+        быстрый мобильный центральный процессор.`
     },
     {
         _id: "3006512812",
@@ -560,7 +1384,33 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 119990,
         bookmark: false,
-        rating: 6.8
+        rating: 6.8,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2022
+            },
+            display: {
+                diagonal: "6.7",
+                ScreenResolution: "2796 x 1290",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "48",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "77.6 x 160.7 x 7.85",
+                weight: "240"
+            }
+        },
+        describe: `Смартфон Apple iPhone 14 Pro Max получил 6.7 дюймовый дисплей Super Retina XDR и 
+        новый вырез Dynamic Island — «динамический остров». Камеру и сенсоры расположили так, чтобы они не 
+        бросались в глаза, а на черном пространстве теперь отображаются различные уведомления и фоновая активность.
+        Разрешение экрана у iPhone 14 Pro Max составляет 2796 на 1290 пикселей при плотности 460 пикселей на дюйм.
+         Яркость экрана достигает 2000 нит — это рекордное значение для смартфонов.        
+        Новинка работает на базе Apple A16 Bionic, в которой применен самый быстрый мобильный центральный процессор.`
     },
     {
         _id: "3006512825",
@@ -571,7 +1421,33 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 129990,
         bookmark: false,
-        rating: 6.7
+        rating: 6.7,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2022
+            },
+            display: {
+                diagonal: "6.7",
+                ScreenResolution: "2796 x 1290",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "48",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "77.6 x 160.7 x 7.85",
+                weight: "240"
+            }
+        },
+        describe: `Смартфон Apple iPhone 14 Pro Max получил 6.7 дюймовый дисплей Super Retina XDR и 
+        новый вырез Dynamic Island — «динамический остров». Камеру и сенсоры расположили так, чтобы они не 
+        бросались в глаза, а на черном пространстве теперь отображаются различные уведомления и фоновая активность.
+        Разрешение экрана у iPhone 14 Pro Max составляет 2796 на 1290 пикселей при плотности 460 пикселей на дюйм.
+         Яркость экрана достигает 2000 нит — это рекордное значение для смартфонов.        
+        Новинка работает на базе Apple A16 Bionic, в которой применен самый быстрый мобильный центральный процессор.`
     },
     {
         _id: "3006512826",
@@ -582,7 +1458,33 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 119990,
         bookmark: false,
-        rating: 6.5
+        rating: 6.5,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2022
+            },
+            display: {
+                diagonal: "6.7",
+                ScreenResolution: "2796 x 1290",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "48",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "77.6 x 160.7 x 7.85",
+                weight: "240"
+            }
+        },
+        describe: `Смартфон Apple iPhone 14 Pro Max получил 6.7 дюймовый дисплей Super Retina XDR и 
+        новый вырез Dynamic Island — «динамический остров». Камеру и сенсоры расположили так, чтобы они не 
+        бросались в глаза, а на черном пространстве теперь отображаются различные уведомления и фоновая активность.
+        Разрешение экрана у iPhone 14 Pro Max составляет 2796 на 1290 пикселей при плотности 460 пикселей на дюйм.
+         Яркость экрана достигает 2000 нит — это рекордное значение для смартфонов.        
+        Новинка работает на базе Apple A16 Bionic, в которой применен самый быстрый мобильный центральный процессор.`
     },
     {
         _id: "3006512827",
@@ -593,7 +1495,33 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 159990,
         bookmark: false,
-        rating: 6.6
+        rating: 6.6,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2022
+            },
+            display: {
+                diagonal: "6.7",
+                ScreenResolution: "2796 x 1290",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "48",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "77.6 x 160.7 x 7.85",
+                weight: "240"
+            }
+        },
+        describe: `Смартфон Apple iPhone 14 Pro Max получил 6.7 дюймовый дисплей Super Retina XDR и 
+        новый вырез Dynamic Island — «динамический остров». Камеру и сенсоры расположили так, чтобы они не 
+        бросались в глаза, а на черном пространстве теперь отображаются различные уведомления и фоновая активность.
+        Разрешение экрана у iPhone 14 Pro Max составляет 2796 на 1290 пикселей при плотности 460 пикселей на дюйм.
+         Яркость экрана достигает 2000 нит — это рекордное значение для смартфонов.        
+        Новинка работает на базе Apple A16 Bionic, в которой применен самый быстрый мобильный центральный процессор.`
     },
     {
         _id: "300651283",
@@ -604,7 +1532,36 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 199990,
         bookmark: false,
-        rating: 5.5
+        rating: 5.5,
+        Specifications: {
+            factoryData: {
+                head: "Заводские данные",
+                subHeadOne: "Страна",
+                subHeadTwo: "Год производства",
+                made: "Китай",
+                date: 2022
+            },
+            display: {
+                diagonal: "6.7",
+                ScreenResolution: "2796 x 1290",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "48",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "77.6 x 160.7 x 7.85",
+                weight: "240"
+            }
+        },
+        describe: `Смартфон Apple iPhone 14 Pro Max получил 6.7 дюймовый дисплей Super Retina XDR и 
+        новый вырез Dynamic Island — «динамический остров». Камеру и сенсоры расположили так, чтобы они не 
+        бросались в глаза, а на черном пространстве теперь отображаются различные уведомления и фоновая активность.
+        Разрешение экрана у iPhone 14 Pro Max составляет 2796 на 1290 пикселей при плотности 460 пикселей на дюйм.
+         Яркость экрана достигает 2000 нит — это рекордное значение для смартфонов.        
+        Новинка работает на базе Apple A16 Bionic, в которой применен самый быстрый мобильный центральный процессор.`
     },
     {
         _id: "300651284",
@@ -615,7 +1572,33 @@ const iphones = [
         simCard: [simCard.twoNanoSim, simCard.nanoSim_eSim],
         price: 199990,
         bookmark: false,
-        rating: 5.4
+        rating: 5.4,
+        Specifications: {
+            factoryData: {
+                made: "Китай",
+                date: 2022
+            },
+            display: {
+                diagonal: "6.7",
+                ScreenResolution: "2796 x 1290",
+                matrix: "OLED"
+            },
+            photoCamera: {
+                camera: "48",
+                additionalCamera: "12",
+                frontCamera: "12"
+            },
+            DimensionsAndWeight: {
+                Dimensions: "77.6 x 160.7 x 7.85",
+                weight: "240"
+            }
+        },
+        describe: `Смартфон Apple iPhone 14 Pro Max получил 6.7 дюймовый дисплей Super Retina XDR и 
+        новый вырез Dynamic Island — «динамический остров». Камеру и сенсоры расположили так, чтобы они не 
+        бросались в глаза, а на черном пространстве теперь отображаются различные уведомления и фоновая активность.
+        Разрешение экрана у iPhone 14 Pro Max составляет 2796 на 1290 пикселей при плотности 460 пикселей на дюйм.
+         Яркость экрана достигает 2000 нит — это рекордное значение для смартфонов.        
+        Новинка работает на базе Apple A16 Bionic, в которой применен самый быстрый мобильный центральный процессор.`
     },
 ];
 

@@ -1,7 +1,5 @@
-.groupList {  
-  margin-top: 15px;
-    padding: 25px;
-  width: 400px;
+.groupList {
+  padding-left: 25px;
 }
 
 .groupList__item,
@@ -34,4 +32,43 @@
 
 .groupList__btn button:hover {
   background-color: var(--blue-colorHover);
+}
+
+@media (max-width: 740px) {
+  .groupList__item,
+  .groupList__item__active {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 660px) {
+  .groupList__item,
+  .groupList__item__active {
+    margin: 13px;
+    font-size: 16px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 557px) {
+  .groupList__inner {
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s linear;
+  }
+  .groupList__btn button {
+    width: 160px;
+    height: 40px;
+    color: white;
+    border-radius: 15px;
+    background-color: var(--blue-color);  
+    transition: all 0.2s ease;
+    margin-bottom: 20px;
+  }
 }

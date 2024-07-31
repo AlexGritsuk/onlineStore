@@ -3,60 +3,52 @@ import style from "./iphonePage.module.css";
 import root from "../../style/root__style.module.css";
 import GroupList from "../../components/common/groupList/groupList";
 import ProductsGrid from "../../components/common/productsGrid/productsGrid";
-import { useCart } from "../../hooks/useCart";
-import { useHeart } from "../../hooks/useHeart";
-import { useCompare } from "../../hooks/useCompare";
 import API from "../../api";
 import Loading from "../../components/common/loading/loading";
+import { useSelector } from "react-redux";
+import {
+  getColorIphones,
+  getColorIphonesLoadingStatus,
+  getIphones,
+  getIphonesLoadingStatus,
+  getSeriesIphones,
+  getSeriesIphonesLoadingStatus,
+} from "../../store/iphones";
+import { getCart, getCountCart } from "../../store/cart";
+import { getHeart, getCountHeart } from "../../store/heart";
+import { getCompare, getCountCompare } from "../../store/compare";
+import { handleAddCompare, handleDeleteCompare } from "../../store/compare";
 
 const IphonesPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [seriesIphone, setSeriesIphone] = useState();  
   const [currentItems, setCurrentItems] = useState();
-  const [product, setProduct] = useState();
-  const [colorIphone, setColorIphone] = useState();
   const [selectedItem, setSelectedItem] = useState();
 
-  useEffect(() => {
-    API.seriesIphone.fetchAll().then((data) => setSeriesIphone(data));
-  }, []);
+  const [filters, setFilters] = useState(false);
+
+  const product = useSelector(getIphones());
+  const isLoading = useSelector(getIphonesLoadingStatus());
+
+  const seriesIphone = useSelector(getSeriesIphones());
+  const isLoadingSeriesIphone = useSelector(getSeriesIphonesLoadingStatus());
+
+  const colorIphone = useSelector(getColorIphones());
+  const isLoadingColorIphone = useSelector(getColorIphonesLoadingStatus());
 
   useEffect(() => {
     API.iphones.fetchAll().then((data) => setCurrentItems(data));
   }, []);
 
-  useEffect(() => {
-    API.iphones.fetchAll().then((data) => setProduct(data));
-  }, []);
+  const cartProducts = useSelector(getCart());
+  const countCart = useSelector(getCountCart());
 
-  useEffect(() => {
-    API.visualAppearance.fetchAll().then((data) => setColorIphone(data));
-  }, []);
+  const heartProducts = useSelector(getHeart());
+  const countHeart = useSelector(getCountHeart());
 
-  const {
-    cartProducts,
-    countCart,
-    handleAddCartProducts,
-    handleDeleteCartProducts,
-  } = useCart();
-
-  const {
-    heartProducts,
-    countHeart,
-    handleAddHeartProducts,
-    handleDeleteHeartProducts,
-  } = useHeart();
-
-  const {
-    compareIphones,
-    countItemCompare,
-    handleAddCompareIphone,
-    handleDeleteCompareIphone,
-  } = useCompare();
+  const compareProducts = useSelector(getCompare());
+  const countCompare = useSelector(getCountCompare());
 
   const linkName = "Iphones";
-
-  
 
   const handleChooseCategory = (category) => {
     setCurrentPage(1);
@@ -101,47 +93,67 @@ const IphonesPage = () => {
     setSelectedItem(undefined);
   };
 
+  const handleFilterOn = () => {
+    setFilters((filters) => (filters = !filters));
+  };
+
   let groupName = "iPhone";
   return (
     <div className={root.container}>
       <div className={style.iphonePage}>
-        <div className={style.iphonePage__groupList}>
-          {seriesIphone && colorIphone && (
-            <GroupList
-              chooseCategory={handleChooseCategory}
-              chooseCategoryColor={handleChooseCategoryColor}
-              items={seriesIphone}
-              itemsColor={colorIphone}
-              groupName={groupName}
-              selectedItem={selectedItem}
-              clearFilter={handleClearFilter}
-            />
-          )}
+        <div className={style.iphonePage__accordion}>
+          <div className={style.iphonePage__filter}>
+            <button onClick={() => handleFilterOn()}>Фильтр</button>
+          </div>
+          <div className={style.iphonePage__groupList_container}>
+            <div
+              className={
+                filters
+                  ? style.iphonePage__groupList
+                  : style.iphonePage__groupList + " " + style.active
+              }
+            >
+              {!isLoading &&
+                !isLoadingSeriesIphone &&
+                !isLoadingColorIphone && (
+                  <GroupList
+                    chooseCategory={handleChooseCategory}
+                    chooseCategoryColor={handleChooseCategoryColor}
+                    items={seriesIphone}
+                    itemsColor={colorIphone}
+                    groupName={groupName}
+                    selectedItem={selectedItem}
+                    clearFilter={handleClearFilter}
+                    filters={filters}
+                  />
+                )}
+            </div>
+          </div>
         </div>
-        <div className={style.iphonePage__iphoneGrid}>          
+        <div className={style.iphonePage__iphoneGrid}>
           {currentItems ? (
-            <ProductsGrid
-              productsCart={cartProducts}
-              onAddCart={handleAddCartProducts}
-              onDeleteCart={handleDeleteCartProducts}
-              productsHeart={heartProducts}
-              onAddHeart={handleAddHeartProducts}
-              onDeleteHeart={handleDeleteHeartProducts}
-              productsCompare={compareIphones}
-              onAddCompare={handleAddCompareIphone}
-              onDeleteCompare={handleDeleteCompareIphone}
-              countCart={countCart}
-              countHeart={countHeart}
-              countItemCompare={countItemCompare}
-              products={currentItems}
-              linkName={linkName}
-              handleNext={handleNext}
-              handlePrev={handlePrev}
-              handlePageChange={handlePageChange}
-              currentPage={currentPage}
-            />
+            <div>
+              <ProductsGrid
+                productsCart={cartProducts}
+                productsHeart={heartProducts}
+                productsCompare={compareProducts}
+                countCart={countCart}
+                countHeart={countHeart}
+                countCompare={countCompare}
+                products={currentItems}
+                linkName={linkName}
+                handleNext={handleNext}
+                handlePrev={handlePrev}
+                handlePageChange={handlePageChange}
+                currentPage={currentPage}
+                addCompare={handleAddCompare}
+                deleteCompare={handleDeleteCompare}
+              />
+            </div>
           ) : (
-            <Loading />
+            <div className={style.iphonePage_loading}>
+              <Loading />
+            </div>
           )}
         </div>
       </div>

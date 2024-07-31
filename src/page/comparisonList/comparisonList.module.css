@@ -1,8 +1,115 @@
+.comparisonList__wrapper h3 {
+    font-size: 18px;
+}
+
+.comparisonList__wrapper h5 {
+    font-size: 14px;
+}
+
+.comparisonList__flex {
+    display: flex;
+    margin-top: 15px;
+}
+
+.comparisonList__noflex {
+    margin-top: 15px;
+    width: fit-content;
+}
+
+
 .comparisonList {
     display: flex;   
 } 
 
-.comparisonList__wrapper {
-    display: flex;
+
+.comparisonList__addCompare {
+    padding: "30px";
+}
+
+.disactive {
+    display: none;
+}
+
+
+.comparisonList__factory {
+    margin-top: 25px;    
+}
+
+.comparisonList__factory > h3 {
     margin-top: 15px;
+}
+
+
+
+.comparisonList__factory::before {
+    content: '';
+    display: block;    
+    height: 1px;
+    background: black;
+}
+
+.comparisonList__factory_item {
+    margin-top: 20px;
+}
+
+.comparisonList__factory_item > h5 {
+    color: var(--gray--color);
+}
+
+
+.comparisonList__factory_element {
+    margin-top: 15px;
+    
+
+    display: flex;  
+    justify-content: start;
+    align-items: center;
+    
+}
+
+.compareFactory {
+    margin-right: 120px;
+    min-width: 190px;
+}
+
+.compareFactory:last-child {
+    margin-right: 0;
+    min-width: 135px;
+}
+
+@media (max-width: 564px) {
+    .comparisonList__wrapper h3 {
+        font-size: 18px;
+    }
+    
+    .comparisonList__wrapper h5 {
+        font-size: 14px;
+    }
+
+    .comparisonList__wrapper div {
+        font-size: 15px;
+    }
+    .compareFactory {
+        margin-right: 100px;
+        min-width: 169px;
+    }
+
+    .comparisonList {
+       width: 400px; 
+       height: 400px;
+    } 
+}
+
+@media (max-width: 460px) {
+    .compareFactory {
+        margin-right: 70px;
+        min-width: 130px;        
+    }
+    .comparisonList {
+        width: 350px; 
+        
+     } 
+     .comparisonList__factory {
+        margin-top: 10px;    
+    }
 }

@@ -15,7 +15,7 @@ export const seriesIphone = {
 const fetchAll = () =>
     new Promise((resolve) => {
         window.setTimeout(function () {
-            resolve(seriesIphone)
+            resolve(seriesIphone) 
         }, 2000)
     });
 

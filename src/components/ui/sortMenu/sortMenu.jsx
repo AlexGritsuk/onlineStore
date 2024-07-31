@@ -22,7 +22,7 @@ const SortMenu = ({ onSort, name, sort, currentSort }) => {
         return <TiArrowSortedDown />;
       } else {
         return <TiArrowSortedUp />;
-      }
+      } 
     }
     return null;
   };

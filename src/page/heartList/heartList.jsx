@@ -1,20 +1,12 @@
 import React from "react";
 import HeartEmpty from "./heartEmpty";
 import ProductHeart from "./ProductHeart";
-import { useCompare } from "../../hooks/useCompare";
-import { useCart } from "../../hooks/useCart";
-import { useHeart } from "../../hooks/useHeart";
+import {  useSelector } from "react-redux";
+import { getHeart } from "../../store/heart";
+
 
 const HeartList = () => {
-  const { compareIphones, handleAddCompareIphone, handleDeleteCompareIphone } =
-    useCompare();
-
-  const { cartProducts, handleAddCartProducts, handleDeleteCartProducts } =
-    useCart();
-
-  const { heartProducts, handleAddHeartProducts, handleDeleteHeartProducts } =
-    useHeart();
-
+    const heartProducts = useSelector(getHeart());
   if (heartProducts.length > 0) {
     return (
       <div>
@@ -24,18 +16,10 @@ const HeartList = () => {
               <ProductHeart
                 key={product._id}
                 {...product}
-                cartProducts={cartProducts}
-                compareIphones={compareIphones}
-                onAddCart={handleAddCartProducts}
-                onDeleteCart={handleDeleteCartProducts}
-                onAddHeart={handleAddHeartProducts}
-                onDeleteHeart={handleDeleteHeartProducts}
-                onAddCompare={handleAddCompareIphone}
-                onDeleteCompare={handleDeleteCompareIphone}
               />
             );
           })}
-        </div>
+        </div> 
       </div>
     );
   }

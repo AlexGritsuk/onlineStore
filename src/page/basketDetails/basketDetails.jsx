@@ -2,11 +2,11 @@ import React from "react";
 import style from "./basketDetails.module.css";
 import BasketProductCounter from "./BasketproductСounter";
 import Accordion from "../../components/common/accordion/accordion";
-import { useCart } from "../../hooks/useCart";
+import { useSelector } from "react-redux";
+import { getCart } from "../../store/cart";
 
-const BasketDetails = () => {  
-
-  const { cartProducts} = useCart();
+const BasketDetails = () => {    
+  const cartProducts = useSelector(getCart())
 
   const countPrice = (carts) => {
     let result = [];
@@ -34,7 +34,6 @@ const BasketDetails = () => {
           </div>
           <div className={style.basketDetails__item}>
             <Accordion faqList={accordionDiscount} />
-
             <div>{""}</div>
           </div>
           <div className={style.basketDetails__item}>

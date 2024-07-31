@@ -1,9 +1,9 @@
 import React from "react";
-import { useIphone } from "../../hooks/useIphone";
+import { useSelector } from "react-redux";
+import { getCountCart } from "../../store/cart";
 
 const BasketProductCounter = () => {
-  const { countItemCart } = useIphone();
-
+  const countCart = useSelector(getCountCart());
   const renderPhrase = (number, one, two, five) => {
     let n = Math.abs(number);
     n %= 100;
@@ -19,11 +19,14 @@ const BasketProductCounter = () => {
     }
     return five;
   };
-
   return (
     <div>
-      {countItemCart > 0
-        ? `${countItemCart + " " + renderPhrase(countItemCart, "товар", "товара", "товаров")}`
+      {countCart > 0
+        ? `${
+            countCart +
+            " " +
+            renderPhrase(countCart, "товар", "товара", "товаров")
+          }`
         : "Товаров в корзине нет"}
     </div>
   );

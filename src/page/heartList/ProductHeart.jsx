@@ -3,22 +3,22 @@ import style from "./productHeart.module.css";
 import root from "../../style/root__style.module.css";
 import BtnCart from "../../components/common/buttons/btnCart/btnCart";
 import BtnCompare from "../../components/common/buttons/btnCompare/btnCompare";
-import BtnDelete from "../../components/common/buttons/btnDelete/btnDelete";
+import BtnDeleteHeart from "../../components/common/buttons/btnHeart/btnDeleteHeart";
+import { useSelector } from "react-redux";
+import { getCompare } from "../../store/compare";
+import { getCompareAirPods } from "../../store/compareAirPods";
+import { getCompareMacBooks } from "../../store/compareMacBooks";
 
-const ProductHeart = ({
-  cartProducts,
-  compareIphones,
-  onDeleteCart,
-  onAddCart,
-  onDeleteHeart,
-  onAddCompare,
-  onDeleteCompare,
-  ...product
-}) => {
+const ProductHeart = ({ ...product }) => {
+  
+  const compareProducts = useSelector(getCompare());
+  const compareProductAirPods = useSelector(getCompareAirPods());
+  const compareProductMacBooks = useSelector(getCompareMacBooks());
+
   return (
     <div className={style.productHeart__wrapper}>
       <div className={style.productHeart}>
-        <div>
+        <div className={style.productHeart__image}>
           <img
             className={root.img + " " + style.productHeart__img}
             src={product.img[0]}
@@ -26,33 +26,36 @@ const ProductHeart = ({
           />
         </div>
 
-        <div style={{ width: "260px" }}>
-          <div className={style.productHeart__name}>
-            <div>{product.name.name}</div>
-            <div>{product.memories?.memory}</div>
+        <div className={style.productHeart__other}>
+          <div className={style.productHeart__info1}>
+            <div className={style.productHeart__name}>
+              <div>{product.name.name}</div>
+              <div>{product.memories?.memory}</div>
+            </div>
+            <div>{product.visualAppearance.name}</div>
+            <div className={style.productHeart__btns}>
+              <BtnCompare
+                productIphone={compareProducts}
+                productAirPods={compareProductAirPods}
+                productMacBooks={compareProductMacBooks}
+                id={product._id}
+                currentProduct={product}
+              />
+              <BtnDeleteHeart id={product._id} />
+            </div>
           </div>
-          <div>{product.visualAppearance.name}</div>
-          <div className={style.productHeart__btns}>
-            <BtnCompare 
-              products={compareIphones}
-              id={product._id}
-              currentProduct={product}
-              onAddCompare={onAddCompare}
-              onDeleteCompare={onDeleteCompare}
-            />
-            <BtnDelete id={product._id} onDel={onDeleteHeart} />
-          </div>
-        </div>
 
-        <div>
-          <div className={style.productHeart__price}>{product.price} ₽</div>
-          <BtnCart
-            products={cartProducts}
-            id={product._id}
-            currentProduct={product}
-            onDelete={onDeleteCart}
-            onAddCart={onAddCart}
-          />
+          <div className={style.productHeart__info2}>
+            <div className={style.productHeart__price}>
+              {product.price} <span>₽</span>
+            </div>
+            <div className={style.productHeart__btnCart}>
+              <BtnCart                
+                id={product._id}
+                currentProduct={product}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

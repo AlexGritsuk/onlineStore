@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import AirPodsPage from "../page/airPodsPage/airPodsPage";
 import ProductListPage from "../page/productListPage/productListPage";
 
-const Airpods = ({ history }) => {
+const Airpods = ({ history }) => { 
   const params = useParams();
   const { airPodsId } = params;
   return (

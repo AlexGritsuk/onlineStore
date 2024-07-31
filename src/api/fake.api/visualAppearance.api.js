@@ -3,7 +3,7 @@ export const visualAppearance = {
         _id: "67rdca3eeb7f6fgeed471198",
         name: "Голубой",
         color: "primary"
-    },
+    }, 
     green: {
         _id: "67rdca3eeb7f6fgeed471100",
         name: "Зеленый",

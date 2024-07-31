@@ -3,19 +3,51 @@ import { isHave } from "../../../../utils/isHave";
 import { IoIosGitCompare } from "react-icons/io";
 import style from "./btnCompare.module.css";
 import PropTypes from "prop-types";
+import { useDispatch, useSelector } from "react-redux";
+import { getCompare, handleAddCompare, handleDeleteCompare } from "../../../../store/compare";
+import { getCompareAirPods, handleAddCompareAirPods, handleDeleteCompareAirPods } from "../../../../store/compareAirPods";
+import { getCompareMacBooks, handleAddCompareMacBooks, handleDeleteCompareMacBooks } from "../../../../store/compareMacBooks";
 
-const BtnCompare = ({
-  products,
+const BtnCompare = ({  
   id,
-  currentProduct,
-  onAddCompare,
-  onDeleteCompare,
+  currentProduct,  
 }) => {
+
+  const productIphone = useSelector(getCompare());
+  const productAirPods = useSelector(getCompareAirPods());
+  const productMacBooks = useSelector(getCompareMacBooks());
+
+  const dispatch = useDispatch();  
+
+  const handleIdentifyProduct = (product) => {
+      if(product.hasOwnProperty("Specifications")) {
+       return handleAddCompare(product)
+      }
+      if(product.hasOwnProperty("specificationsMacBooks")) {
+        return handleAddCompareMacBooks(product)
+       }
+      if(product.hasOwnProperty("specificationsAirPods")) {
+        return handleAddCompareAirPods(product)
+      }      
+  }
+
+  const handleIdentifyId = (id) => {
+    if(id[0] === "5") {
+      return handleDeleteCompareAirPods(id)
+    }
+    if (id[0] === "3") {
+      return handleDeleteCompare(id)
+    }
+    if (id[0] === "1") {
+      return handleDeleteCompareMacBooks(id)
+    }
+  } 
+
   return (
     <div>
-      {!isHave(products, id, currentProduct) ? (
+      {!isHave(productAirPods, id) && !isHave(productIphone, id) && !isHave(productMacBooks, id) ? (
         <button
-          onClick={() => onAddCompare(currentProduct)}
+          onClick={() => dispatch(handleIdentifyProduct(currentProduct))}
           className={style.btnCompare__delete}
         >
           <IoIosGitCompare style={{ width: "20px", height: "20px" }} />
@@ -23,7 +55,7 @@ const BtnCompare = ({
         </button>
       ) : (
         <button
-          onClick={() => onDeleteCompare(id)}
+          onClick={() => dispatch(handleIdentifyId(id))}
           className={style.btnCompare__delete_in}
         >
           <IoIosGitCompare style={{ width: "20px", height: "20px" }} />
@@ -34,12 +66,9 @@ const BtnCompare = ({
   );
 };
 
-BtnCompare.propTypes = {
-  products: PropTypes.array.isRequired,
+BtnCompare.propTypes = {  
   id: PropTypes.string.isRequired,
-  currentProduct: PropTypes.object.isRequired,
-  onDeleteCompare: PropTypes.func.isRequired,
-  onAddCompare: PropTypes.func.isRequired,
+  currentProduct: PropTypes.object.isRequired, 
 };
 
 export default BtnCompare;

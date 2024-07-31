@@ -3,20 +3,19 @@ import { isHave } from "../../../../utils/isHave";
 import PropTypes from "prop-types";
 import { FaRegHeart } from "react-icons/fa";
 import style from "./btnHeart.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { getHeart, handleAddHeart, handleDeleteHeart } from "../../../../store/heart";
 
-const BtnHeart = ({
-  products,
-  id,
-  onAddHeart,
-  currentProduct,
-  onDeleteHeart,
-}) => {
+const BtnHeart = ({ id, currentProduct }) => {
+  const products = useSelector(getHeart());
+
+  const dispatch = useDispatch();
   return (
     <div className={style.btnHeart}>
       {!isHave(products, id) ? (
         <button
           className={style.btnHeart__delete}
-          onClick={() => onAddHeart(currentProduct)}
+          onClick={() => dispatch(handleAddHeart(currentProduct))}
         >
           <FaRegHeart style={{ width: "20px", height: "20px" }} />
           <span>В избранное</span>
@@ -24,7 +23,7 @@ const BtnHeart = ({
       ) : (
         <button
           className={style.btnHeart__delete_in}
-          onClick={() => onDeleteHeart(id)}
+          onClick={() => dispatch(handleDeleteHeart(id))}
         >
           <FaRegHeart style={{ width: "20px", height: "20px" }} />
           <span>В избранном</span>
@@ -34,12 +33,9 @@ const BtnHeart = ({
   );
 };
 
-BtnHeart.propTypes = {
-  products: PropTypes.array.isRequired,
+BtnHeart.propTypes = {  
   id: PropTypes.string.isRequired,
-  currentProduct: PropTypes.object.isRequired,
-  onAddHeart: PropTypes.func.isRequired,
-  onDeleteHeart: PropTypes.func.isRequired,
+  currentProduct: PropTypes.object.isRequired,  
 };
 
 export default BtnHeart;

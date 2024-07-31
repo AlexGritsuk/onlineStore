@@ -10,23 +10,20 @@ import { PiListLight } from "react-icons/pi";
 import { PiListFill } from "react-icons/pi";
 import SortMenu from "../../ui/sortMenu/sortMenu";
 import _ from "lodash";
+import SearchMenu from "../../ui/searchMenu/searchMenu";
 
 const ProductsGrid = ({
   productsCart,
-  onAddCart,
-  onDeleteCart,
   productsHeart,
-  onAddHeart,
-  onDeleteHeart,
   productsCompare,
-  onAddCompare,
-  onDeleteCompare,
   linkName,
   products,
   handleNext,
   handlePrev,
   handlePageChange,
   currentPage,
+  addCompare,
+  deleteCompare,
 }) => {
   const [sortBy, setSortBy] = useState({ iter: "price", order: "asc" });
   const [catalog, setCatalog] = useState(true);
@@ -47,7 +44,7 @@ const ProductsGrid = ({
 
   const handleSearchQuery = ({ target }) => {
     setSearchQuery(target.value);
-  }; 
+  };
 
   let prod = searchQuery
     ? products.filter(
@@ -60,77 +57,73 @@ const ProductsGrid = ({
   const sortedUsers = _.orderBy(prod, [sortBy.iter], [sortBy.order]);
   const userCrop = paginate(sortedUsers, currentPage, pageSize);
   const pagesCount = Math.ceil(count / pageSize);
-  
+
   let pages = pagesArray(pagesCount);
   return (
-    <div>
-      <div className={style.productsGrid__sortMenu}>
-        <div>
+    <div className={style.product}>
+      <div className={style.products__sortMenu}>
+        <div className={style.products__sortMenu_item}>
           <SortMenu
             onSort={handleSort}
             currentSort={sortBy}
-            name={"По цене"}
+            name={"Цена"}
             sort={"price"}
           />
         </div>
-        <div style={{ marginLeft: "15px" }}>
+        <div className={style.products__sortMenu_item}>
           <SortMenu
             onSort={handleSort}
             currentSort={sortBy}
-            name={"По популярности"}
+            name={"Рейтинг"}
             sort={"rating"}
           />
         </div>
-        <div>
-          <input
-            style={{ marginLeft: "45px", borderBottom: "1px solid black" }}
-            type="text"
-            name="searchQuery"
-            placeholder="Поиск..."
+        <div className={style.products__sortMenu_item}>
+          <SearchMenu
+            type={"text"}
+            name={"searchQuery"}
+            placeholder={"Поиск"}
             onChange={handleSearchQuery}
             value={searchQuery}
           />
-        </div>        
-      </div>
-      <ul className={style.productsGrid__catalog}>
-        <li>
-          <a onClick={() => handleCatalogGrid()} role="button">
-            {catalog ? <IoGrid /> : <IoGridOutline />}
-          </a>
-        </li>
-        <li>
-          <a onClick={() => handleCatalogLine()} role="button">
-            {catalog ? <PiListLight /> : <PiListFill />}
-          </a>
-        </li>
-      </ul>
-      <div className={catalog ? style.productsGrid__item : ""}>
+        </div>
+        <div className={style.products__sortMenu_item}>
+          <ul className={style.products__catalog}>
+            <li>
+              <a onClick={() => handleCatalogGrid()} role="button">
+                {catalog ? <IoGrid /> : <IoGridOutline />}
+              </a>
+            </li>
+            <li>
+              <a onClick={() => handleCatalogLine()} role="button">
+                {catalog ? <PiListLight /> : <PiListFill />}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>      
+      <div className={catalog ? style.products__grid : style.products__line}>
         {userCrop.map((products) => (
           <ProductCard
             key={products._id}
             catalog={catalog}
             cartProduct={productsCart}
-            onAddCart={onAddCart}
-            onDeleteCart={onDeleteCart}
             heartProduct={productsHeart}
-            onAddHeart={onAddHeart}
-            onDeleteHeart={onDeleteHeart}
             compareProduct={productsCompare}
-            onAddCompare={onAddCompare}
-            onDeleteCompare={onDeleteCompare}
             linkName={linkName}
             {...products}
+            addCompare={addCompare}
+            deleteCompare={deleteCompare}
           />
         ))}
       </div>
-      <div className={style.productsGrid__pagin}>
+      <div className={style.products__pagin}>
         <Pagination
           pages={pages}
           onPageChange={handlePageChange}
           currentPage={currentPage}
           onNext={handleNext}
           onPrev={handlePrev}
-          
         />
       </div>
     </div>

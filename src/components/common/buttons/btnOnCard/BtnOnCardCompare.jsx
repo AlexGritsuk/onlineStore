@@ -2,31 +2,33 @@ import React from "react";
 import PropTypes from "prop-types";
 import { isHave } from "../../../../utils/isHave";
 import style from "./btnOnCard.module.css";
+import { useDispatch } from "react-redux";
 
-const BtnOnCard = ({
+const BtnOnCardCompare = ({
   products,
   id,
   currentProduct,
-  onAdd,
-  onDelete,
   beforeLogo,
   afterLogo,
-}) => {
+  addCompare,
+  deleteCompare
+}) => {   
+  const dispatch = useDispatch();
   return (
     <div className={style.btnOnCard__wrapper}>
       {!isHave(products, id) ? (
         <button
-          onClick={() => {
-            onAdd(currentProduct);
+          onClick={() => {            
+            dispatch(addCompare(currentProduct));
           }}
           className={style.btnOnCard}
-        >
+        > 
           {beforeLogo}
         </button>
       ) : (
         <button
           onClick={() => {
-            onDelete(id);
+            dispatch(deleteCompare(id));
           }}
           className={style.btnOnCard_in}
         >
@@ -37,12 +39,10 @@ const BtnOnCard = ({
   );
 };
 
-BtnOnCard.propTypes = {
+BtnOnCardCompare.propTypes = {
   products: PropTypes.array.isRequired,
   id: PropTypes.string.isRequired,
-  currentProduct: PropTypes.object.isRequired,
-  onAdd: PropTypes.func.isRequired,
-  onDelete: PropTypes.func.isRequired,
+  currentProduct: PropTypes.object.isRequired,  
 };
 
-export default BtnOnCard;
+export default BtnOnCardCompare;

@@ -12,11 +12,9 @@ const MainSlider = ({ images }) => {
   const [mouseMoved, setMouseMoved] = useState(false);
 
   const handleClick = () => {
-    setMouseMoved(true);
+    setMouseMoved(true); 
     if (mouseMoved) history.push("/Iphones");
-  };
-
-  
+  };   
 
   const settings = {
     dots: true,
@@ -41,7 +39,7 @@ const MainSlider = ({ images }) => {
             style={{ textDecoration: "none", cursor: "pointer" }}
           >
             <div className="mainSlider">
-              <img src={image} style={{ width: "100%" }} />
+              <img src={image}/>
             </div>
           </button>
         );

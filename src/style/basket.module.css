@@ -1,7 +1,22 @@
+.basket__wrapper {
+  margin: 15px;
+}
+
+.basket__head {
+  display: flex;
+}
+
+.basket__count {
+  margin-left: 8px;
+  color: #8e8e93;
+}
+
 .basket {
   display: flex;
   margin-top: 40px;  
 }
+
+
 
 .basket__info {   
   width: 70%;
@@ -12,3 +27,21 @@
   width: 30%;
 }
 
+
+@media (max-width: 1000px) {
+  .basket {
+    flex-direction: column;
+  }
+  .basket__info {   
+    width: 100%;
+    margin-right: 0px;
+  }
+  
+  .basket__details {
+    width: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+
+}
