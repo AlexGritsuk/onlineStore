@@ -2,7 +2,7 @@ import { seriesAirPods } from "./seriesAirPods.api";
 import { visualAppearance } from "./visualAppearanceAirPods.api";
 
 import airPods2White from "./images/airpods/airPods2/airPods2White3.png";
-import airPods2White2 from "./images/airpods/airPods2/airPods2White2.png";
+// import airPods2White2 from "./images/airpods/airPods2/airPods2White2.png";
 import airPodsWhite3 from "./images/airpods/airPods2/airPods2White3.png";
 import airPodsWhite4 from "./images/airpods/airPods2/airpods2White4.png";
 
@@ -73,7 +73,7 @@ import airPodsMaxGreen2 from "./images/airpods/AirPodsMax/AirPodsMaxGreen2.png";
 
 const imageAirPods = {
   airPods2: {
-    white: [airPods2White, airPods2White2, airPodsWhite3, airPodsWhite4],
+    white: [airPods2White, airPodsWhite3, airPodsWhite4],
     black: [airPods2Black, airPods2Black2, airPods2Black3, airPods2Black4],
     green: [airPods2Green, airPods2Green2, airPods2Green3],
     blue: [airPods2blue, airPods2blue2, airPods2blue3],
